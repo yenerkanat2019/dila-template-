@@ -227,7 +227,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#f0f0ec;color:#666">Açık Zemin</span>
       </div>
     </div>
-    <button class="select-btn" id="b1" onclick="toggleSelect(1)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b1" onclick="toggleSelect(1, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T2 -->
@@ -254,7 +254,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#1a2e0a;color:#C0DD97">Koyu</span>
       </div>
     </div>
-    <button class="select-btn" id="b2" onclick="toggleSelect(2)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b2" onclick="toggleSelect(2, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T3 -->
@@ -287,7 +287,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#f3e8ff;color:#7C4D8B">Editöryal</span>
       </div>
     </div>
-    <button class="select-btn" id="b3" onclick="toggleSelect(3)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b3" onclick="toggleSelect(3, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T4 -->
@@ -310,7 +310,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#f3e8ff;color:#7C4D8B">Grid</span>
       </div>
     </div>
-    <button class="select-btn" id="b4" onclick="toggleSelect(4)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b4" onclick="toggleSelect(4, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T5 -->
@@ -336,7 +336,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#EAF3DE;color:#3B6D11">Kadınsı</span>
       </div>
     </div>
-    <button class="select-btn" id="b5" onclick="toggleSelect(5)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b5" onclick="toggleSelect(5, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T6 -->
@@ -360,7 +360,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#fde8d8;color:#E8843A">İstatistik</span>
       </div>
     </div>
-    <button class="select-btn" id="b6" onclick="toggleSelect(6)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b6" onclick="toggleSelect(6, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T7 -->
@@ -389,7 +389,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#fde8d8;color:#E8843A">Fiyat Listesi</span>
       </div>
     </div>
-    <button class="select-btn" id="b7" onclick="toggleSelect(7)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b7" onclick="toggleSelect(7, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T8 -->
@@ -416,7 +416,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#EAF3DE;color:#3B6D11">Lüks</span>
       </div>
     </div>
-    <button class="select-btn" id="b8" onclick="toggleSelect(8)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b8" onclick="toggleSelect(8, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T9 -->
@@ -440,7 +440,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#fde8d8;color:#E8843A">Gradient</span>
       </div>
     </div>
-    <button class="select-btn" id="b9" onclick="toggleSelect(9)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b9" onclick="toggleSelect(9, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
   <!-- T10 -->
@@ -467,7 +467,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
         <span class="tag" style="background:#f3e8ff;color:#7C4D8B">Visual</span>
       </div>
     </div>
-    <button class="select-btn" id="b10" onclick="toggleSelect(10)">Bu tasarımı beğendim ✓</button>
+    <button class="select-btn" id="b10" onclick="toggleSelect(10, event)">Bu tasarımı beğendim ✓</button>
   </div>
 
 </div>
@@ -486,7 +486,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 const names = ['Fresh & Organic','Bold Split','Magazine Clean','Card Grid','Feminine & Warm','Dark Pro','Wellness Spa','Modern Minimal','Story Driven','Instagram-First'];
 let selected = new Set();
 
-function toggleSelect(n) {
+function toggleSelect(n, event) {
+  if (event) event.stopPropagation(); // Butona basıldığında üst linke gitmesini önle
   if (selected.has(n)) {
     selected.delete(n);
     document.getElementById('c'+n).classList.remove('selected');
