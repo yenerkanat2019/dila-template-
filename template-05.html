@@ -48,8 +48,8 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 /* Aesthetic Image Composition */
 .h-visual { flex: 0.9; position: relative; height: 550px; }
-.img-frame { width: 100%; height: 100%; border-radius: 200px 200px 20px 20px; background: #EEE0D5; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.06); }
-.img-frame::before { content: 'DilaFit'; font-family: 'Lora', serif; font-size: 80px; color: #fff; opacity: 0.5; font-style: italic; }
+.img-frame { width: 100%; height: 100%; border-radius: 200px 200px 20px 20px; background: url('assets/img/spa_1.jpg') center/cover; position: relative; z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.06); }
+
 .img-accent { position: absolute; width: 100%; height: 100%; border: 2px solid var(--terra); border-radius: 200px 200px 20px 20px; top: -20px; right: -20px; z-index: 1; }
 .float-card { position: absolute; left: -50px; bottom: 80px; background: rgba(255,255,255,0.9); padding: 25px 30px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); backdrop-filter: blur(10px); z-index: 3; display: flex; align-items: center; gap: 15px; }
 .f-icon { width: 50px; height: 50px; background: rgba(82,121,111,0.1); color: var(--leaf); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; }
@@ -84,7 +84,7 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 /* Overlapping Grid Features */
 .overlap-sec { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 0; margin-bottom: 150px; background: #fff; border-radius: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.04); overflow: hidden; }
-.overlap-img { height: 600px; background: #EEDCC6; position: relative; display: flex; align-items: center; justify-content: center; font-size: 60px; color: rgba(255,255,255,0.7); }
+.overlap-img { height: 600px; background: url('assets/img/fitness_1.jpg') center/cover; position: relative; }
 .overlap-txt { padding: 80px; }
 .overlap-txt h2 { font-family: 'Lora', serif; font-size: 38px; color: var(--plum); margin-bottom: 30px; }
 .st-item { display: flex; gap: 20px; margin-bottom: 25px; }
@@ -123,7 +123,7 @@ footer { padding: 60px 5%; text-align: center; border-top: 1px solid rgba(0,0,0,
     .float-card { left: 50%; transform: translateX(-50%); bottom: -30px; width: 80%; }
     .img-accent { display: none; }
     .services-flex, .overlap-sec, .pr-grid { flex-direction: column; }
-    .overlap-img { height: 350px; }
+    .overlap-img { height: 600px; background: url('assets/img/fitness_1.jpg') center/cover; position: relative; }
     .pr-box.hot { transform: scale(1); margin: 30px 0; }
 }
 </style>
@@ -225,7 +225,7 @@ footer { padding: 60px 5%; text-align: center; border-top: 1px solid rgba(0,0,0,
                 </div>
             </div>
         </div>
-        <div class="overlap-img">B-8317 Cihaz & Estetik Görsel</div>
+        <div class="overlap-img"></div>
     </div>
 </section>
 

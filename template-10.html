@@ -36,7 +36,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 /* Clinic Profile Banner */
 .clinic-profile { padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: flex; gap: 60px; align-items: flex-start; }
 .cp-img-circle { width: 180px; height: 180px; border-radius: 50%; padding: 5px; background: linear-gradient(45deg, var(--ig-o), var(--ig-p), var(--ig-v)); flex-shrink: 0; }
-.cp-img-in { width: 100%; height: 100%; border: 4px solid #fff; border-radius: 50%; background: #eee; }
+.cp-img-in { width: 100%; height: 100%; border: 4px solid #fff; border-radius: 50%; background: url('assets/img/doctor_1.jpg') center/cover; }
 .cp-info { flex: 1; }
 .cp-title { display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; }
 .cp-title h1 { font-size: 32px; font-weight: 300; }
@@ -67,7 +67,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .vp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
 .vp-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
 .vp-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: var(--ig-o); }
-.vp-img { height: 200px; background: linear-gradient(45deg, #eee, #ddd); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #fff; font-weight: 900; }
+.vp-img { height: 200px; background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; font-size: 32px; color: #fff; font-weight: 900; box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.3); }
 .vp-body { padding: 40px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; }
 .vp-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 5px; }
 .vp-body h4 { font-size: 36px; color: var(--text); font-weight: 900; margin-bottom: 20px; }
@@ -183,7 +183,7 @@ footer { padding: 40px 5%; text-align: center; font-size: 13px; color: var(--mut
     
     <div class="vp-grid">
         <div class="vp-card">
-            <div class="vp-img" style="background:var(--blue)">KLASİK DİYET</div>
+            <div class="vp-img" style="background-image: url('assets/img/diet_2.jpg');">KLASİK DİYET</div>
             <div class="vp-body">
                 <h3>Aylık Takip</h3>
                 <h4>₺1.200</h4>
@@ -192,7 +192,7 @@ footer { padding: 40px 5%; text-align: center; font-size: 13px; color: var(--mut
             </div>
         </div>
         <div class="vp-card" style="border-color: var(--ig-p); box-shadow: 0 10px 40px rgba(221,42,123,0.15); transform: translateY(-5px);">
-            <div class="vp-img" style="background:var(--ig-p)">DİYET + EMS</div>
+            <div class="vp-img" style="background-image: url('assets/img/fitness_1.jpg');">DİYET + EMS</div>
             <div class="vp-body">
                 <h3>8 Cihaz Seansı</h3>
                 <h4 style="color:var(--ig-p)">₺2.500</h4>
@@ -201,7 +201,7 @@ footer { padding: 40px 5%; text-align: center; font-size: 13px; color: var(--mut
             </div>
         </div>
         <div class="vp-card">
-            <div class="vp-img" style="background:var(--text)">V.I.P ERİŞİM</div>
+            <div class="vp-img" style="background-image: url('assets/img/spa_1.jpg');">V.I.P ERİŞİM</div>
             <div class="vp-body">
                 <h3>12 Seans + Öncelik</h3>
                 <h4>₺4.000</h4>

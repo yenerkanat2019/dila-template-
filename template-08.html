@@ -28,7 +28,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .hero h1 { font-family: 'Playfair Display', serif; font-size: 72px; font-weight: 400; line-height: 1.1; margin-bottom: 40px; max-width: 900px; color: var(--text); }
 .hero h1 i { color: var(--muted); }
 .hero p { font-size: 18px; color: var(--muted); max-width: 500px; margin-bottom: 50px; }
-.hero-img { width: 100%; max-width: 1200px; height: 500px; background: #E5E5E5; border-radius: 40px 40px 0 0; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #CCC; margin-top: auto; position: relative; overflow: hidden; }
+.hero-img { width: 100%; max-width: 1200px; height: 500px; background: url('assets/img/clinic_1.jpg') center/cover; border-radius: 40px 40px 0 0; margin-top: auto; }
 
 /* Line Seperator */
 .divider { width: 100%; height: 1px; background: var(--border); margin: 100px 0; }
@@ -46,7 +46,7 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 
 /* Photo / Text Combo */
 .split-sec { display: flex; gap: 80px; align-items: center; margin-bottom: 150px; }
-.split-img { flex: 1; height: 600px; background: #F0F0F0; border-radius: 20px; }
+.split-img { flex: 1; height: 600px; background: url('assets/img/fit_client.png') center/cover; border-radius: 20px; }
 .split-text { flex: 1; padding: 40px 0; }
 .split-text h2 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 400; margin-bottom: 30px; }
 .split-text p { font-size: 16px; color: var(--muted); margin-bottom: 30px; max-width: 450px; }
@@ -72,7 +72,7 @@ footer { padding: 60px 6%; border-top: 1px solid var(--border); display: flex; j
     .hero h1 { font-size: 48px; }
     .hero { padding-top: 120px; }
     .grid-cols, .split-sec, .p-grid { grid-template-columns: 1fr; flex-direction: column; }
-    .split-img { width: 100%; height: 400px; }
+    .split-img { flex: 1; height: 600px; background: url('assets/img/fit_client.png') center/cover; border-radius: 20px; }
     footer { flex-direction: column; gap: 20px; text-align: center; }
 }
 </style>
@@ -93,7 +93,7 @@ footer { padding: 60px 6%; border-top: 1px solid var(--border); display: flex; j
     <div class="h-tag">Basitlik, Nihai Gelişmişliktir</div>
     <h1>Formda Kalmak Asla <br><i>Karmaşık</i> Olmamalı.</h1>
     <p>Beslenme bilimini Meta Slim GS Makinesiyle birleştiren sadelik ve zarafet odaklı estetik kliniği.</p>
-    <div class="hero-img">Zarif Klinik veya Cihaz Görseli</div>
+    <div class="hero-img"></div>
 </section>
 
 <div class="divider"></div>

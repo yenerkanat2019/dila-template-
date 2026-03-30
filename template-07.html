@@ -51,14 +51,14 @@ nav { display: flex; justify-content: space-between; align-items: center; paddin
 
 /* Archway Visual */
 .hero-visual { flex: 0.9; height: 80vh; position: relative; display: flex; justify-content: flex-end; align-items: flex-end; }
-.arch-frame { width: 90%; height: 95%; background: var(--cream); border-radius: 999px 999px 0 0; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(167,189,164,0.4); box-shadow: 0 40px 100px rgba(26,40,31,0.06); transform: scale(0.95); transform-origin: top center; animation: arch-breathe 8s ease-in-out infinite alternate; }
+.arch-frame { width: 90%; height: 95%; background: url('assets/img/measure_1.jpg') center/cover; border-radius: 999px 999px 0 0; position: relative; box-shadow: 0 40px 100px rgba(26,40,31,0.06); animation: arch-breathe 8s ease-in-out infinite alternate; }
 @keyframes arch-breathe { 0% { transform: scale(0.98); } 100% { transform: scale(1); } }
 .arch-frame::after { content: 'SPA'; font-family: 'Cormorant Garamond', serif; font-size: 200px; color: rgba(167,189,164,0.1); position: absolute; bottom: -60px; font-weight: 600; line-height: 0.8; letter-spacing: -5px; }
 .leaf-accent { position: absolute; left: -30px; top: 100px; font-size: 100px; color: var(--forest); opacity: 0.03; transform: rotate(-30deg); pointer-events: none; }
 
 /* The Art of EMS */
 .art-sec { padding: 150px 6%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; background: var(--cream); position: relative; }
-.art-img { width: 100%; height: 600px; background: rgba(167,189,164,0.1); border-radius: 0 200px 0 200px; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--copper); font-style: italic; border: 1px dashed rgba(167,189,164,0.6); position: relative; }
+.art-img { width: 100%; height: 600px; background: url('assets/img/healthy_diet.png') center/cover; border-radius: 0 200px 0 200px; position: relative; }
 .art-img::before { content: ''; position: absolute; width: 100%; height: 100%; border: 1px solid var(--forest); top: -20px; left: -20px; border-radius: 0 200px 0 200px; z-index: 0; opacity: 0.1; }
 .art-content { position: relative; z-index: 2; }
 .s-title { font-family: 'Cormorant Garamond', serif; font-size: 54px; line-height: 1.1; color: var(--forest); margin-bottom: 30px; font-weight: 400; }
@@ -120,9 +120,9 @@ footer { padding: 60px 6%; border-top: 1px solid rgba(26,40,31,0.05); text-align
     .h-label { justify-content: center; }
     .h-label::before { display: none; }
     .h-actions { justify-content: center; }
-    .arch-frame { width: 100%; height: 500px; }
+    .arch-frame { width: 90%; height: 95%; background: url('assets/img/measure_1.jpg') center/cover; border-radius: 999px 999px 0 0; position: relative; box-shadow: 0 40px 100px rgba(26,40,31,0.06); animation: arch-breathe 8s ease-in-out infinite alternate; }
     .art-sec, .menu-sec { flex-direction: column; gap: 60px; padding: 80px 6%; }
-    .art-img { height: 400px; border-radius: 40px; }
+    .art-img { width: 100%; height: 600px; background: url('assets/img/healthy_diet.png') center/cover; border-radius: 0 200px 0 200px; position: relative; }
     .art-img::before { display: none; }
     .test-grid { grid-template-columns: 1fr; }
     .menu-left { text-align: center; }
@@ -160,7 +160,7 @@ footer { padding: 60px 6%; border-top: 1px solid rgba(26,40,31,0.05); text-align
     </div>
     <div class="hero-visual">
         <div class="arch-frame">
-            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--forest); font-style: italic; opacity: 0.5;">Huzur ve Sağlık</div>
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--forest); font-style: italic; opacity: 0.5;"></div>
         </div>
         <div class="leaf-accent">🌿</div>
     </div>

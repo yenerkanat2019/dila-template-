@@ -58,7 +58,7 @@ nav { display: flex; align-items: center; padding: 25px 5%; height: 90px; positi
 /* EMS Magazine Style */
 .ems-magazine { display: grid; grid-template-columns: 5fr 4fr; gap: 80px; align-items: center; }
 .ems-img-wrapper { position: relative; }
-.ems-img { height: 600px; background: #f0f0f0; border-radius: 8px; position: relative; z-index: 2; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 80px; color: #ddd; }
+.ems-img { height: 600px; background: url('assets/img/ems_machine.png') center/cover; border-radius: 8px; position: relative; z-index: 2; }
 .ems-img::after { content: 'B-8317'; position: absolute; top: 20px; left: 20px; font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: #ccc; }
 .ems-bg-accent { position: absolute; bottom: -30px; left: -30px; width: 100%; height: 100%; background: var(--green); border-radius: 8px; z-index: 1; opacity: 0.1; }
 .ems-content h2 { font-family: 'Playfair Display', serif; font-size: 40px; line-height: 1.1; margin-bottom: 30px; }
@@ -160,7 +160,7 @@ footer { padding: 80px 5% 40px; background: var(--text); color: #fff; text-align
     <div class="ems-magazine">
         <div class="ems-img-wrapper">
             <div class="ems-bg-accent"></div>
-            <div class="ems-img">İmaj Alanı</div>
+            <div class="ems-img"></div>
         </div>
         <div class="ems-content">
             <h2>Peki Nedir Bu Meta Slim?</h2>
