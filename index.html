@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diyetisyen Dila Karakurt — Template Seçimi</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f0; color: #111; }
+
+.page-header { background: #3B6D11; color: white; padding: 28px 24px 24px; }
+.page-header h1 { font-size: 22px; font-weight: 600; }
+.page-header p { font-size: 14px; opacity: 0.8; margin-top: 6px; }
+
+.instruction { background: #fef9f0; border-left: 4px solid #E8843A; padding: 14px 20px; margin: 20px 24px; border-radius: 4px; font-size: 14px; color: #555; line-height: 1.6; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; padding: 8px 24px 40px; }
+
+.card {
+  border: 1.5px solid #e0e0d8;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.10); border-color: #b0c8a0; }
+.card.selected { border: 2.5px solid #3B6D11; box-shadow: 0 8px 28px rgba(59,109,17,0.18); }
+
+.preview {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.card-info { padding: 14px 16px; border-top: 1px solid #f0f0ec; }
+.card-num { font-size: 11px; font-weight: 600; color: #aaa; margin-bottom: 3px; letter-spacing: 0.5px; text-transform: uppercase; }
+.card-title { font-size: 15px; font-weight: 600; color: #111; }
+.card-desc { font-size: 12px; color: #777; margin-top: 5px; line-height: 1.5; }
+.card-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 10px; }
+.tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+
+.select-btn {
+  display: block; width: calc(100% - 32px); margin: 0 16px 14px;
+  padding: 9px; border-radius: 8px;
+  border: 1.5px solid #d0d0c8;
+  background: transparent; color: #444;
+  font-size: 13px; cursor: pointer; font-family: inherit;
+  transition: all 0.15s; font-weight: 500;
+}
+.select-btn:hover { background: #f0f7ea; border-color: #3B6D11; color: #3B6D11; }
+.select-btn.chosen { background: #EAF3DE; border-color: #3B6D11; color: #3B6D11; font-weight: 600; }
+
+.selection-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #3B6D11; color: white;
+  padding: 16px 24px; display: none;
+  align-items: center; justify-content: space-between;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  z-index: 100;
+}
+.selection-bar.show { display: flex; }
+.sel-text { font-size: 15px; font-weight: 500; }
+.sel-sub { font-size: 12px; opacity: 0.8; margin-top: 2px; }
+.sel-clear { background: rgba(255,255,255,0.2); border: none; color: white; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-family: inherit; }
+
+/* ====== TEMPLATE PREVIEWS ====== */
+
+/* T1 - Fresh Organic */
+.t1 { background: linear-gradient(135deg, #EAF3DE 0%, #fef9f0 100%); flex-direction: column; }
+.t1-nav { width: 100%; height: 32px; background: #3B6D11; display: flex; align-items: center; padding: 0 14px; flex-shrink: 0; }
+.t1-logo { font-size: 12px; font-weight: 600; color: white; }
+.t1-hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; text-align: center; }
+.t1-h { font-size: 18px; font-weight: 700; color: #3B6D11; }
+.t1-sub { font-size: 11px; color: #639922; margin-top: 5px; }
+.t1-cta { display: inline-block; margin-top: 12px; background: #E8843A; color: white; padding: 7px 18px; border-radius: 24px; font-size: 11px; font-weight: 600; }
+
+/* T2 - Bold Split */
+.t2 { background: #1a1a2e; }
+.t2-left { width: 44%; background: #7C4D8B; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 18px; }
+.t2-right { flex: 1; padding: 18px; display: flex; flex-direction: column; justify-content: center; }
+.t2-name { font-size: 12px; font-weight: 700; color: white; text-align: center; }
+.t2-sub2 { font-size: 9px; color: #e2b8f0; text-align: center; margin-top: 5px; }
+.t2-acc { width: 32px; height: 3px; background: #E8843A; margin: 10px auto 0; border-radius: 2px; }
+.t2-h { font-size: 13px; font-weight: 600; color: white; line-height: 1.4; }
+.t2-body { font-size: 9px; color: #aaa; margin-top: 8px; line-height: 1.6; }
+.t2-btn { display: inline-block; margin-top: 14px; background: #E8843A; color: white; padding: 6px 14px; border-radius: 5px; font-size: 10px; font-weight: 600; }
+
+/* T3 - Magazine */
+.t3 { background: white; flex-direction: column; }
+.t3-top { width: 100%; height: 7px; background: linear-gradient(90deg, #3B6D11, #E8843A, #7C4D8B); flex-shrink: 0; }
+.t3-nav { width: 100%; display: flex; align-items: center; padding: 9px 14px; border-bottom: 1px solid #eee; }
+.t3-logo3 { font-size: 14px; font-weight: 700; color: #3B6D11; flex: 1; }
+.t3-links { display: flex; gap: 12px; }
+.t3-link { font-size: 10px; color: #666; }
+.t3-hero { padding: 18px 14px; display: flex; gap: 14px; align-items: center; flex: 1; }
+.t3-text { flex: 1; }
+.t3-h { font-size: 15px; font-weight: 700; color: #222; line-height: 1.3; }
+.t3-s { font-size: 10px; color: #888; margin-top: 5px; line-height: 1.5; }
+.t3-img { width: 65px; height: 75px; background: linear-gradient(160deg, #EAF3DE, #639922); border-radius: 10px; flex-shrink: 0; }
+.t3-cta { display: inline-block; margin-top: 12px; background: #3B6D11; color: white; padding: 6px 14px; border-radius: 5px; font-size: 10px; }
+
+/* T4 - Card Grid */
+.t4 { background: #f8f4ff; padding: 14px; flex-direction: column; }
+.t4-logo { font-size: 13px; font-weight: 700; color: #7C4D8B; margin-bottom: 12px; }
+.t4-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.t4-card { background: white; border-radius: 8px; padding: 10px; border-left: 3px solid; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.t4-card:nth-child(1) { border-color: #3B6D11; }
+.t4-card:nth-child(2) { border-color: #E8843A; }
+.t4-card:nth-child(3) { border-color: #7C4D8B; }
+.t4-card:nth-child(4) { border-color: #639922; }
+.t4-ct { font-size: 10px; font-weight: 600; color: #333; }
+.t4-cs { font-size: 9px; color: #888; margin-top: 3px; }
+
+/* T5 - Feminine Soft */
+.t5 { background: #fef6f0; flex-direction: column; }
+.t5-nav { width: 100%; background: white; padding: 9px 14px; display: flex; align-items: center; box-shadow: 0 1px 4px rgba(0,0,0,0.06); flex-shrink: 0; }
+.t5-logo { font-size: 12px; font-weight: 600; color: #E8843A; flex: 1; }
+.t5-ig { width: 16px; height: 16px; border-radius: 5px; background: linear-gradient(135deg, #E8843A, #7C4D8B); }
+.t5-hero { flex: 1; text-align: center; padding: 20px 18px 14px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.t5-h { font-size: 16px; font-weight: 700; color: #333; line-height: 1.4; }
+.t5-tag { display: inline-block; background: #fde8d8; color: #E8843A; font-size: 10px; padding: 4px 12px; border-radius: 24px; margin: 10px 0; font-weight: 600; }
+.t5-motiv { font-size: 10px; color: #888; font-style: italic; line-height: 1.6; padding: 0 20px; }
+.t5-btn { display: block; margin: 14px 0 0; background: #E8843A; color: white; padding: 9px 28px; border-radius: 28px; font-size: 11px; font-weight: 600; }
+
+/* T6 - Dark Pro */
+.t6 { background: #0f1117; padding: 14px; flex-direction: column; }
+.t6-bar { display: flex; align-items: center; margin-bottom: 12px; }
+.t6-logo { font-size: 14px; font-weight: 700; color: #639922; flex: 1; }
+.t6-dot { width: 7px; height: 7px; border-radius: 50%; background: #E8843A; }
+.t6-h { font-size: 15px; font-weight: 600; color: white; line-height: 1.4; margin-bottom: 10px; }
+.t6-stats { display: flex; gap: 8px; margin-bottom: 12px; }
+.t6-stat { flex: 1; background: #1e2130; border-radius: 8px; padding: 9px; text-align: center; }
+.t6-sn { font-size: 18px; font-weight: 700; color: #639922; }
+.t6-sl { font-size: 9px; color: #666; margin-top: 3px; }
+.t6-cta { background: #639922; color: white; padding: 8px; border-radius: 7px; font-size: 11px; font-weight: 600; text-align: center; }
+
+/* T7 - Wellness Spa */
+.t7 { background: #f0faf4; flex-direction: column; }
+.t7-nav { width: 100%; background: #3B6D11; padding: 9px 14px; display: flex; align-items: center; flex-shrink: 0; }
+.t7-logo { font-size: 11px; font-weight: 700; color: white; flex: 1; letter-spacing: 1.5px; text-transform: uppercase; }
+.t7-hero { display: flex; flex: 1; }
+.t7-left { flex: 1; padding: 18px; display: flex; flex-direction: column; justify-content: center; }
+.t7-h { font-size: 14px; font-weight: 600; color: #1a3d0a; line-height: 1.4; }
+.t7-s { font-size: 10px; color: #639922; margin-top: 5px; }
+.t7-right { width: 90px; background: linear-gradient(160deg, #C0DD97, #639922); display: flex; align-items: center; justify-content: center; font-size: 36px; }
+.t7-pkgs { display: flex; gap: 7px; padding: 10px 12px; border-top: 1px solid #d0ecc0; }
+.t7-pkg { flex: 1; background: white; border-radius: 7px; padding: 7px; text-align: center; border-top: 2px solid #3B6D11; }
+.t7-pn { font-size: 10px; font-weight: 600; color: #333; }
+.t7-pp { font-size: 11px; font-weight: 700; color: #E8843A; margin-top: 3px; }
+
+/* T8 - Modern Minimal */
+.t8 { background: white; padding: 18px; flex-direction: column; justify-content: center; }
+.t8-top { display: flex; align-items: flex-start; margin-bottom: 22px; }
+.t8-logo { font-size: 10px; font-weight: 500; color: #aaa; letter-spacing: 3px; text-transform: uppercase; flex: 1; }
+.t8-menu { display: flex; gap: 8px; }
+.t8-ml { font-size: 9px; color: #bbb; }
+.t8-h { font-size: 24px; font-weight: 800; color: #111; line-height: 1.2; margin-bottom: 10px; }
+.t8-accent { color: #3B6D11; }
+.t8-line { height: 3px; width: 44px; background: #E8843A; margin-bottom: 12px; border-radius: 2px; }
+.t8-s { font-size: 11px; color: #777; line-height: 1.7; }
+.t8-btns { display: flex; gap: 9px; margin-top: 14px; }
+.t8-b1 { background: #3B6D11; color: white; padding: 7px 16px; border-radius: 5px; font-size: 10px; font-weight: 600; }
+.t8-b2 { background: transparent; color: #3B6D11; padding: 7px 16px; border-radius: 5px; font-size: 10px; font-weight: 600; border: 1.5px solid #3B6D11; }
+
+/* T9 - Story Driven */
+.t9 { background: #1c0a2e; flex-direction: column; }
+.t9-nav { width: 100%; padding: 10px 14px; display: flex; align-items: center; flex-shrink: 0; }
+.t9-logo { font-size: 14px; font-weight: 700; background: linear-gradient(90deg, #E8843A, #c878e0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; flex: 1; }
+.t9-strip { width: 100%; height: 3px; background: linear-gradient(90deg, #3B6D11, #E8843A, #7C4D8B); flex-shrink: 0; }
+.t9-hero { flex: 1; padding: 18px 14px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.t9-tag { display: inline-block; background: rgba(124,77,139,0.3); color: #c878e0; font-size: 10px; padding: 4px 12px; border-radius: 24px; margin-bottom: 10px; font-weight: 600; border: 1px solid rgba(200,120,224,0.3); }
+.t9-h { font-size: 18px; font-weight: 700; color: white; line-height: 1.3; }
+.t9-s { font-size: 10px; color: #aaa; margin-top: 8px; line-height: 1.6; }
+.t9-cta { display: inline-block; margin-top: 14px; background: linear-gradient(135deg, #E8843A, #7C4D8B); color: white; padding: 8px 20px; border-radius: 24px; font-size: 11px; font-weight: 600; }
+
+/* T10 - Instagram First */
+.t10 { background: #fafafa; flex-direction: column; }
+.t10-nav { width: 100%; background: white; padding: 9px 14px; display: flex; align-items: center; border-bottom: 1px solid #eee; flex-shrink: 0; }
+.t10-logo { font-size: 14px; font-weight: 700; color: #333; flex: 1; font-family: Georgia, serif; }
+.t10-icons { display: flex; gap: 9px; }
+.t10-i { width: 16px; height: 16px; border-radius: 4px; background: #ddd; }
+.t10-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; flex: 1; }
+.t10-g1 { grid-row: span 2; background: linear-gradient(160deg, #3B6D11, #C0DD97); display: flex; flex-direction: column; justify-content: flex-end; padding: 10px; }
+.t10-g2 { background: linear-gradient(160deg, #E8843A, #fde8d8); }
+.t10-g3 { background: linear-gradient(160deg, #7C4D8B, #e2b8f0); }
+.t10-ft { font-size: 11px; font-weight: 700; color: white; }
+.t10-fs { font-size: 9px; color: rgba(255,255,255,0.8); margin-top: 3px; }
+.t10-bio { padding: 9px 14px; font-size: 10px; color: #555; line-height: 1.5; background: white; }
+.t10-btn { margin: 0 14px 10px; background: #3B6D11; color: white; padding: 8px; border-radius: 7px; font-size: 11px; font-weight: 600; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>@diyetisyendilakarakurt — Web Sitesi Tasarımı</h1>
+  <p>Aşağıdaki 10 template'den beğendiğini seç, ardından detaylı tasarım sürecine geçelim.</p>
+</div>
+
+<div class="instruction">
+  💡 Her kartın altındaki butona tıklayarak tercihin belirtebiirsin. Birden fazla beğendiğin varsa hepsini seçebilirsin!
+</div>
+
+<div class="grid">
+
+  <!-- T1 -->
+  <div class="card" id="c1">
+    <div class="preview t1">
+      <div class="t1-nav"><span class="t1-logo">@diyetisyendilakarakurt</span></div>
+      <div class="t1-hero">
+        <div class="t1-h">EMS ile Sağlıklı Yaşam</div>
+        <div class="t1-sub">Diyetisyen Dila Karakurt ile</div>
+        <div class="t1-cta">Paketi Keşfet →</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 01</div>
+      <div class="card-title">Fresh & Organic</div>
+      <div class="card-desc">Sade, doğal his. Açık yeşil zeminli, sıcak turuncu CTA butonlu. Wellness markaları için klasik tercih.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#EAF3DE;color:#3B6D11">Sade</span>
+        <span class="tag" style="background:#fde8d8;color:#E8843A">Modern</span>
+        <span class="tag" style="background:#f0f0ec;color:#666">Açık Zemin</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b1" onclick="toggleSelect(1)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T2 -->
+  <div class="card" id="c2">
+    <div class="preview t2">
+      <div class="t2-left">
+        <div class="t2-name">Dila Karakurt</div>
+        <div class="t2-sub2">Diyetisyen & EMS Uzmanı</div>
+        <div class="t2-acc"></div>
+      </div>
+      <div class="t2-right">
+        <div class="t2-h">Vücudunu Hızlı Dönüştür</div>
+        <div class="t2-body">EMS Meta Slim teknolojisi ve kişisel beslenme planıyla sonuç garantili.</div>
+        <div class="t2-btn">Randevu Al</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 02</div>
+      <div class="card-title">Bold Split — Koyu & Etkileyici</div>
+      <div class="card-desc">Eflatun sol panel, koyu sağ bölüm. Güçlü profesyonel imaj. Klinik hissi.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#f3e8ff;color:#7C4D8B">Eflatun</span>
+        <span class="tag" style="background:#fde8d8;color:#E8843A">Cesur</span>
+        <span class="tag" style="background:#1a2e0a;color:#C0DD97">Koyu</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b2" onclick="toggleSelect(2)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T3 -->
+  <div class="card" id="c3">
+    <div class="preview t3">
+      <div class="t3-top"></div>
+      <div class="t3-nav">
+        <span class="t3-logo3">DilaFit</span>
+        <div class="t3-links">
+          <span class="t3-link">EMS</span>
+          <span class="t3-link">Paketler</span>
+          <span class="t3-link">Blog</span>
+        </div>
+      </div>
+      <div class="t3-hero">
+        <div class="t3-text">
+          <div class="t3-h">Sağlıklı Beslenme, Güçlü Vücut</div>
+          <div class="t3-s">EMS teknolojisi ve uzman diyetisyen rehberliği bir arada</div>
+          <div class="t3-cta">Hemen Başla</div>
+        </div>
+        <div class="t3-img"></div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 03</div>
+      <div class="card-title">Magazine Clean</div>
+      <div class="card-desc">3 renkli üst şerit, beyaz zemin, gazete düzeni. Güvenilir ve profesyonel görünüm.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#EAF3DE;color:#3B6D11">Temiz</span>
+        <span class="tag" style="background:#f3e8ff;color:#7C4D8B">Editöryal</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b3" onclick="toggleSelect(3)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T4 -->
+  <div class="card" id="c4">
+    <div class="preview t4">
+      <div class="t4-logo">Diyetisyen Dila</div>
+      <div class="t4-grid">
+        <div class="t4-card"><div class="t4-ct">EMS Makinesi</div><div class="t4-cs">Meta Slim B-8317</div></div>
+        <div class="t4-card"><div class="t4-ct">Paketler</div><div class="t4-cs">3 farklı program</div></div>
+        <div class="t4-card"><div class="t4-ct">Başarı Hikayeleri</div><div class="t4-cs">Gerçek sonuçlar</div></div>
+        <div class="t4-card"><div class="t4-ct">SSS</div><div class="t4-cs">Sıkça sorulanlar</div></div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 04</div>
+      <div class="card-title">Card Grid — Hizmet Odaklı</div>
+      <div class="card-desc">Her hizmet kendi kartında, renkli sol kenarlıklar. İçeriklere hızlı erişim sağlayan düzen.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#EAF3DE;color:#3B6D11">Fonksiyonel</span>
+        <span class="tag" style="background:#f3e8ff;color:#7C4D8B">Grid</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b4" onclick="toggleSelect(4)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T5 -->
+  <div class="card" id="c5">
+    <div class="preview t5">
+      <div class="t5-nav">
+        <span class="t5-logo">@dila.karakurt</span>
+        <div class="t5-ig"></div>
+      </div>
+      <div class="t5-hero">
+        <div class="t5-h">Seninle daha<br>sağlıklı bir hayat</div>
+        <div class="t5-tag">EMS + Beslenme Danışmanlığı</div>
+        <div class="t5-motiv">"Küçük adımlar, büyük değişimler yaratır."</div>
+        <div class="t5-btn">Randevu Al →</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 05</div>
+      <div class="card-title">Feminine & Warm</div>
+      <div class="card-desc">Sıcak krem zemin, Instagram logosu öne çıkıyor, günlük motivasyon sözü prominently gösteriliyor.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#fde8d8;color:#E8843A">Sıcak</span>
+        <span class="tag" style="background:#EAF3DE;color:#3B6D11">Kadınsı</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b5" onclick="toggleSelect(5)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T6 -->
+  <div class="card" id="c6">
+    <div class="preview t6">
+      <div class="t6-bar"><span class="t6-logo">DilaFit Pro</span><div class="t6-dot"></div></div>
+      <div class="t6-h">EMS Teknolojisi ile<br>Sonuç Garantili</div>
+      <div class="t6-stats">
+        <div class="t6-stat"><div class="t6-sn">500+</div><div class="t6-sl">Müşteri</div></div>
+        <div class="t6-stat"><div class="t6-sn">8kg</div><div class="t6-sl">Ort. kayıp</div></div>
+        <div class="t6-stat"><div class="t6-sn">%94</div><div class="t6-sl">Memnuniyet</div></div>
+      </div>
+      <div class="t6-cta">Ücretsiz Danışma Al</div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 06</div>
+      <div class="card-title">Dark Pro — Sonuç Odaklı</div>
+      <div class="card-desc">Koyu zemin, yeşil aksan, istatistiklerle güven inşa eden güçlü profesyonel tasarım.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#1a2e0a;color:#C0DD97">Koyu</span>
+        <span class="tag" style="background:#fde8d8;color:#E8843A">İstatistik</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b6" onclick="toggleSelect(6)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T7 -->
+  <div class="card" id="c7">
+    <div class="preview t7">
+      <div class="t7-nav"><span class="t7-logo">Dila Karakurt</span></div>
+      <div class="t7-hero">
+        <div class="t7-left">
+          <div class="t7-h">Wellness & EMS Uzmanlığı</div>
+          <div class="t7-s">Meta Slim teknolojisi ile</div>
+        </div>
+        <div class="t7-right">🌿</div>
+      </div>
+      <div class="t7-pkgs">
+        <div class="t7-pkg"><div class="t7-pn">Başlangıç</div><div class="t7-pp">₺499</div></div>
+        <div class="t7-pkg"><div class="t7-pn">Pro</div><div class="t7-pp">₺899</div></div>
+        <div class="t7-pkg"><div class="t7-pn">Premium</div><div class="t7-pp">₺1499</div></div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 07</div>
+      <div class="card-title">Wellness Spa</div>
+      <div class="card-desc">Koyu yeşil header, açık zemin, paketler ana sayfada direkt görünür. SPA hissi verir.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#EAF3DE;color:#3B6D11">Wellness</span>
+        <span class="tag" style="background:#fde8d8;color:#E8843A">Fiyat Listesi</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b7" onclick="toggleSelect(7)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T8 -->
+  <div class="card" id="c8">
+    <div class="preview t8">
+      <div class="t8-top">
+        <span class="t8-logo">DILAFIT</span>
+        <div class="t8-menu"><span class="t8-ml">EMS</span><span class="t8-ml">Paket</span><span class="t8-ml">SSS</span></div>
+      </div>
+      <div class="t8-h">Formda <span class="t8-accent">kal</span>,<br>güçlü <span class="t8-accent">yaşa</span></div>
+      <div class="t8-line"></div>
+      <div class="t8-s">EMS teknolojisi, beslenme danışmanlığı ve motivasyon bir arada.</div>
+      <div class="t8-btns">
+        <div class="t8-b1">Başlayalım</div>
+        <div class="t8-b2">Paketler</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 08</div>
+      <div class="card-title">Modern Minimal</div>
+      <div class="card-desc">Beyaz zemin, büyük bold başlık, turuncu alt çizgi detayı. Sessiz lüks his.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#f5f5f5;color:#555">Minimal</span>
+        <span class="tag" style="background:#EAF3DE;color:#3B6D11">Lüks</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b8" onclick="toggleSelect(8)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T9 -->
+  <div class="card" id="c9">
+    <div class="preview t9">
+      <div class="t9-nav"><span class="t9-logo">DilaForm</span></div>
+      <div class="t9-strip"></div>
+      <div class="t9-hero">
+        <div class="t9-tag">Başarı Hikayeleri</div>
+        <div class="t9-h">Gerçek İnsanlar,<br>Gerçek Sonuçlar</div>
+        <div class="t9-s">500+ müşteri dönüşüm hikayesine katıl</div>
+        <div class="t9-cta">Hikayeleri Oku</div>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 09</div>
+      <div class="card-title">Story Driven — Koyu & Dinamik</div>
+      <div class="card-desc">Koyu mor zemin, gradient logo, 3 renkli şerit. Sosyal medya doğumlu, genç kitleye hitap eder.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#1c0a2e;color:#c878e0">Dark</span>
+        <span class="tag" style="background:#fde8d8;color:#E8843A">Gradient</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b9" onclick="toggleSelect(9)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+  <!-- T10 -->
+  <div class="card" id="c10">
+    <div class="preview t10">
+      <div class="t10-nav">
+        <span class="t10-logo">Dila Karakurt</span>
+        <div class="t10-icons"><div class="t10-i"></div><div class="t10-i"></div></div>
+      </div>
+      <div class="t10-grid">
+        <div class="t10-g1"><div class="t10-ft">EMS ile Zayıfla</div><div class="t10-fs">Meta Slim B-8317</div></div>
+        <div class="t10-g2"></div>
+        <div class="t10-g3"></div>
+      </div>
+      <div class="t10-bio">👩‍⚕️ Diyetisyen · EMS Uzmanı · @diyetisyendilakarakurt</div>
+      <div class="t10-btn">Randevu Al →</div>
+    </div>
+    <div class="card-info">
+      <div class="card-num">Template 10</div>
+      <div class="card-title">Instagram-First</div>
+      <div class="card-desc">Instagram grid mantığında ana sayfa. Renkli bloklar, bio formatı. Sosyal medya dostu tasarım.</div>
+      <div class="card-tags">
+        <span class="tag" style="background:#EAF3DE;color:#3B6D11">Instagram</span>
+        <span class="tag" style="background:#f3e8ff;color:#7C4D8B">Visual</span>
+      </div>
+    </div>
+    <button class="select-btn" id="b10" onclick="toggleSelect(10)">Bu tasarımı beğendim ✓</button>
+  </div>
+
+</div>
+
+<div class="selection-bar" id="selbar">
+  <div>
+    <div class="sel-text" id="sel-text">Seçim yapıldı</div>
+    <div class="sel-sub" id="sel-sub"></div>
+  </div>
+  <button class="sel-clear" onclick="clearAll()">Temizle</button>
+</div>
+
+<div style="height: 80px;"></div>
+
+<script>
+const names = ['Fresh & Organic','Bold Split','Magazine Clean','Card Grid','Feminine & Warm','Dark Pro','Wellness Spa','Modern Minimal','Story Driven','Instagram-First'];
+let selected = new Set();
+
+function toggleSelect(n) {
+  if (selected.has(n)) {
+    selected.delete(n);
+    document.getElementById('c'+n).classList.remove('selected');
+    const btn = document.getElementById('b'+n);
+    btn.classList.remove('chosen');
+    btn.textContent = 'Bu tasarımı beğendim ✓';
+  } else {
+    selected.add(n);
+    document.getElementById('c'+n).classList.add('selected');
+    const btn = document.getElementById('b'+n);
+    btn.classList.add('chosen');
+    btn.textContent = '✓ Beğenildi!';
+  }
+  updateBar();
+}
+
+function updateBar() {
+  const bar = document.getElementById('selbar');
+  if (selected.size === 0) {
+    bar.classList.remove('show');
+    return;
+  }
+  bar.classList.add('show');
+  const nums = [...selected].sort();
+  const labels = nums.map(n => `#${n} ${names[n-1]}`).join(', ');
+  document.getElementById('sel-text').textContent = selected.size === 1 ? '1 template seçildi' : `${selected.size} template seçildi`;
+  document.getElementById('sel-sub').textContent = labels;
+}
+
+function clearAll() {
+  selected.forEach(n => {
+    document.getElementById('c'+n).classList.remove('selected');
+    const btn = document.getElementById('b'+n);
+    btn.classList.remove('chosen');
+    btn.textContent = 'Bu tasarımı beğendim ✓';
+  });
+  selected.clear();
+  updateBar();
+}
+</script>
+</body>
+</html>
