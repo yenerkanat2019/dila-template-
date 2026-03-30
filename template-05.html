@@ -3,64 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DilaFit — Feminine & Warm</title>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Dila Karakurt — Template 05: Feminine & Warm</title>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Lora:ital@1&display=swap" rel="stylesheet">
 <style>
+:root{--orange:#E8843A;--green:#3B6D11;--purple:#7C4D8B;--warm-bg:#fef9f5;--card-bg:#fff;--text:#4a4a4a;}
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--orange:#E8843A;--green:#3B6D11;--warm-bg:#fef6f0;--purple:#7C4D8B}
-body{font-family:'Quicksand',sans-serif;background:var(--warm-bg);color:#4a4a4a;line-height:1.6}
-.back-bar{padding:15px 30px;font-size:14px;background:#fff;border-bottom:1px solid #fde8d8}
-.back-bar a{color:var(--orange);font-weight:700;text-decoration:none}
-nav{background:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 10px rgba(232,132,58,0.1)}
-.logo{font-size:22px;font-weight:700;color:var(--orange)}
-.nav-links a{margin-left:25px;text-decoration:none;color:#777;font-weight:600;font-size:15px}
-.hero{text-align:center;padding:80px 20px;max-width:800px;margin:0 auto}
-.hero h1{font-size:42px;color:#333;margin-bottom:20px;line-height:1.2}
-.hero p{font-size:18px;color:#888;margin-bottom:30px}
-.tag{display:inline-block;background:#fde8d8;color:var(--orange);padding:6px 16px;border-radius:20px;font-size:14px;font-weight:700;margin-bottom:20px}
-.quote-box{background:#fff;padding:40px;border-radius:30px;box-shadow:0 15px 40px rgba(232,132,58,0.08);margin:40px auto;position:relative;max-width:600px}
-.quote-box::before{content:'“';position:absolute;top:10px;left:20px;font-size:80px;color:#fde8d8;font-family:serif}
-.quote-box blockquote{font-size:20px;font-style:italic;color:#555}
-.btn-randevu{background:var(--orange);color:#fff;padding:15px 40px;border-radius:40px;display:inline-block;text-decoration:none;font-weight:700;margin-top:20px;transition:transform .2s}
-.btn-randevu:hover{transform:translateY(-3px)}
-.instagram-strip{background:#fff;padding:40px 0;text-align:center;margin-top:60px}
-.ig-grid{display:flex;justify-content:center;gap:15px;margin-top:20px;overflow-x:auto;padding:0 20px}
-.ig-item{width:150px;height:150px;background:#fde8d8;border-radius:15px;flex-shrink:0}
-footer{padding:40px;text-align:center;font-size:14px;color:#aaa}
+body{font-family:'Quicksand',sans-serif;background:var(--warm-bg);color:var(--text);line-height:1.7}
+a{text-decoration:none;transition:opacity 0.2s}
+a:hover{opacity:0.8}
+
+.back-bar{padding:15px 5%;background:#fff;border-bottom:1px solid #fde8d8;font-size:14px}
+.back-bar a{color:var(--orange);font-weight:700}
+
+/* Header */
+header{background:#fff;padding:25px 5%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 10px 30px rgba(232,132,58,0.05);position:sticky;top:0;z-index:100}
+.logo{font-size:24px;font-weight:700;color:var(--orange)}
+.nav-links{display:flex;gap:30px}
+.nav-links a{color:#666;font-weight:600;font-size:15px}
+.btn-ig{background:linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);color:#fff;padding:10px 20px;border-radius:30px;font-weight:700}
+
+/* Hero Section */
+.hero{padding:80px 5%;display:flex;align-items:center;gap:50px;max-width:1200px;margin:0 auto}
+.hero-content{flex:1}
+.hero-content h1{font-size:48px;color:#333;margin-bottom:20px;line-height:1.15;letter-spacing:-1px}
+.hero-content p{font-size:18px;color:#777;margin-bottom:30px}
+.hero-image{flex:1;background:#fde8d8;height:500px;border-radius:40px 10px 40px 10px;position:relative}
+
+/* Motivation */
+.motivation{max-width:900px;margin:60px auto;text-align:center;padding:50px 30px;background:#fff;border-radius:30px;box-shadow:0 15px 40px rgba(232,132,58,0.08);position:relative}
+.motivation blockquote{font-family:'Lora',serif;font-size:26px;color:#555;margin-bottom:20px}
+.motivation span{display:inline-block;padding:5px 15px;background:#fde8d8;color:var(--orange);border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase}
+
+/* EMS and Info */
+.section{padding:80px 5%;max-width:1200px;margin:0 auto}
+.sec-title{text-align:center;font-size:36px;color:#333;margin-bottom:50px}
+.sec-title span{color:var(--green)}
+.services{display:flex;gap:40px;flex-wrap:wrap}
+.srv-card{flex:1;min-width:300px;background:#fff;padding:40px;border-radius:20px;text-align:center;box-shadow:0 5px 20px rgba(0,0,0,0.03);border-top:5px solid var(--green)}
+.srv-card.border-org{border-color:var(--orange)}
+.srv-card.border-pur{border-color:var(--purple)}
+.srv-icon{font-size:40px;margin-bottom:20px}
+.srv-card h3{font-size:22px;margin-bottom:15px;color:#333}
+.srv-card p{font-size:15px;color:#777}
+
+/* Grid for Stories and Features */
+.features-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:40px}
+.feat-box{background:#fff;padding:30px;border-radius:20px;display:flex;gap:20px;align-items:flex-start}
+.feat-icon{width:50px;height:50px;background:#fde8d8;color:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.feat-box h4{font-size:18px;margin-bottom:5px;color:#333}
+.feat-box p{font-size:14px;color:#777}
+
+/* Pricing Section */
+.pricing{background:#fff;padding:80px 5%;text-align:center}
+.price-container{display:flex;justify-content:center;gap:30px;max-width:1000px;margin:50px auto 0;flex-wrap:wrap}
+.price-box{background:var(--warm-bg);padding:40px;border-radius:20px;flex:1;min-width:280px}
+.price-box h3{font-size:24px;color:#333;margin-bottom:20px}
+.price-amount{font-size:36px;font-weight:700;color:var(--orange);margin-bottom:20px}
+.price-box ul{list-style:none;margin-bottom:30px;text-align:left}
+.price-box li{padding:10px 0;border-bottom:1px solid #eee;font-size:15px}
+.btn-cta{display:inline-block;padding:15px 40px;background:var(--orange);color:#fff;border-radius:30px;font-weight:700;font-size:16px}
+
+/* Footer / Contact */
+footer{padding:60px 5%;background:#fff;text-align:center}
+.social-strip{display:flex;justify-content:center;gap:20px;margin-bottom:30px}
+.social-strip a{display:flex;align-items:center;justify-content:center;width:50px;height:50px;background:#f8f8f8;border-radius:50%;font-size:20px;color:#555}
 </style>
 </head>
 <body>
-<div class="back-bar"><a href="index.html">← Geri Dön</a></div>
-<nav>
-    <div class="logo">@dila.karakurt</div>
+
+<div class="back-bar"><a href="index.html">← INDEX'E DÖN</a> | Template 05: Feminine & Warm</div>
+
+<header>
+    <div class="logo">dila.karakurt</div>
     <div class="nav-links">
-        <a href="#">Beni Tanıyın</a>
-        <a href="#">Hizmetler</a>
-        <a href="#">İletişim</a>
+        <a href="#ems">EMS</a>
+        <a href="#diyet">Özel Diyet</a>
+        <a href="#fiyatlar">Fiyatlar</a>
     </div>
-</nav>
+    <a href="#" class="btn-ig">Instagram</a>
+</header>
+
 <section class="hero">
-    <div class="tag">Diyetisyen & EMS Uzmanı</div>
-    <h1>Seninle daha sağlıklı<br>ve fit bir hayat</h1>
-    <p>Meta Slim B-8317 teknolojisi ve sana özel hazırlanan beslenme programıyla hayalindeki vücuda kavuşmak çok kolay.</p>
-    <div class="quote-box">
-        <blockquote>"Küçük adımlar, zamanla büyük değişimler yaratır. Bugün kendin için bir iyilik yap."</blockquote>
-        <p style="margin-top:15px;font-weight:700;color:var(--orange)">— Dila Karakurt</p>
+    <div class="hero-content">
+        <h1>Bedeninizle <br>yeniden tanışın.</h1>
+        <p>Sağlıklı beslenme ve yenilikçi EMS (Elektromanyetik Kas Uyarımı) cihazımız ile incelme sürecinizi keyifli bir yolculuğa dönüştürüyoruz.</p>
+        <a href="#fiyatlar" class="btn-cta">Hemen Randevu Alın</a>
     </div>
-    <a href="#" class="btn-randevu">Randevu Alın</a>
-</section>
-<section class="instagram-strip">
-    <h3>Instagram'da Biz</h3>
-    <p>@diyetisyendilakarakurt</p>
-    <div class="ig-grid">
-        <div class="ig-item"></div>
-        <div class="ig-item"></div>
-        <div class="ig-item"></div>
-        <div class="ig-item"></div>
+    <div class="hero-image">
+        <!-- Can be replaced with actual image -->
     </div>
 </section>
+
+<div class="motivation">
+    <span>Günün Motivasyonu</span>
+    <br><br>
+    <blockquote>"Başarı, her gün tekrarlanan küçük sağlıklı seçimlerin toplamıdır. Bugün bedeninize bir iyilik yapın."</blockquote>
+</div>
+
+<section id="ems" class="section">
+    <h2 class="sec-title">Klinik <span>Hizmetlerimiz</span></h2>
+    <div class="services">
+        <div class="srv-card">
+            <div class="srv-icon">⚡</div>
+            <h3>Meta Slim (B-8317)</h3>
+            <p>Onaylı GS Makine teknolojisiyle 20 dakikalık konforlu seanslarda yoğun kas uyarımı ve yağ yakımı sağlar.</p>
+        </div>
+        <div class="srv-card border-org">
+            <div class="srv-icon">🍏</div>
+            <h3>Kişisel Diyet Planı</h3>
+            <p>Aç kalmadan, mevcut yaşam tarzınıza ve ekonomik şartlarınıza uygun hazırlanan lezzetli diyet listeleri.</p>
+        </div>
+        <div class="srv-card border-pur">
+            <div class="srv-icon">👩‍⚕️</div>
+            <h3>Ölçüm ve Takip</h3>
+            <p>Haftalık bölgesel kas/yağ ölçümleri ve WhatsApp üzerinden online motivasyon, yürüyüş rotaları desteği.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: #fff;">
+    <h2 class="sec-title">Bunu <span>Biliyor Musunuz?</span></h2>
+    <div class="features-grid">
+        <div class="feat-box">
+            <div class="feat-icon">18x</div>
+            <div>
+                <h4>Daha Güçlü Etki</h4>
+                <p>EMS cihazı, tek seansta normal ağırlık egzersizlerine göre 18 kat daha fazla lif aktivasyonu sağlar.</p>
+            </div>
+        </div>
+        <div class="feat-box">
+            <div class="feat-icon">💧</div>
+            <div>
+                <h4>Su ve İncelme</h4>
+                <p>Beslenme programımızda su tüketiminizi optimize ederek EMS sonrası ödem atımını 2 kat hızlandırıyoruz.</p>
+            </div>
+        </div>
+        <div class="feat-box">
+            <div class="feat-icon">🏆</div>
+            <div>
+                <h4>Müşteri Başarıları</h4>
+                <p>Selin Hanım 6 haftada -6 KG, Ayşe Hanım 3 ayda -12 KG ile sadece birkaç başarı hikayemiz.</p>
+            </div>
+        </div>
+        <div class="feat-box">
+            <div class="feat-icon">❓</div>
+            <div>
+                <h4>Sık Sorulan Sorular</h4>
+                <p>EMS acı vermez, spor sonrası tatlı bir yorgunluk hissi bırakır. Sadece hamile ve kalp pili kullananlara önerilmez.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="fiyatlar" class="pricing">
+    <h2 class="sec-title">Kendinize Özel <span>Programı Seçin</span></h2>
+    <div class="price-container">
+        <div class="price-box">
+            <h3>Sadece Beslenme</h3>
+            <div class="price-amount">₺1.200*</div>
+            <ul>
+                <li>4 Hafta Birebir Takip</li>
+                <li>Güncel Diyet Listesi</li>
+                <li>Online İletişim</li>
+            </ul>
+        </div>
+        <div class="price-box" style="background: #fde8d8;">
+            <h3>Diyet + EMS</h3>
+            <div class="price-amount">₺2.500*</div>
+            <ul>
+                <li>Ayda 8 Seans EMS Kullanımı</li>
+                <li>Düzenli Beslenme Planı</li>
+                <li>Vücut Analizi</li>
+            </ul>
+        </div>
+        <div class="price-box">
+            <h3>Yoğun Program</h3>
+            <div class="price-amount">₺4.000*</div>
+            <ul>
+                <li>Sınırsız İletişim Desteği</li>
+                <li>12 Seans EMS Programı</li>
+                <li>Tüm Vücut Ölçüm Raporu</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
 <footer>
-    <p>&copy; 2025 Dila Karakurt | Sağlıklı Yaşam Portalı</p>
+    <div class="social-strip">
+        <a href="#">IG</a>
+        <a href="#">FB</a>
+        <a href="#">WA</a>
+    </div>
+    <p>Diyetisyen Dila Karakurt Wellness & EMS © 2025</p>
 </footer>
+
 </body>
 </html>
