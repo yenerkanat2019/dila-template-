@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DilaFit — Card Grid</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#3B6D11;--orange:#E8843A;--purple:#7C4D8B;--bg:#f8f4ff}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:#333;padding:20px}
+.back-bar{margin-bottom:20px;font-size:14px}
+.back-bar a{color:var(--purple);font-weight:600;text-decoration:none}
+.container{max-width:800px;margin:0 auto}
+header{margin-bottom:40px;text-align:center}
+header h1{font-weight:800;font-size:32px;color:var(--purple)}
+header p{color:#888;margin-top:10px}
+.card-grid{display:grid;grid-template-columns:repeat(2, 1fr);gap:20px}
+.card{background:#fff;border-radius:18px;padding:30px;box-shadow:0 10px 25px rgba(0,0,0,0.05);border-left:8px solid #eee;transition:transform .2s}
+.card:hover{transform:scale(1.02)}
+.c1{border-color:var(--green)}
+.c2{border-color:var(--orange)}
+.c3{border-color:var(--purple)}
+.c4{border-color:#639922}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{font-size:14px;color:#777;line-height:1.5}
+.card .icon{font-size:30px;margin-bottom:15px;display:block}
+.full-card{grid-column:span 2;background:var(--purple);color:#fff;text-align:center}
+.full-card h3{color:#fff}
+.full-card p{color:rgba(255,255,255,0.7)}
+.btn-white{background:#fff;color:var(--purple);padding:12px 30px;border-radius:30px;display:inline-block;margin-top:20px;text-decoration:none;font-weight:600}
+@media(max-width:600px){ .card-grid{grid-template-columns:1fr} .full-card{grid-column:span 1} }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="back-bar"><a href="index.html">← Tasarım Listesi</a></div>
+    <header>
+        <h1>Diyetisyen Dila</h1>
+        <p>Hizmetlerimiz ve Teknolojilerimiz</p>
+    </header>
+    <div class="card-grid">
+        <div class="card c1">
+            <span class="icon">⚡</span>
+            <h3>EMS Makinesi</h3>
+            <p>Meta Slim B-8317 GS Makine sertifikalı. Elektriksel kas uyarımı ile hızlı ve etkili incelme.</p>
+        </div>
+        <div class="card c2">
+            <span class="icon">📦</span>
+            <h3>Programlar</h3>
+            <p>Haftalık yemek listeleri ve yürüyüş rotaları ile desteklenen profesyonel diyet danışmanlığı.</p>
+        </div>
+        <div class="card c3">
+            <span class="icon">📜</span>
+            <h3>S.S.S</h3>
+            <p>EMS ve Beslenme hakkında merak ettiğiniz tüm detaylar bu köşede.</p>
+        </div>
+        <div class="card c4">
+            <span class="icon">📈</span>
+            <h3>Ölçüm & Takip</h3>
+            <p>Kilo, kas ve yağ oranınızın profesyonel analizi ile gelişim raporları.</p>
+        </div>
+        <div class="card full-card">
+            <h3>Hemen Başlayın</h3>
+            <p>Size özel hazırlayacağımız dila-fitness yolculuğunda yanınızdayız.</p>
+            <a href="#" class="btn-white">WhatsApp ile Randevu al</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

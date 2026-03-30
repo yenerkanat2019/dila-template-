@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diyetisyen Dila Karakurt — Template 02: Bold Split</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#639922;--green-dark:#3B6D11;--green-pale:#C0DD97;--orange:#E8843A;--purple:#7C4D8B;--purple-light:#c878e0;--dark:#0f1117;--dark2:#1a1a2e;--dark3:#16213e;--text:#fff;--muted:rgba(255,255,255,.65)}
+body{font-family:'Montserrat',sans-serif;background:var(--dark);color:var(--text)}
+a{text-decoration:none;color:inherit}
+
+/* BACK */
+.back-bar{background:#1a1a2e;padding:12px 32px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.08)}
+.back-bar a{color:var(--green-pale);font-weight:600}
+
+/* NAV */
+nav{background:var(--dark2);padding:0 32px;display:flex;align-items:center;height:68px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-logo{font-size:20px;font-weight:900;flex:1;letter-spacing:-0.5px}
+.nav-logo span{color:var(--purple-light)}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:var(--muted);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;padding:10px 22px;border-radius:6px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-left:24px}
+
+/* HERO - SPLIT */
+.hero{display:flex;min-height:580px}
+.hero-left{width:42%;background:var(--purple);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 48px;text-align:center;position:relative;overflow:hidden}
+.hero-left::before{content:'';position:absolute;width:300px;height:300px;border-radius:50%;border:60px solid rgba(255,255,255,.06);top:-80px;left:-80px}
+.hero-left::after{content:'';position:absolute;width:200px;height:200px;border-radius:50%;border:40px solid rgba(255,255,255,.06);bottom:-60px;right:-60px}
+.hl-tag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,.6);margin-bottom:24px}
+.hl-name{font-size:32px;font-weight:900;color:#fff;margin-bottom:8px}
+.hl-title{font-size:13px;color:rgba(255,255,255,.75);line-height:1.6;margin-bottom:28px}
+.hl-accent{width:48px;height:4px;background:var(--orange);border-radius:2px;margin:0 auto 28px}
+.hl-stat{display:flex;gap:32px;justify-content:center}
+.hl-stat-item{text-align:center}
+.hl-stat-item strong{display:block;font-size:28px;font-weight:900;color:#fff}
+.hl-stat-item span{font-size:10px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px}
+.hero-right{flex:1;background:var(--dark3);display:flex;flex-direction:column;justify-content:center;padding:60px 52px}
+.hr-badge{display:inline-block;background:rgba(232,132,58,.2);color:var(--orange);border:1px solid rgba(232,132,58,.3);font-size:11px;font-weight:700;padding:6px 14px;border-radius:4px;text-transform:uppercase;letter-spacing:1px;margin-bottom:24px}
+.hero-right h1{font-size:44px;font-weight:900;line-height:1.1;color:#fff;margin-bottom:20px}
+.hero-right h1 span{color:var(--green-pale)}
+.hero-right p{font-size:15px;color:var(--muted);line-height:1.8;max-width:440px;margin-bottom:36px}
+.hero-btns{display:flex;gap:14px}
+.btn-p{background:var(--orange);color:#fff;padding:14px 30px;border-radius:6px;font-weight:700;font-size:14px;text-transform:uppercase;letter-spacing:.5px}
+.btn-s{background:transparent;color:#fff;padding:14px 30px;border-radius:6px;font-weight:700;font-size:14px;border:1px solid rgba(255,255,255,.3)}
+
+/* MOTIVATION */
+.motivation{background:linear-gradient(90deg,var(--purple) 0%,var(--dark2) 100%);padding:52px 32px;text-align:center}
+.motivation-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:3px;margin-bottom:18px}
+.motivation blockquote{font-family:'Playfair Display',serif;font-size:24px;font-style:italic;color:#fff;max-width:660px;margin:0 auto;line-height:1.5}
+.motivation cite{display:block;margin-top:14px;font-size:12px;font-style:normal;color:rgba(255,255,255,.55)}
+
+/* SECTIONS */
+section{padding:72px 32px}
+.section-tag{font-size:10px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:3px;margin-bottom:12px}
+.section-title{font-size:36px;font-weight:900;margin-bottom:16px;line-height:1.15}
+.section-sub{font-size:15px;color:var(--muted);max-width:560px;line-height:1.8;margin-bottom:40px}
+
+/* EMS */
+.ems{background:var(--dark2);display:flex;gap:60px;align-items:center}
+.ems-visual{width:300px;height:360px;background:linear-gradient(160deg,#1a3a0a,var(--green-dark));border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;color:#fff;text-align:center;padding:28px;border:1px solid rgba(100,180,40,.2)}
+.ems-visual .mn{font-size:10px;font-weight:700;color:var(--green-pale);letter-spacing:2px;text-transform:uppercase;margin-bottom:6px}
+.ems-visual .mi{font-size:68px;margin-bottom:12px}
+.ems-visual .mm{font-size:20px;font-weight:900;margin-bottom:20px}
+.ems-visual .mb{background:rgba(255,255,255,.12);padding:8px 18px;border-radius:4px;font-size:11px;font-weight:600;color:var(--green-pale)}
+.ems-feats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.ems-f{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);padding:16px;border-radius:10px;border-left:3px solid var(--green)}
+.ems-f h4{font-size:13px;font-weight:700;color:var(--green-pale);margin-bottom:5px}
+.ems-f p{font-size:12px;color:var(--muted);line-height:1.5}
+.ems-text{flex:1}
+
+/* STORIES */
+.stories{background:var(--dark3)}
+.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.story-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px;border-bottom:3px solid var(--orange)}
+.s-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--orange));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;margin-bottom:14px}
+.s-name{font-size:15px;font-weight:700;margin-bottom:4px}
+.s-result{font-size:12px;color:var(--orange);font-weight:600;margin-bottom:12px}
+.s-quote{font-size:13px;color:var(--muted);font-style:italic;line-height:1.7;font-family:'Playfair Display',serif}
+.s-stars{color:var(--orange);margin-top:12px;font-size:13px}
+
+/* DYK */
+.dyk{background:var(--dark2)}
+.dyk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.dyk-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:22px;border-radius:12px;display:flex;gap:16px}
+.dyk-icon{width:46px;height:46px;background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.dyk-item h4{font-size:13px;font-weight:700;color:var(--green-pale);margin-bottom:6px}
+.dyk-item p{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* PACKAGES */
+.packages{background:var(--dark3)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pkg-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:32px 24px;text-align:center;position:relative}
+.pkg-card.featured{border-color:var(--orange);background:rgba(232,132,58,.06)}
+.pkg-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:5px 14px;border-radius:24px;white-space:nowrap;text-transform:uppercase;letter-spacing:.5px}
+.pkg-icon{font-size:38px;margin-bottom:14px}
+.pkg-card h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px}
+.pkg-card p{font-size:12px;color:var(--muted);line-height:1.6;margin-bottom:18px}
+.pkg-feats{list-style:none;text-align:left;margin-bottom:22px}
+.pkg-feats li{font-size:12px;color:var(--muted);padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:8px}
+.pkg-feats li::before{content:'→';color:var(--green-pale);font-weight:700}
+.pkg-price{font-size:13px;font-weight:700;color:var(--orange);margin-bottom:14px}
+.pkg-btn{display:block;padding:12px;border-radius:6px;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.5px;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.15)}
+.pkg-card.featured .pkg-btn{background:var(--orange);border-color:var(--orange)}
+.device-fee{margin-top:28px;background:rgba(124,77,139,.15);border:1px solid rgba(124,77,139,.3);padding:18px 22px;border-radius:10px;font-size:13px;color:var(--muted)}
+.device-fee strong{color:#c878e0}
+
+/* FAQ */
+.faq{background:var(--dark2)}
+.faq-list{max-width:700px}
+.faq-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:18px 22px;font-weight:700;font-size:14px;color:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:18px;color:var(--orange)}
+.faq-a{padding:0 22px 18px;font-size:13px;color:var(--muted);line-height:1.7}
+
+/* SOCIAL */
+.social{background:linear-gradient(135deg,var(--purple) 0%,var(--dark2) 100%);padding:72px 32px;text-align:center}
+.social h2{font-size:34px;font-weight:900;color:#fff;margin-bottom:12px}
+.social p{font-size:15px;color:rgba(255,255,255,.75);margin-bottom:32px}
+.social-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.social-btn{display:flex;align-items:center;gap:10px;padding:14px 28px;border-radius:8px;font-weight:700;font-size:14px}
+.social-btn.ig{background:linear-gradient(135deg,#E8843A,#7C4D8B);color:#fff}
+.social-btn.fb{background:#1877F2;color:#fff}
+.social-btn.wa{background:#25D366;color:#fff}
+.canva-note{margin-top:22px;font-size:12px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:1px}
+
+/* FOOTER */
+footer{background:#070b10;color:rgba(255,255,255,.5);padding:28px;text-align:center;font-size:12px}
+footer strong{color:var(--green-pale)}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Tüm Templatelere Dön</a> &nbsp;|&nbsp; Template 02 — Bold Split</div>
+
+<nav>
+  <div class="nav-logo">DILA<span>FIT</span></div>
+  <div class="nav-links">
+    <a href="#">EMS</a><a href="#">Paketler</a><a href="#">Hikayeler</a><a href="#">SSS</a>
+  </div>
+  <a href="#" class="nav-cta">Randevu Al</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-left">
+    <div class="hl-tag">@diyetisyendilakarakurt</div>
+    <div class="hl-name">Dila Karakurt</div>
+    <div class="hl-title">Diyetisyen &amp; EMS Uzmanı<br>Sağlıklı yaşam danışmanınız</div>
+    <div class="hl-accent"></div>
+    <div class="hl-stat">
+      <div class="hl-stat-item"><strong>500+</strong><span>Müşteri</span></div>
+      <div class="hl-stat-item"><strong>5★</strong><span>Puan</span></div>
+      <div class="hl-stat-item"><strong>3 Yıl</strong><span>Deneyim</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hr-badge">EMS + Beslenme Danışmanlığı</div>
+    <h1>Vücudunu<br><span>Dönüştür</span><br>Hayatını Değiştir</h1>
+    <p>EMS Meta Slim teknolojisi ve kişisel beslenme programıyla hedefine ulaşmanın en hızlı yolu.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-p">Paketleri Gör →</a>
+      <a href="#" class="btn-s">Daha Fazla Bilgi</a>
+    </div>
+  </div>
+</div>
+
+<div class="motivation">
+  <div class="motivation-label">✦ Günün Motivasyon Sözü</div>
+  <blockquote>"Bugün atacağın küçük adım, yarınki büyük değişimin temelidir."</blockquote>
+  <cite>— Dila Karakurt, Diyetisyen</cite>
+</div>
+
+<section class="ems">
+  <div class="ems-visual">
+    <div class="mn">EMS Teknolojisi</div>
+    <div class="mi">⚡</div>
+    <div class="mm">Meta Slim B-8317</div>
+    <div class="mb">GS Makine Sertifikalı</div>
+  </div>
+  <div class="ems-text">
+    <div class="section-tag">EMS Makinesi</div>
+    <h2 class="section-title">Meta Slim (B-8317)<br><span style="color:var(--green-pale)">GS Makine</span></h2>
+    <p class="section-sub">Elektro Myo Stimülasyon teknolojisinin zirvesi. 20 dakikada 4 saatlik egzersiz etkisi sağlar.</p>
+    <div class="ems-feats">
+      <div class="ems-f"><h4>⚡ Hızlı Sonuç</h4><p>20 dakikada 4 saatlik egzersiz etkisi</p></div>
+      <div class="ems-f"><h4>🎯 Hedefli Etki</h4><p>Kas güçlendirme ve yağ yakma</p></div>
+      <div class="ems-f"><h4>✅ Klinik Onaylı</h4><p>Güvenli sertifikalı teknoloji</p></div>
+      <div class="ems-f"><h4>🔬 Selülit Azaltma</h4><p>Derin doku stimülasyonu</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="stories">
+  <div class="section-tag">Gerçek Sonuçlar</div>
+  <h2 class="section-title">Başarı Hikayeleri</h2>
+  <p class="section-sub">Müşterilerimizin gerçek dönüşüm hikayelerinden bir kısmı.</p>
+  <div class="stories-grid">
+    <div class="story-card">
+      <div class="s-avatar">A</div>
+      <div class="s-name">Ayşe K.</div>
+      <div class="s-result">🏆 3 ayda 12 kg</div>
+      <div class="s-quote">"Hiç bu kadar enerjik hissetmemiştim. Hem kilo verdim hem de kendimi çok daha güçlü hissediyorum."</div>
+      <div class="s-stars">★★★★★</div>
+    </div>
+    <div class="story-card">
+      <div class="s-avatar">M</div>
+      <div class="s-name">Merve T.</div>
+      <div class="s-result">🏆 2 ayda 8 kg</div>
+      <div class="s-quote">"EMS seansları hayatımı değiştirdi. Dila Hanım'ın beslenme programıyla çok daha kolay oldu."</div>
+      <div class="s-stars">★★★★★</div>
+    </div>
+    <div class="story-card">
+      <div class="s-avatar">S</div>
+      <div class="s-name">Selin B.</div>
+      <div class="s-result">🏆 6 haftada 6 kg</div>
+      <div class="s-quote">"Beslenme programıyla birlikte EMS seansları düşündüğümden çok daha hızlı sonuç verdi."</div>
+      <div class="s-stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<section class="dyk">
+  <div class="section-tag">Bilgi Köşesi</div>
+  <h2 class="section-title">Bunu Biliyor musunuz?</h2>
+  <p class="section-sub">EMS teknolojisi ve beslenme hakkında şaşırtıcı gerçekler.</p>
+  <div class="dyk-grid">
+    <div class="dyk-item"><div class="dyk-icon">💪</div><div><h4>18x Daha Fazla Aktivasyon</h4><p>EMS antrenmanı geleneksel egzersize göre 18 kat daha fazla kas lifi aktive eder.</p></div></div>
+    <div class="dyk-item"><div class="dyk-icon">⏱️</div><div><h4>Haftada 2 Seans Yeterli</h4><p>Sadece haftada 2 kez 20 dakika ile görünür sonuçlar elde edebilirsiniz.</p></div></div>
+    <div class="dyk-item"><div class="dyk-icon">🚀</div><div><h4>NASA Astronotları Kullanıyor</h4><p>NASA astronotları uzayda kas kaybını önlemek için EMS teknolojisini kullanmaktadır.</p></div></div>
+    <div class="dyk-item"><div class="dyk-icon">🥗</div><div><h4>Beslenme %40 Daha Etkili</h4><p>Doğru beslenme programı olmadan yapılan egzersiz %40 daha az sonuç verir.</p></div></div>
+  </div>
+</section>
+
+<section class="packages">
+  <div class="section-tag">Programlar</div>
+  <h2 class="section-title">Paketler & Fiyatlar</h2>
+  <p class="section-sub">Hedefine uygun paketi seç, hemen başla.</p>
+  <div class="pkg-grid">
+    <div class="pkg-card">
+      <div class="pkg-icon">🌱</div>
+      <h3>Başlangıç</h3>
+      <p>EMS dünyasına ilk adım</p>
+      <ul class="pkg-feats"><li>4 Seans EMS</li><li>Beslenme Planı</li><li>Vücut Analizi</li><li>Online Destek</li></ul>
+      <div class="pkg-price">📞 Fiyat için iletişim</div>
+      <a href="#" class="pkg-btn">Bilgi Al</a>
+    </div>
+    <div class="pkg-card featured">
+      <div class="pkg-badge">⭐ En Popüler</div>
+      <div class="pkg-icon">🔥</div>
+      <h3>Dönüşüm</h3>
+      <p>Ciddi dönüşüm için tam destek</p>
+      <ul class="pkg-feats"><li>8 Seans EMS</li><li>Haftalık Takip</li><li>Beslenme Planı</li><li>Vücut Analizi</li><li>WhatsApp Destek</li></ul>
+      <div class="pkg-price">📞 Fiyat için iletişim</div>
+      <a href="#" class="pkg-btn">Bilgi Al</a>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-icon">👑</div>
+      <h3>Premium</h3>
+      <p>Maksimum sonuç programı</p>
+      <ul class="pkg-feats"><li>12 Seans EMS</li><li>Aylık Takip</li><li>Beslenme Planı</li><li>Vücut Analizi</li><li>Öncelikli Destek</li></ul>
+      <div class="pkg-price">📞 Fiyat için iletişim</div>
+      <a href="#" class="pkg-btn">Bilgi Al</a>
+    </div>
+  </div>
+  <div class="device-fee"><strong>⚡ Cihaz Kullanım Ücreti:</strong> Seans başına cihaz kullanım ücreti ayrıca uygulanmaktadır.</div>
+</section>
+
+<section class="faq">
+  <div class="section-tag">Merak Edilenler</div>
+  <h2 class="section-title">Sık Sorulan Sorular</h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">EMS seansları acıtır mı?</div><div class="faq-a">Hayır, EMS seansları acı vermez. Sadece kaslarınızda hafif bir titreşim ve kasılma hissi yaşarsınız.</div></div>
+    <div class="faq-item"><div class="faq-q">Kimler EMS kullanamaz?</div><div class="faq-a">Hamile kadınlar, kalp pili kullananlar, epilepsi hastaları ve aktif kanser tedavisi görenler EMS kullanmamalıdır.</div></div>
+    <div class="faq-item"><div class="faq-q">Kaç seanste sonuç alınır?</div><div class="faq-a">Genellikle 4-6 seans sonrasında görünür sonuçlar elde edilir. Beslenme programıyla birlikte çok daha hızlı.</div></div>
+    <div class="faq-item"><div class="faq-q">Beslenme programı kişiye özel mi?</div><div class="faq-a">Evet, her beslenme programı vücut analizi ve hedeflerinize göre tamamen kişiselleştirilmiş hazırlanır.</div></div>
+    <div class="faq-item"><div class="faq-q">Seanslar ne kadar sürer?</div><div class="faq-a">Her EMS seansı 20-25 dakika sürer. Hazırlık süresiyle birlikte toplam randevu yaklaşık 45 dakikadır.</div></div>
+  </div>
+</section>
+
+<section class="social">
+  <h2>Bizi Takip Edin</h2>
+  <p>Günlük içerikler, motivasyon ve ipuçları için sosyal medyada bizi takip edin!</p>
+  <div class="social-btns">
+    <a href="https://instagram.com/diyetisyendilakarakurt" class="social-btn ig">📸 Instagram</a>
+    <a href="#" class="social-btn fb">👍 Facebook</a>
+    <a href="#" class="social-btn wa">💬 WhatsApp Randevu</a>
+  </div>
+  <div class="canva-note">✦ Canva entegrasyonu ile içerik yönetimi</div>
+</section>
+
+<footer>
+  <p><strong>Diyetisyen Dila Karakurt</strong> | EMS & Beslenme Danışmanlığı | @diyetisyendilakarakurt</p>
+  <p style="margin-top:8px">© 2025 Tüm hakları saklıdır.</p>
+</footer>
+</body>
+</html>

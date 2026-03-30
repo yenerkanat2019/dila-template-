@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diyetisyen Dila Karakurt — Template 01: Fresh & Organic</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#3B6D11;--green-light:#639922;--green-pale:#EAF3DE;--orange:#E8843A;--orange-pale:#fde8d8;--purple:#7C4D8B;--purple-pale:#f3e8ff;--text:#1a1a1a;--muted:#666}
+body{font-family:'Nunito',sans-serif;color:var(--text);background:#fff}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{background:var(--green);padding:0 32px;display:flex;align-items:center;height:64px;position:sticky;top:0;z-index:100}
+.nav-logo{color:#fff;font-size:18px;font-weight:800;font-family:'Lora',serif;flex:1}
+.nav-logo span{color:#C0DD97}
+.nav-links{display:flex;gap:24px}
+.nav-links a{color:rgba(255,255,255,0.85);font-size:13px;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;padding:8px 18px;border-radius:24px;font-size:13px;font-weight:700;margin-left:20px;transition:opacity .2s}
+.nav-cta:hover{opacity:.9}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--green-pale) 0%,#f9f6ef 60%,var(--orange-pale) 100%);padding:80px 32px;display:flex;align-items:center;gap:60px;min-height:520px}
+.hero-text{flex:1}
+.hero-badge{display:inline-block;background:var(--green-pale);color:var(--green);border:1.5px solid #C0DD97;font-size:12px;font-weight:700;padding:5px 14px;border-radius:24px;margin-bottom:20px;text-transform:uppercase;letter-spacing:.5px}
+.hero-text h1{font-size:48px;font-weight:800;line-height:1.15;color:var(--green);margin-bottom:12px}
+.hero-text h1 em{font-style:normal;color:var(--orange)}
+.hero-text p{font-size:17px;color:var(--muted);line-height:1.7;max-width:480px;margin-bottom:28px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--orange);color:#fff;padding:14px 28px;border-radius:28px;font-weight:700;font-size:15px;transition:transform .2s}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-secondary{background:#fff;color:var(--green);padding:14px 28px;border-radius:28px;font-weight:700;font-size:15px;border:2px solid var(--green);transition:transform .2s}
+.btn-secondary:hover{transform:translateY(-2px)}
+.hero-visual{width:340px;height:380px;background:linear-gradient(160deg,var(--green-pale),#C0DD97,var(--green-light));border-radius:24px;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;overflow:hidden}
+.hero-visual::before{content:'';position:absolute;width:200px;height:200px;background:rgba(255,255,255,.3);border-radius:50%;top:-40px;right:-40px}
+.hero-icon{font-size:80px;z-index:1}
+
+/* MOTIVATION */
+.motivation{background:var(--green);padding:48px 32px;text-align:center}
+.motivation-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px}
+.motivation blockquote{font-family:'Lora',serif;font-size:26px;font-style:italic;color:#fff;max-width:700px;margin:0 auto;line-height:1.5}
+.motivation cite{display:block;margin-top:16px;font-size:13px;font-style:normal;color:rgba(255,255,255,.7);font-family:'Nunito',sans-serif}
+
+/* SECTION COMMON */
+section{padding:72px 32px}
+.section-label{font-size:11px;font-weight:700;color:var(--orange);text-transform:uppercase;letter-spacing:2px;margin-bottom:10px}
+.section-title{font-size:34px;font-weight:800;color:var(--green);margin-bottom:16px;line-height:1.2}
+.section-sub{font-size:16px;color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:40px}
+
+/* EMS */
+.ems{background:#fff;display:flex;gap:60px;align-items:center}
+.ems-visual{width:320px;height:340px;background:linear-gradient(160deg,#1a2e0a,var(--green));border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;color:#fff;text-align:center;padding:24px}
+.ems-visual .machine-name{font-size:14px;font-weight:700;color:#C0DD97;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.ems-visual .machine-model{font-size:22px;font-weight:800;margin-bottom:24px}
+.ems-visual .machine-icon{font-size:64px;margin-bottom:16px}
+.ems-visual .machine-badge{background:rgba(255,255,255,.15);padding:8px 20px;border-radius:24px;font-size:12px;font-weight:600}
+.ems-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+.ems-feat{background:var(--green-pale);padding:16px;border-radius:12px;border-left:4px solid var(--green-light)}
+.ems-feat h4{font-size:14px;font-weight:700;color:var(--green);margin-bottom:4px}
+.ems-feat p{font-size:13px;color:var(--muted);line-height:1.5}
+.ems-text{flex:1}
+
+/* SUCCESS STORIES */
+.stories{background:var(--green-pale)}
+.stories-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.story-card{background:#fff;border-radius:16px;padding:28px;border-bottom:4px solid var(--orange);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.story-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;font-weight:800;margin-bottom:16px}
+.story-card h4{font-size:16px;font-weight:700;color:var(--text);margin-bottom:4px}
+.story-result{font-size:13px;font-weight:600;color:var(--orange);margin-bottom:12px}
+.story-quote{font-size:14px;color:var(--muted);font-style:italic;line-height:1.6;font-family:'Lora',serif}
+.story-stars{color:var(--orange);font-size:14px;margin-top:12px}
+
+/* DID YOU KNOW */
+.dyk{background:#fff}
+.dyk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.dyk-item{display:flex;gap:16px;align-items:flex-start;background:var(--green-pale);padding:20px;border-radius:14px}
+.dyk-icon{width:44px;height:44px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.dyk-item h4{font-size:14px;font-weight:700;color:var(--green);margin-bottom:6px}
+.dyk-item p{font-size:13px;color:var(--muted);line-height:1.5}
+
+/* PACKAGES */
+.packages{background:linear-gradient(135deg,var(--green-pale),#fff)}
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.pkg-card{background:#fff;border-radius:20px;padding:32px 24px;text-align:center;border:2px solid #e8ede0;transition:transform .2s,box-shadow .2s}
+.pkg-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(59,109,17,.12)}
+.pkg-card.featured{border-color:var(--orange);position:relative}
+.pkg-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-size:11px;font-weight:700;padding:5px 16px;border-radius:24px;white-space:nowrap}
+.pkg-icon{font-size:40px;margin-bottom:16px}
+.pkg-card h3{font-size:20px;font-weight:800;color:var(--green);margin-bottom:8px}
+.pkg-card p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:20px}
+.pkg-features{list-style:none;text-align:left;margin-bottom:24px}
+.pkg-features li{font-size:13px;color:var(--text);padding:6px 0;border-bottom:1px solid #f0f0ec;display:flex;align-items:center;gap:8px}
+.pkg-features li::before{content:'✓';color:var(--green);font-weight:700}
+.pkg-price{font-size:15px;font-weight:700;color:var(--orange);margin-bottom:16px}
+.pkg-btn{display:block;background:var(--green);color:#fff;padding:12px;border-radius:24px;font-weight:700;font-size:14px;transition:opacity .2s}
+.pkg-btn:hover{opacity:.9}
+.pkg-card.featured .pkg-btn{background:var(--orange)}
+.device-fee{margin-top:32px;background:var(--purple-pale);border-left:4px solid var(--purple);padding:20px 24px;border-radius:12px;font-size:14px;color:var(--muted)}
+.device-fee strong{color:var(--purple)}
+
+/* FAQ */
+.faq{background:var(--green-pale)}
+.faq-list{max-width:720px}
+.faq-item{background:#fff;border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq-q{padding:20px 24px;font-weight:700;font-size:15px;color:var(--green);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-q::after{content:'+';font-size:20px;color:var(--orange)}
+.faq-a{padding:0 24px 20px;font-size:14px;color:var(--muted);line-height:1.7}
+
+/* SOCIAL */
+.social{background:var(--green);padding:72px 32px;text-align:center}
+.social h2{font-size:32px;font-weight:800;color:#fff;margin-bottom:12px}
+.social p{font-size:16px;color:rgba(255,255,255,.8);margin-bottom:32px}
+.social-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.social-btn{display:flex;align-items:center;gap:10px;padding:14px 28px;border-radius:12px;font-weight:700;font-size:15px;transition:transform .2s}
+.social-btn:hover{transform:translateY(-2px)}
+.social-btn.ig{background:linear-gradient(135deg,#E8843A,#7C4D8B);color:#fff}
+.social-btn.fb{background:#1877F2;color:#fff}
+.social-btn.wa{background:#25D366;color:#fff}
+.canva-note{margin-top:24px;font-size:13px;color:rgba(255,255,255,.6)}
+
+/* FOOTER */
+footer{background:#0f1a06;color:rgba(255,255,255,.7);padding:32px;text-align:center;font-size:13px}
+footer strong{color:#C0DD97}
+
+/* BACK BUTTON */
+.back-bar{background:#f5f5f0;padding:12px 32px;font-size:13px;border-bottom:1px solid #e0e0d8}
+.back-bar a{color:var(--green);font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="back-bar"><a href="index.html">← Tüm Templatelere Dön</a> &nbsp;|&nbsp; Template 01 — Fresh & Organic</div>
+
+<nav>
+  <div class="nav-logo">Dila<span>Fit</span></div>
+  <div class="nav-links">
+    <a href="#">EMS Makinesi</a>
+    <a href="#">Paketler</a>
+    <a href="#">Başarı Hikayeleri</a>
+    <a href="#">SSS</a>
+  </div>
+  <a href="#" class="nav-cta">Randevu Al</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">🌿 EMS & Beslenme Danışmanlığı</div>
+    <h1>Sağlıklı<br>Yaşamın<br><em>Tam Zamanı</em></h1>
+    <p>Diyetisyen Dila Karakurt ile EMS teknolojisi ve kişisel beslenme programını birleştiren bütünsel bir dönüşüm programı.</p>
+    <div class="hero-btns">
+      <a href="#" class="btn-primary">Paketleri Keşfet →</a>
+      <a href="#" class="btn-secondary">Daha Fazla Bilgi</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-icon">🌿</div>
+  </div>
+</section>
+
+<!-- MOTIVATION -->
+<div class="motivation">
+  <div class="motivation-label">✨ Günün Motivasyon Sözü</div>
+  <blockquote>"Bugün atacağın küçük adım, yarınki büyük değişimin temelidir."</blockquote>
+  <cite>— Dila Karakurt, Diyetisyen</cite>
+</div>
+
+<!-- EMS -->
+<section class="ems">
+  <div class="ems-visual">
+    <div class="machine-name">EMS Teknolojisi</div>
+    <div class="machine-icon">⚡</div>
+    <div class="machine-model">Meta Slim B-8317</div>
+    <div class="machine-badge">GS Makine Sertifikalı</div>
+  </div>
+  <div class="ems-text">
+    <div class="section-label">EMS Makinesi</div>
+    <h2 class="section-title">Meta Slim (B-8317)<br>GS Makine</h2>
+    <p class="section-sub">Elektro Myo Stimülasyon teknolojisinin en gelişmiş versiyonu. 20 dakikada 4 saatlik egzersiz etkisi.</p>
+    <div class="ems-features">
+      <div class="ems-feat"><h4>⚡ Hızlı Sonuç</h4><p>20 dakikada 4 saatlik egzersiz etkisi sağlar</p></div>
+      <div class="ems-feat"><h4>🎯 Hedefli Çalışma</h4><p>Kas güçlendirme ve yağ yakma aynı anda</p></div>
+      <div class="ems-feat"><h4>✅ Klinik Onaylı</h4><p>Güvenli, sertifikalı teknoloji</p></div>
+      <div class="ems-feat"><h4>🔬 Selülit Azaltma</h4><p>Derin doku stimülasyonu ile görünür sonuç</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STORIES -->
+<section class="stories">
+  <div class="section-label">Gerçek Sonuçlar</div>
+  <h2 class="section-title">Başarı Hikayeleri</h2>
+  <p class="section-sub">Yüzlerce müşterimizin dönüşüm hikayelerinden bir kısmı.</p>
+  <div class="stories-grid">
+    <div class="story-card">
+      <div class="story-avatar">A</div>
+      <h4>Ayşe K.</h4>
+      <div class="story-result">🏆 3 ayda 12 kg</div>
+      <p class="story-quote">"Hiç bu kadar enerjik hissetmemiştim. Hem kilo verdim hem de kendimi çok daha güçlü hissediyorum."</p>
+      <div class="story-stars">★★★★★</div>
+    </div>
+    <div class="story-card">
+      <div class="story-avatar">M</div>
+      <h4>Merve T.</h4>
+      <div class="story-result">🏆 2 ayda 8 kg</div>
+      <p class="story-quote">"EMS seansları hayatımı değiştirdi. Dila Hanım'ın beslenme programıyla çok daha kolay oldu."</p>
+      <div class="story-stars">★★★★★</div>
+    </div>
+    <div class="story-card">
+      <div class="story-avatar">S</div>
+      <h4>Selin B.</h4>
+      <div class="story-result">🏆 6 haftada 6 kg</div>
+      <p class="story-quote">"Beslenme programıyla birlikte EMS seansları düşündüğümden çok daha hızlı sonuç verdi."</p>
+      <div class="story-stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+<!-- DID YOU KNOW -->
+<section class="dyk">
+  <div class="section-label">Bilgi Köşesi</div>
+  <h2 class="section-title">Bunu Biliyor musunuz?</h2>
+  <p class="section-sub">EMS teknolojisi ve beslenme hakkında şaşırtıcı bilgiler.</p>
+  <div class="dyk-grid">
+    <div class="dyk-item">
+      <div class="dyk-icon">💪</div>
+      <div><h4>18x Daha Fazla Aktivasyon</h4><p>EMS antrenmanı geleneksel egzersize göre 18 kat daha fazla kas lifi aktive eder.</p></div>
+    </div>
+    <div class="dyk-item">
+      <div class="dyk-icon">⏱️</div>
+      <div><h4>Haftada 2 Seans Yeterli</h4><p>Sadece haftada 2 kez 20 dakika ile görünür sonuçlar elde edebilirsiniz.</p></div>
+    </div>
+    <div class="dyk-item">
+      <div class="dyk-icon">🚀</div>
+      <div><h4>NASA Astronotları Kullanıyor</h4><p>NASA astronotları uzayda kas kaybını önlemek için EMS teknolojisini kullanmaktadır.</p></div>
+    </div>
+    <div class="dyk-item">
+      <div class="dyk-icon">🥗</div>
+      <div><h4>Beslenme %40 Daha Etkili</h4><p>Doğru beslenme programı olmadan yapılan egzersiz %40 daha az sonuç verir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages">
+  <div class="section-label">Programlar</div>
+  <h2 class="section-title">Paketler & Fiyatlar</h2>
+  <p class="section-sub">Hedefine uygun paketi seç, hemen başla. Tüm paketler kişisel beslenme planı içerir.</p>
+  <div class="pkg-grid">
+    <div class="pkg-card">
+      <div class="pkg-icon">🌱</div>
+      <h3>Başlangıç Paketi</h3>
+      <p>EMS dünyasına ilk adımı atmak isteyenler için</p>
+      <ul class="pkg-features">
+        <li>4 Seans EMS</li>
+        <li>Kişisel Beslenme Planı</li>
+        <li>Vücut Analizi</li>
+        <li>Online Destek</li>
+      </ul>
+      <div class="pkg-price">📞 Fiyat için iletişim</div>
+      <a href="#" class="pkg-btn">Bilgi Al</a>
+    </div>
+    <div class="pkg-card featured">
+      <div class="pkg-badge">⭐ En Çok Tercih Edilen</div>
+      <div class="pkg-icon">🔥</div>
+      <h3>Dönüşüm Paketi</h3>
+      <p>Ciddi dönüşüm hedefleyenler için tam destek</p>
+      <ul class="pkg-features">
+        <li>8 Seans EMS</li>
+        <li>Haftalık Takip</li>
+        <li>Kişisel Beslenme Planı</li>
+        <li>Vücut Analizi</li>
+        <li>WhatsApp Destek</li>
+      </ul>
+      <div class="pkg-price">📞 Fiyat için iletişim</div>
+      <a href="#" class="pkg-btn">Bilgi Al</a>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-icon">👑</div>
+      <h3>Premium Paket</h3>
+      <p>Maksimum sonuç, tam kapsamlı program</p>
+      <ul class="pkg-features">
+        <li>12 Seans EMS</li>
+        <li>Aylık Takip</li>
+        <li>Kişisel Beslenme Planı</li>
+        <li>Vücut Analizi</li>
+        <li>Öncelikli Destek</li>
+      </ul>
+      <div class="pkg-price">📞 Fiyat için iletişim</div>
+      <a href="#" class="pkg-btn">Bilgi Al</a>
+    </div>
+  </div>
+  <div class="device-fee">
+    <strong>⚡ Cihaz Kullanım Ücreti:</strong> Seans başına cihaz kullanım ücreti ayrıca uygulanmaktadır. Detaylı bilgi için iletişime geçiniz.
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-label">Merak Edilenler</div>
+  <h2 class="section-title">Sık Sorulan Sorular</h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q">EMS seansları acıtır mı?</div><div class="faq-a">Hayır, EMS seansları acı vermez. Sadece kaslarınızda hafif bir titreşim ve kasılma hissi yaşarsınız. Bu his seansa seansa alışıldıkça daha konforlu hale gelir.</div></div>
+    <div class="faq-item"><div class="faq-q">Kimler EMS kullanamazs?</div><div class="faq-a">Hamile kadınlar, kalp pili kullananlar, epilepsi hastaları ve aktif kanser tedavisi görenler EMS kullanmamalıdır. Diğer sağlık durumları için doktorunuza danışmanızı öneririz.</div></div>
+    <div class="faq-item"><div class="faq-q">Kaç seanste sonuç alınır?</div><div class="faq-a">Genellikle 4-6 seans sonrasında görünür sonuçlar elde edilir. Beslenme programıyla birlikte uygulandığında sonuçlar çok daha hızlı ortaya çıkar.</div></div>
+    <div class="faq-item"><div class="faq-q">Beslenme programı kişiye özel mi hazırlanıyor?</div><div class="faq-a">Evet, her beslenme programı vücut analizi, yaşam tarzı ve hedeflerinize göre tamamen kişiselleştirilmiş şekilde hazırlanır.</div></div>
+    <div class="faq-item"><div class="faq-q">Seanslar ne kadar sürer?</div><div class="faq-a">Her EMS seansı 20-25 dakika sürer. Hazırlık ve değerlendirme süresiyle birlikte toplam randevu süresi yaklaşık 45 dakikadır.</div></div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social">
+  <h2>Bizi Takip Edin</h2>
+  <p>Instagram ve Facebook'ta günlük içerikler, motivasyon ve ipuçları için bizi takip edin!</p>
+  <div class="social-btns">
+    <a href="https://instagram.com/diyetisyendilakarakurt" class="social-btn ig">📸 Instagram'da Takip Et</a>
+    <a href="#" class="social-btn fb">👍 Facebook'ta Beğen</a>
+    <a href="#" class="social-btn wa">💬 WhatsApp ile Randevu</a>
+  </div>
+  <div class="canva-note">✦ Tasarım & içerik yönetimi: Canva entegrasyonu ile</div>
+</section>
+
+<footer>
+  <p><strong>Diyetisyen Dila Karakurt</strong> | EMS & Beslenme Danışmanlığı | @diyetisyendilakarakurt</p>
+  <p style="margin-top:8px">© 2025 Tüm hakları saklıdır.</p>
+</footer>
+
+</body>
+</html>

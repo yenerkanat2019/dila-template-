@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DilaFit — Wellness Spa</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green-header:#3B6D11;--green-bg:#f0faf4;--orange:#E8843A}
+body{font-family:'Montserrat',sans-serif;background:var(--green-bg);color:#2d421f}
+.back-bar{padding:12px 32px;background:#fff;font-size:13px;border-bottom:1px solid #d0ecc0}
+.back-bar a{color:var(--green-header);font-weight:700;text-decoration:none}
+header{background:var(--green-header);padding:40px 32px;color:#fff;text-align:center}
+header h1{letter-spacing:4px;text-transform:uppercase;font-size:24px}
+.hero{display:flex;align-items:center;padding:80px 32px;max-width:1100px;margin:0 auto}
+.hero-left{flex:1;padding-right:60px}
+.hero-left h2{font-size:48px;font-family:'Lora',serif;font-style:italic;margin-bottom:20px}
+.hero-right{width:350px;height:450px;background:linear-gradient(160deg, #C0DD97, #639922);border-radius:10px;box-shadow:20px 20px 0 var(--orange)}
+.pricing-section{padding:80px 32px;max-width:1100px;margin:0 auto}
+.pricing-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:25px;margin-top:40px}
+.pricing-card{background:#fff;padding:40px 20px;text-align:center;border-radius:5px}
+.pricing-card h3{margin-bottom:15px;color:var(--green-header)}
+.pricing-card .price{font-size:32px;font-weight:700;color:var(--orange);margin-bottom:20px}
+.btn-select{background:var(--green-header);color:#fff;padding:12px 30px;display:inline-block;text-decoration:none;border-radius:30px;font-weight:700}
+footer{padding:60px;text-align:center;background:#fff;margin-top:80px}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Tasarımlar</a></div>
+<header>
+    <h1>Dila Karakurt</h1>
+</header>
+<section class="hero">
+    <div class="hero-left">
+        <h2>Wellness & EMS Uzmanlığı</h2>
+        <p>Bedeninizi dinlendirin, kaslarınızı güçlendirin. Meta Slim B-8317 teknolojisi ile klinik ortamında zayıflamanın keyfini çıkarın.</p>
+    </div>
+    <div class="hero-right"></div>
+</section>
+<section class="pricing-section">
+    <h2 style="text-align:center">Hizmet Paketleri</h2>
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <h3>Başlangıç</h3>
+            <div class="price">₺499</div>
+            <p>4 Seans EMS + Diyet Programı</p>
+            <br>
+            <a href="#" class="btn-select">Hemen Al</a>
+        </div>
+        <div class="pricing-card" style="box-shadow: 0 10px 30px rgba(0,0,0,0.1)">
+            <h3>Pro</h3>
+            <div class="price">₺899</div>
+            <p>8 Seans EMS + Takip</p>
+            <br>
+            <a href="#" class="btn-select">Hemen Al</a>
+        </div>
+        <div class="pricing-card">
+            <h3>Premium</h3>
+            <div class="price">₺1.499</div>
+            <p>12 Seans EMS + WhatsApp Destek</p>
+            <br>
+            <a href="#" class="btn-select">Hemen Al</a>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2025 Diyetisyen Dila Karakurt Wellness Clinic</p>
+</footer>
+</body>
+</html>

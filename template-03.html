@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DilaFit — Magazine Clean</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--green:#3B6D11;--orange:#E8843A;--purple:#7C4D8B;--bg:#fff;--text:#222;--muted:#666}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.back-bar{background:#f9f9f9;padding:12px 32px;font-size:13px;border-bottom:1px solid #eee}
+.back-bar a{color:var(--green);font-weight:600;text-decoration:none}
+.top-strip{height:6px;background:linear-gradient(90deg, var(--green), var(--orange), var(--purple))}
+nav{display:flex;align-items:center;padding:24px 32px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:10}
+.logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--green);flex:1}
+.nav-links{display:flex;gap:30px}
+.nav-links a{text-decoration:none;color:var(--text);font-size:14px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--orange)}
+.btn-nav{background:var(--green);color:#fff;padding:10px 24px;border-radius:4px;margin-left:30px;font-weight:600;font-size:14px;text-decoration:none}
+.hero{padding:80px 32px;display:flex;align-items:center;gap:60px;max-width:1200px;margin:0 auto}
+.hero-content{flex:1.2}
+.hero-content h1{font-family:'Playfair Display',serif;font-size:56px;line-height:1.1;margin-bottom:24px}
+.hero-content p{font-size:18px;color:var(--muted);margin-bottom:32px;max-width:500px}
+.hero-visual{flex:0.8;height:450px;background:linear-gradient(160deg, #EAF3DE, #639922);border-radius:20px;position:relative}
+.section{padding:80px 32px;max-width:1200px;margin:0 auto}
+.section-title{font-family:'Playfair Display',serif;font-size:32px;margin-bottom:40px;border-bottom:2px solid #eee;padding-bottom:15px;display:flex;justify-content:space-between;align-items:flex-end}
+.section-title span{font-family:'Inter',sans-serif;font-size:14px;color:var(--orange);font-weight:600}
+.services-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:40px}
+.service-item h3{margin-bottom:12px;color:var(--green)}
+.service-item p{font-size:14px;color:var(--muted)}
+.pricing{background:#f8faf6}
+.price-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:2px;background:#eee;border:1px solid #eee}
+.price-card{background:#fff;padding:40px;text-align:center}
+.price-card h3{margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;font-size:16px}
+.price-val{font-size:24px;font-weight:700;color:var(--orange);margin-bottom:20px}
+.price-card ul{list-style:none;margin-bottom:30px}
+.price-card li{padding:10px 0;font-size:14px;border-bottom:1px solid #f9f9f9}
+footer{padding:60px 32px;text-align:center;border-top:1px solid #eee;margin-top:60px}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="index.html">← Geri Dön</a> | Template 03 — Magazine Clean</div>
+<div class="top-strip"></div>
+<nav>
+    <div class="logo">DilaFit</div>
+    <div class="nav-links">
+        <a href="#ems">EMS</a>
+        <a href="#paketler">Paketler</a>
+        <a href="#hikayeler">Başarı Hikayeleri</a>
+    </div>
+    <a href="#" class="btn-nav">Randevunuzu Ayarlayın</a>
+</nav>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Sağlıklı Tahıl, Güçlü Kaslar.</h1>
+        <p>Bilimsel temelli diyet programları ve son teknoloji EMS (Meta Slim) ile vücudunuzu yeniden inşa edin.</p>
+        <a href="#" class="btn-nav" style="margin:0">Programları İnceleyin</a>
+    </div>
+    <div class="hero-visual"></div>
+</section>
+<section class="section">
+    <div class="section-title">Hizmet Alanlarımız <span>Klinik Çözümler</span></div>
+    <div class="services-grid">
+        <div class="service-item">
+            <h3>EMS Meta Slim</h3>
+            <p>20 dakikada 4 saatlik antrenmana eşdeğer stimülasyon ile hızlı sonuç. GS Makine teknolojisi.</p>
+        </div>
+        <div class="service-item">
+            <h3>Kişiye Özel Diyet</h3>
+            <p>Kan bulgularınız ve yaşam tarzınıza özel hazırlanan sürdürülebilir listeler. Yemek ve yürüyüş takibi.</p>
+        </div>
+        <div class="service-item">
+            <h3>Vücut Analizi</h3>
+            <p>Yağ, kas ve su oranınızın profesyonel cihazlarla detaylı ölçümü ve periyodik takibi.</p>
+        </div>
+    </div>
+</section>
+<section class="section pricing">
+    <div class="section-title">Danışmanlık Paketleri <span>Güncel Ücretler</span></div>
+    <div class="price-grid">
+        <div class="price-card">
+            <h3>Aylık Takip</h3>
+            <div class="price-val">İletişime Geçiniz</div>
+            <ul><li>4 Görüşme</li><li>Haftalık Liste</li><li>WhatsApp Destek</li></ul>
+        </div>
+        <div class="price-card" style="border-top: 4px solid var(--orange)">
+            <h3>EMS + Diyet</h3>
+            <div class="price-val">İletişime Geçiniz</div>
+            <ul><li>8 Seans EMS</li><li>Diyet Programı</li><li>Vücut Analizi</li></ul>
+        </div>
+        <div class="price-card">
+            <h3>V.I.P Program</h3>
+            <div class="price-val">İletişime Geçiniz</div>
+            <ul><li>Sınırsız EMS</li><li>Özel Takip</li><li>Evde Destek</li></ul>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>@diyetisyendilakarakurt — 2025</p>
+</footer>
+</body>
+</html>
