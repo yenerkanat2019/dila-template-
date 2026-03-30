@@ -3,171 +3,209 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dila Karakurt — Template 04: Card Grid</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;800&display=swap" rel="stylesheet">
+<title>DilaFit — Function Card Grid Premium</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root { --green: #3B6D11; --orange: #E8843A; --purple: #7C4D8B; --bg: #f5f7f9; --card-bg: #ffffff; --text: #333; --muted: #777; }
+:root { --green: #3B6D11; --orange: #E8843A; --purple: #7C4D8B; --bg: #f4f6f8; --card: #ffffff; --text: #2a2e35; --muted: #747d88; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+body { font-family: 'Outfit', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 40px 20px; }
 a { text-decoration: none; color: inherit; }
 
-/* Desktop Frame */
-.wrapper { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-.back-bar { margin-bottom: 30px; font-size: 14px; font-weight: 600; color: var(--muted); }
-.back-bar a { color: var(--purple); margin-right: 15px; }
+.app-wrapper { max-width: 1200px; margin: 0 auto; }
+.back-link { display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; background: rgba(124,77,139,0.05); color: var(--purple); font-weight: 700; font-size: 14px; border-radius: 100px; margin-bottom: 40px; transition: 0.2s; }
+.back-link:hover { background: rgba(124,77,139,0.1); }
 
-/* Header & Motivation */
-.header-card { background: var(--card-bg); border-radius: 20px; padding: 40px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-.header-info h1 { font-size: 32px; font-weight: 800; color: var(--purple); margin-bottom: 5px; }
-.header-info p { color: var(--muted); font-size: 15px; }
-.motivation-box { background: rgba(124, 77, 139, 0.05); padding: 20px; border-radius: 12px; border-left: 4px solid var(--purple); max-width: 400px; }
-.motivation-box p { font-style: italic; color: #555; font-size: 14px; }
-.motivation-box strong { display: block; margin-top: 8px; font-size: 12px; color: var(--purple); text-transform: uppercase; }
+/* Header Card */
+.header-card { background: var(--card); border-radius: 30px; padding: 50px 60px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); position: relative; overflow: hidden; }
+.header-card::before { content: ''; position: absolute; right: 0; top: 0; width: 400px; height: 100%; background: linear-gradient(90deg, transparent, rgba(124,77,139,0.05)); }
+.h-info h1 { font-size: 42px; font-weight: 800; color: var(--text); margin-bottom: 8px; letter-spacing: -1px; }
+.h-tag { display: inline-block; padding: 6px 16px; background: var(--purple); color: #fff; font-size: 13px; font-weight: 700; border-radius: 100px; margin-bottom: 15px; }
+.h-info p { color: var(--muted); font-size: 18px; max-width: 400px; }
 
-/* Grid Layout */
-.main-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.card { background: var(--card-bg); border-radius: 20px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
-.card-wide { grid-column: span 2; }
-.card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-.icon-box { width: 50px; height: 50px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; color: #fff; flex-shrink: 0; }
-.card h2 { font-size: 20px; font-weight: 800; }
+.quote-bubble { background: #fff; padding: 25px 30px; border-radius: 20px 20px 0 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); max-width: 380px; position: relative; border: 1px solid rgba(0,0,0,0.04); }
+.quote-bubble blockquote { font-style: italic; color: var(--text); font-weight: 500; font-size: 15px; line-height: 1.5; }
+.speaker { display: block; margin-top: 10px; font-size: 12px; font-weight: 800; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; }
 
-/* Colors */
-.c-green .icon-box { background: var(--green); } .c-green h2 { color: var(--green); }
-.c-orange .icon-box { background: var(--orange); } .c-orange h2 { color: var(--orange); }
-.c-purple .icon-box { background: var(--purple); } .c-purple h2 { color: var(--purple); }
+/* Grid System */
+.grid-framework { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: minmax(100px, auto); gap: 30px; }
+.pane { background: var(--card); border-radius: 30px; padding: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.03); display: flex; flex-direction: column; position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,0.02); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s; }
+.pane:hover { transform: translateY(-5px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+.pane-hdr { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
+.icon { width: 60px; height: 60px; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 26px; }
+.pane h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.5px; }
 
-/* Card Content Details */
-.card-text { color: var(--muted); font-size: 15px; margin-bottom: 20px; flex: 1; }
-.btn { display: inline-block; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-align: center; }
-.c-green .btn { background: rgba(59, 109, 17, 0.1); color: var(--green); }
-.c-orange .btn { background: rgba(232, 132, 58, 0.1); color: var(--orange); }
-.c-purple .btn { background: var(--purple); color: #fff; }
+/* Theme Colors */
+.p-green .icon { background: rgba(59,109,17,0.1); color: var(--green); }
+.p-green h2 { color: var(--green); }
+.p-orange .icon { background: rgba(232,132,58,0.1); color: var(--orange); }
+.p-orange h2 { color: var(--orange); }
+.p-purple .icon { background: rgba(124,77,139,0.1); color: var(--purple); }
+.p-purple h2 { color: var(--purple); }
 
-/* Specific Inner Layouts */
-.ems-img { background: #eee; height: 180px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; }
-.pkg-list { list-style: none; margin-bottom: 20px; }
-.pkg-list li { padding: 12px 0; border-bottom: 1px solid #f0f0f0; display: flex; justify-content: space-between; font-size: 14px; font-weight: 500; }
-.pkg-list li span { color: var(--orange); font-weight: 800; }
-.story-item { background: #f9f9f9; padding: 15px; border-radius: 10px; margin-bottom: 15px; }
-.story-item h4 { font-size: 14px; margin-bottom: 5px; }
-.story-item p { font-size: 13px; color: var(--muted); }
+/* Pane Sizing */
+.wide { grid-column: span 8; }
+.square { grid-column: span 4; }
+.full { grid-column: span 12; }
 
-/* Quick Info Grid inside Wide Card */
-.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.info-item { background: #f9f9f9; padding: 20px; border-radius: 12px; }
-.info-item h4 { font-size: 16px; margin-bottom: 5px; color: var(--text); }
-.info-item p { font-size: 13px; color: var(--muted); }
+/* Pane Content */
+.p-text { font-size: 15px; color: var(--muted); margin-bottom: 25px; line-height: 1.7; flex: 1; }
+.btn { align-self: flex-start; padding: 14px 28px; border-radius: 12px; font-weight: 700; font-size: 14px; margin-top: auto; }
+.p-green .btn { background: var(--green); color: #fff; }
+.p-orange .btn { background: var(--orange); color: #fff; }
+.p-purple .btn { background: var(--purple); color: #fff; }
+
+.inner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; height: 100%; }
+.img-placeholder { background: #f4f6f8; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 40px; color: #ddd; height: 100%; min-height: 200px; position: relative; }
+.img-placeholder::after { content: 'GS Makine'; position: absolute; font-size: 18px; font-weight: 700; color: #bbb; bottom: 20px; left: 20px; }
+
+/* Package List Area */
+.pkg-rows { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+.pkg-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; background: #f9fbfd; border-radius: 12px; font-weight: 600; font-size: 15px; }
+.pkg-row span { color: var(--orange); font-weight: 800; font-size: 18px; }
+
+/* Story Tags */
+.feed-box { background: rgba(59,109,17,0.05); padding: 20px; border-radius: 16px; margin-bottom: 15px; border-left: 4px solid var(--green); }
+.feed-box h4 { font-size: 16px; margin-bottom: 5px; color: var(--text); }
+.feed-box p { font-size: 13px; color: var(--muted); }
+
+/* Banner Pane */
+.banner-pane { background: linear-gradient(135deg, var(--purple), #5f336e); color: #fff; display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 50px 60px; }
+.banner-pane h2 { font-size: 36px; margin-bottom: 10px; color: #fff; }
+.banner-pane p { font-size: 16px; color: rgba(255,255,255,0.7); max-width: 500px; }
+.btn-white { background: #fff; color: var(--purple); padding: 18px 40px; border-radius: 100px; font-size: 15px; font-weight: 800; transition: 0.3s; }
+.btn-white:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.2); transform: translateY(-3px); }
 
 /* Footer */
-footer { text-align: center; padding: 40px 0; color: var(--muted); font-size: 14px; }
+footer { text-align: center; padding: 40px; font-size: 14px; font-weight: 600; color: #a1aab3; margin-top: 30px; }
+
+@media(max-width: 900px) {
+    .header-card { flex-direction: column; gap: 40px; text-align: center; padding: 40px 30px; }
+    .quote-bubble { border-radius: 20px; }
+    .wide, .square { grid-column: span 12; }
+    .inner-grid { grid-template-columns: 1fr; }
+    .banner-pane { flex-direction: column; text-align: center; gap: 30px; }
+}
 </style>
 </head>
 <body>
 
-<div class="wrapper">
-    <div class="back-bar">
-        <a href="index.html">← INDEX'E DÖN</a> / Template 04 — Card Grid (Fonksiyonel)
-    </div>
+<div class="app-wrapper">
+    <a href="index.html" class="back-link">← Geri Dön</a>
 
-    <!-- Header Panel -->
     <div class="header-card">
-        <div class="header-info">
+        <div class="h-info">
+            <div class="h-tag">@diyetisyendilakarakurt</div>
             <h1>Diyetisyen Dila Karakurt</h1>
-            <p>EMS & Sağlıklı Yaşam Merkezi. @diyetisyendilakarakurt</p>
+            <p>Meta Slim teknolojisine sahip klinik beslenme ve sağlıklı yaşam merkezi.</p>
         </div>
-        <div class="motivation-box">
-            <p>"Kendinize inanın. Yapacağınız en iyi yatırım, bedeninize ve sağlığınıza yaptığınızdır."</p>
-            <strong>Günün Motivasyonu</strong>
+        <div class="quote-bubble">
+            <blockquote>"Değişim, her gün kararlılıkla tekrarladığınız küçük sağlıklı alışkanlıkların sonucudur. Teknolojimiz ise sizin bu sadakatinizi ödüllendiren bir hızlandırıcıdır."</blockquote>
+            <span class="speaker">Bugünün Mottosu</span>
         </div>
     </div>
 
-    <div class="main-grid">
-        <!-- EMS Card -->
-        <div class="card c-purple card-wide">
-            <div class="card-header">
-                <div class="icon-box">⚡</div>
+    <div class="grid-framework">
+        
+        <!-- Wide Card: EMS Info -->
+        <div class="pane p-purple wide">
+            <div class="pane-hdr">
+                <div class="icon">⚡</div>
                 <h2>Meta Slim B-8317 Teknolojisi</h2>
             </div>
-            <div class="info-grid">
-                <div>
-                    <div class="ems-img">Cihaz Görseli Alanı</div>
-                    <a href="#" class="btn" style="width: 100%;">Detaylı İncele</a>
-                </div>
-                <div>
-                    <p class="card-text">GS Makine tarafından üretilen üst düzey EMS (Elektromanyetik Kas Uyarımı) teknolojisi. Düzenli seanslarla kas kütlesinde artış ve hedeflenen bölgelerde hızlı yağ yakımı sağlar.</p>
-                    <div class="story-item">
-                        <h4>Faydaları</h4>
-                        <p>20 dakikada 4 saatlik etki, postür düzelmesi, selülit azalması.</p>
+            <div class="inner-grid">
+                <div class="img-placeholder"></div>
+                <div style="display:flex; flex-direction:column;">
+                    <p class="p-text">Avrupa standartlarında GS Makine onaylı bu cihaz, Elektromanyetik Kas Uyarımı sağlayarak bölgesel veya genel yağ yakımını maksimize eder. Acısız 20 dakikalık tek bir seans, saatlerce süren koşu veya ağırlık antrenmanı verimiyle metabolizmanızı hızlandırır.</p>
+                    <div class="feed-box" style="border-left-color: var(--purple); background: rgba(124,77,139,0.05);">
+                        <h4>Klinik Kanıt: %1800 Aktivasyon</h4>
+                        <p>Diyet programınızla senkronize edildiğinde, hiç çalışmayan en alt kas dokuları bile uyarılır.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Packages Card -->
-        <div class="card c-orange">
-            <div class="card-header">
-                <div class="icon-box">📦</div>
+        <!-- Square Card: Stories -->
+        <div class="pane p-green square">
+            <div class="pane-hdr">
+                <div class="icon">🏆</div>
+                <h2>Dönüşümler</h2>
+            </div>
+            <p class="p-text">Bedenine şans tanıyan danışanlarımızın başarı sonuçları.</p>
+            <div class="feed-box">
+                <h4>Ayşe K. (-12 KG)</h4>
+                <p>EMS + Diyet konsültasyonu ile 3 ayda kalıcı yağdan kilo kaybı sağladık.</p>
+            </div>
+            <div class="feed-box">
+                <h4>Selin B. (-6 KG)</h4>
+                <p>Özellikle inatçı bölgesel fazlalıklar için 6 haftada şok etki yakaladık.</p>
+            </div>
+            <a href="#" class="btn">Tüm Analizleri Gör</a>
+        </div>
+
+        <!-- Square Card: Packages -->
+        <div class="pane p-orange square">
+            <div class="pane-hdr">
+                <div class="icon">🎟️</div>
                 <h2>Paket Ücretleri</h2>
             </div>
-            <p class="card-text">İhtiyacınıza en uygun paket ile dönüşüme başlayın.</p>
-            <ul class="pkg-list">
-                <li>Aylık Diyet Takibi <span>₺1.200</span></li>
-                <li>4 Seans EMS <span>₺900</span></li>
-                <li>Diyet + 8 Seans EMS <span>₺2.500</span></li>
-            </ul>
-            <a href="#" class="btn">Randevu Al</a>
+            <p class="p-text">Ulaşılabilir maliyetlerle profesyonel değişim programları.</p>
+            <div class="pkg-rows">
+                <div class="pkg-row">
+                    Sadece Özel Diyet
+                    <span>₺1.200*</span>
+                </div>
+                <div class="pkg-row" style="background: rgba(232,132,58,0.08); border: 1px solid rgba(232,132,58,0.2);">
+                    Diyet + 8 Seans EMS
+                    <span>₺2.500*</span>
+                </div>
+                <div class="pkg-row">
+                    V.I.P Yoğun Bakım
+                    <span>₺4.000*</span>
+                </div>
+            </div>
+            <a href="#" class="btn" style="width: 100%; text-align: center;">Danışmanlığa Başla</a>
         </div>
 
-        <!-- Success Stories Card -->
-        <div class="card c-green">
-            <div class="card-header">
-                <div class="icon-box">🏆</div>
-                <h2>Başarılarımız</h2>
-            </div>
-            <p class="card-text">Sonuç garantili programlarımızın kanıtları.</p>
-            <div class="story-item">
-                <h4>Ayşe K. (-12 KG)</h4>
-                <p>EMS ve sıkı takip ile 3 ayda kalıcı sonuca ulaştık.</p>
-            </div>
-            <div class="story-item">
-                <h4>Selin B. (-6 KG)</h4>
-                <p>6 haftalık kısa programda gözle görülür bölgesel incelme.</p>
-            </div>
-            <a href="#" class="btn">Tümünü Gör</a>
-        </div>
-
-        <!-- Info / DYK Card -->
-        <div class="card c-green card-wide">
-            <div class="card-header">
-                <div class="icon-box">💡</div>
+        <!-- Wide Card: DYK & FAQ -->
+        <div class="pane p-green wide">
+            <div class="pane-hdr">
+                <div class="icon">💡</div>
                 <h2>Bunu Biliyor Musunuz & SSS</h2>
             </div>
-            <div class="info-grid">
-                <div class="info-item">
-                    <h4>18 Kat Daha Etkili</h4>
-                    <p>EMS antrenmanı geleneksel egzersize göre 18 kat daha fazla kas lifini aktive eder.</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; flex: 1;">
+                <div style="padding: 20px; border-radius: 12px; background: #f9fbfd; border: 1px solid #eee;">
+                    <h4 style="font-size: 16px; margin-bottom: 8px;">EMS Cihazı Acı Verir mi?</h4>
+                    <p style="font-size: 14px; color: var(--muted);">Kesinlikle hayır. İşlem sırasında sadece güçlü ancak konforlu bir kasılma ve egzersiz eforu hissedersiniz. Seanstan sonra hafif bir spor ağrısı doğaldır.</p>
                 </div>
-                <div class="info-item">
-                    <h4>Su Tüketiminin Önemi</h4>
-                    <p>Düzenli su içmek EMS sonrası lenfatik drenajı destekler ve ödem atımını kolaylaştırır.</p>
+                <div style="padding: 20px; border-radius: 12px; background: #f9fbfd; border: 1px solid #eee;">
+                    <h4 style="font-size: 16px; margin-bottom: 8px;">Hangi Durumlarda Kullanılmaz?</h4>
+                    <p style="font-size: 14px; color: var(--muted);">Kalp pili taşıyanlar, hamileler, aktif kanser tedavisi görenler veya diyabet gibi kronik sorunları olanların hekim onayından geçmesi gerekir.</p>
                 </div>
-                <div class="info-item">
-                    <h4>EMS Acıtır mı?</h4>
-                    <p>Hayır, kontrollü ve acısız bir titreşim hissiyatı vardır.</p>
+                <div style="padding: 20px; border-radius: 12px; background: #f9fbfd; border: 1px solid #eee;">
+                    <h4 style="font-size: 16px; margin-bottom: 8px;">Su Tüketiminin Kritk Etkisi</h4>
+                    <p style="font-size: 14px; color: var(--muted);">Programlarımıza başlayanların ilk öğrendiği kuraldır: Cihaz hücreleri parçalarken ödemin atılabilmesi için günde net 2.5 LT su içilmelidir.</p>
                 </div>
-                <div class="info-item">
-                    <h4>Kimler Kullanamaz?</h4>
-                    <p>Hamileler, kalp pili olanlar için uygun değildir.</p>
+                <div style="padding: 20px; border-radius: 12px; background: #f9fbfd; border: 1px solid #eee;">
+                    <h4 style="font-size: 16px; margin-bottom: 8px;">Diyet Listeleri Sabit midir?</h4>
+                    <p style="font-size: 14px; color: var(--muted);">Hayır. Liste tamamen sizin bütçenize, kan testlerinize, alerjilerinize ve iş yaşantınıza göre size özel yazılır ve sıkılmamanız için yenilenir.</p>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <footer>
-        <p>Tasarım ve Entegrasyon: Canva Data — 2025 Dila Karakurt</p>
-    </footer>
 
+        <!-- Full Pane: CTA -->
+        <div class="pane full banner-pane">
+            <div>
+                <h2>Bahaneleri geride bırakın.</h2>
+                <p>Bir sonraki başarı hikayesi olmak için ilk adımı atın. İster yüz yüze cihaz destekli, ister Türkiye'nin her yerinden online randevu alın.</p>
+            </div>
+            <a href="#" class="btn-white">WhatsApp İletişim Formuna Git</a>
+        </div>
+
+    </div>
+
+    <footer>
+        Tasarım ve Altyapı Entegrasyonu © 2025 Diyetisyen Dila Karakurt
+    </footer>
 </div>
 
 </body>

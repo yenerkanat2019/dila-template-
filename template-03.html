@@ -3,258 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dila Karakurt — Template 03: Magazine Clean</title>
+<title>DilaFit — Magazine Clean Premium</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root { --green: #3B6D11; --orange: #E8843A; --purple: #7C4D8B; --bg: #fff; --text: #222; --muted: #666; --light-bg: #f9f9f9; }
+:root { --green: #3B6D11; --orange: #E8843A; --purple: #7C4D8B; --bg: #fdfdfc; --text: #1a1a1a; --muted: #555; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 
-/* Back Bar */
-.back-bar { background: var(--light-bg); padding: 12px 32px; font-size: 13px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; }
-.back-bar a { color: var(--green); font-weight: 600; }
+/* Decorative Background Elements */
+.bg-shape-1 { position: absolute; top: -100px; right: -50px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(232,132,58,0.06) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; z-index: -1; }
+.bg-shape-2 { position: absolute; top: 400px; left: -100px; width: 800px; height: 800px; background: radial-gradient(circle, rgba(59,109,17,0.04) 0%, rgba(255,255,255,0) 70%); border-radius: 50%; z-index: -1; }
 
-/* Top Strip */
-.top-strip { height: 6px; background: linear-gradient(90deg, var(--green), var(--orange), var(--purple)); }
+/* Top Navigation */
+.top-strip { height: 6px; background: linear-gradient(90deg, var(--green), var(--orange), var(--purple)); width: 100%; position: absolute; top: 0; left: 0; z-index: 100; }
+nav { display: flex; align-items: center; padding: 25px 5%; height: 90px; position: sticky; top: 0; background: rgba(253,253,252,0.95); backdrop-filter: blur(10px); z-index: 90; border-bottom: 1px solid rgba(0,0,0,0.04); }
+.logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--green); flex: 1; letter-spacing: -0.5px; }
 
-/* Navigation */
-nav { display: flex; align-items: center; padding: 24px 32px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 100; }
-.logo { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--green); flex: 1; }
-.nav-links { display: flex; gap: 30px; }
-.nav-links a { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; transition: color .2s; }
-.nav-links a:hover { color: var(--orange); }
-.btn-nav { background: var(--text); color: #fff; padding: 10px 24px; font-weight: 600; font-size: 13px; margin-left: 30px; border-radius: 4px; }
+/* Back Button Restyled */
+.back-btn { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); display: flex; align-items: center; gap: 8px; transition: 0.3s; margin-right: 40px; }
+.back-btn:hover { color: var(--orange); }
 
-/* Sections Common */
-section { padding: 80px 32px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid #eee; }
-.section-header { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid #222; padding-bottom: 15px; }
-.section-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; }
-.section-tag { font-size: 12px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; }
+.nav-links { display: flex; gap: 40px; }
+.nav-links a { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text); position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--orange); transition: 0.3s ease; }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { background: var(--text); color: #fff; padding: 12px 28px; font-size: 13px; font-weight: 600; border-radius: 4px; margin-left: 30px; letter-spacing: 0.5px; transition: transform 0.3s, box-shadow 0.3s; }
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
 
-/* Hero */
-.hero { display: flex; gap: 60px; align-items: center; border-bottom: none; }
-.hero-content { flex: 1.2; }
-.hero-content h1 { font-family: 'Playfair Display', serif; font-size: 56px; line-height: 1.1; margin-bottom: 24px; color: #111; }
-.hero-content p { font-size: 16px; color: var(--muted); margin-bottom: 32px; max-width: 500px; line-height: 1.8; }
-.hero-btns { display: flex; gap: 15px; }
-.btn-primary { background: var(--green); color: #fff; padding: 14px 28px; font-weight: 600; border-radius: 4px; }
-.btn-outline { border: 1px solid #ccc; padding: 14px 28px; font-weight: 600; border-radius: 4px; }
-.hero-visual { flex: 0.8; height: 500px; background: linear-gradient(160deg, #EAF3DE, #639922); border-radius: 8px; position: relative; }
+/* Hero Section */
+.hero { display: flex; align-items: center; min-height: 85vh; padding: 0 5%; max-width: 1400px; margin: 0 auto; position: relative; }
+.hero-content { flex: 1; padding-right: 80px; position: relative; z-index: 2; }
+.hero-tag { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px; color: var(--orange); margin-bottom: 24px; position: relative; padding-left: 45px; }
+.hero-tag::before { content: ''; position: absolute; left: 0; top: 50%; width: 30px; height: 2px; background: var(--orange); }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: 80px; line-height: 1.05; color: var(--text); margin-bottom: 30px; letter-spacing: -2px; }
+.hero p { font-size: 18px; color: var(--muted); margin-bottom: 40px; max-width: 480px; line-height: 1.8; }
+.btn-primary { background: var(--green); color: #fff; padding: 16px 36px; font-weight: 600; border-radius: 4px; font-size: 15px; display: inline-block; letter-spacing: 0.5px; box-shadow: 0 15px 30px rgba(59,109,17,0.2); transition: 0.3s; }
+.btn-primary:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 20px 40px rgba(59,109,17,0.3); }
 
-/* Motivation */
-.motivation { background: var(--light-bg); padding: 60px 32px; text-align: center; border-bottom: none; }
-.motivation blockquote { font-family: 'Playfair Display', serif; font-size: 28px; font-style: italic; color: var(--green); max-width: 800px; margin: 0 auto; line-height: 1.4; }
-.motivation cite { display: block; margin-top: 20px; font-size: 14px; font-weight: 600; color: var(--muted); font-style: normal; }
+/* Hero Visual Complex Overlay */
+.hero-visual { flex: 1.2; position: relative; height: 600px; display: flex; align-items: center; justify-content: flex-end; }
+.visual-main { width: 90%; height: 90%; background: linear-gradient(135deg, rgba(59,109,17,0.05), rgba(59,109,17,0.15)); border-radius: 12px; position: relative; overflow: hidden; }
+.visual-main::after { content: 'DilaFit'; position: absolute; bottom: -40px; right: -20px; font-family: 'Playfair Display', serif; font-size: 180px; font-weight: 700; color: rgba(255,255,255,0.7); opacity: 0.4; pointer-events: none; }
+.visual-float { position: absolute; left: -40px; bottom: 80px; background: rgba(255,255,255,0.9); backdrop-filter: blur(15px); padding: 25px; border-radius: 8px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); z-index: 3; border: 1px solid rgba(255,255,255,0.5); }
+.visual-float h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--green); margin-bottom: 5px; }
+.visual-float p { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-/* EMS Detail */
-.ems-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-.ems-img { background: #eee; height: 400px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 60px; }
-.ems-desc h3 { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 15px; }
-.ems-desc p { color: var(--muted); margin-bottom: 25px; line-height: 1.7; font-size: 15px; }
-.features { list-style: none; }
-.features li { padding: 12px 0; border-top: 1px solid #eee; font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
-.features li::before { content: '■'; color: var(--orange); font-size: 10px; }
+/* Sections Layout */
+.section { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
+.sec-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 60px; border-bottom: 2px solid #eaeaea; padding-bottom: 20px; }
+.sec-title { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--text); font-weight: 700; letter-spacing: -1px; }
+.sec-tag { font-size: 13px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 2px; }
 
-/* Stories & DYK Grid */
-.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-.story-card, .dyk-card { padding: 30px; border: 1px solid #eee; background: #fff; border-radius: 4px; }
-.story-card h4 { font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; }
-.story-card .result { color: var(--green); font-weight: 600; font-size: 14px; margin-bottom: 15px; }
-.story-card p { font-size: 14px; color: var(--muted); font-style: italic; }
-.dyk-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 10px; color: var(--purple); }
-.dyk-card p { font-size: 14px; color: var(--muted); }
+/* EMS Magazine Style */
+.ems-magazine { display: grid; grid-template-columns: 5fr 4fr; gap: 80px; align-items: center; }
+.ems-img-wrapper { position: relative; }
+.ems-img { height: 600px; background: #f0f0f0; border-radius: 8px; position: relative; z-index: 2; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 80px; color: #ddd; }
+.ems-img::after { content: 'B-8317'; position: absolute; top: 20px; left: 20px; font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; color: #ccc; }
+.ems-bg-accent { position: absolute; bottom: -30px; left: -30px; width: 100%; height: 100%; background: var(--green); border-radius: 8px; z-index: 1; opacity: 0.1; }
+.ems-content h2 { font-family: 'Playfair Display', serif; font-size: 40px; line-height: 1.1; margin-bottom: 30px; }
+.ems-content p { font-size: 17px; color: var(--muted); line-height: 1.8; margin-bottom: 40px; }
+.list-magazine { list-style: none; margin-top: 20px; border-top: 1px solid #eaeaea; }
+.list-magazine li { padding: 20px 0; border-bottom: 1px solid #eaeaea; display: flex; justify-content: space-between; align-items: center; font-size: 16px; font-weight: 500; }
+.list-magazine li span { color: var(--orange); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; }
 
-/* Packages */
-.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid #eee; }
-.price-card { padding: 40px 30px; text-align: center; border-right: 1px solid #eee; }
-.price-card:last-child { border-right: none; }
-.price-card h3 { font-size: 18px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-.price-val { font-family: 'Playfair Display', serif; font-size: 36px; color: var(--orange); margin-bottom: 20px; }
-.price-card ul { list-style: none; margin-bottom: 30px; text-align: left; }
-.price-card li { padding: 10px 0; border-bottom: 1px dotted #ccc; font-size: 14px; color: var(--muted); }
-.price-btn { display: inline-block; padding: 12px 30px; background: #111; color: #fff; border-radius: 4px; font-weight: 600; font-size: 13px; }
+/* Stories - Editorial Grid */
+.story-editorial { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.story-box { position: relative; padding-top: 60px; }
+.story-number { position: absolute; top: 0; left: 0; font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 700; color: rgba(124,77,139,0.08); line-height: 1; }
+.story-box h4 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 10px; color: var(--text); }
+.story-box .highlight { color: var(--green); font-weight: 700; font-size: 14px; margin-bottom: 20px; display: block; text-transform: uppercase; letter-spacing: 1px; }
+.story-box p { font-size: 15px; color: var(--muted); line-height: 1.8; font-style: italic; border-left: 2px solid var(--orange); padding-left: 20px; }
 
-/* FAQ */
-.faq-list { max-width: 800px; margin: 0 auto; }
-.faq-item { border-bottom: 1px solid #eee; padding: 20px 0; }
-.faq-q { font-weight: 600; font-size: 16px; margin-bottom: 10px; color: var(--green); }
-.faq-a { font-size: 14px; color: var(--muted); line-height: 1.6; }
+/* Pricing - Minimal List */
+.pricing-wrap { background: #fafafa; padding: 120px 5%; margin-top: 60px; }
+.pr-container { max-width: 1400px; margin: 0 auto; display: flex; gap: 60px; }
+.pr-header { flex: 1; }
+.pr-header h2 { font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 20px; }
+.pr-header p { font-size: 18px; color: var(--muted); line-height: 1.7; max-width: 400px; }
+.pr-list-container { flex: 2; display: flex; flex-direction: column; gap: 20px; }
+.pr-row { display: flex; justify-content: space-between; align-items: center; padding: 35px 40px; background: #fff; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid transparent; transition: 0.3s; }
+.pr-row:hover { border-color: rgba(59,109,17,0.2); transform: translateX(10px); }
+.pr-info h3 { font-family: 'Playfair Display', serif; font-size: 24px; margin-bottom: 5px; }
+.pr-info p { font-size: 14px; color: var(--muted); font-weight: 500; }
+.pr-price { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--orange); }
 
-/* Footer & Social */
-footer { background: #111; color: #fff; padding: 80px 32px; text-align: center; }
-.social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 40px; }
-.social-links a { display: inline-block; padding: 12px 24px; border: 1px solid #333; border-radius: 4px; font-size: 13px; font-weight: 600; transition: background .2s; }
-.social-links a:hover { background: #333; }
+/* Motivation Hero */
+.quote-hero { padding: 100px 5%; text-align: center; background: var(--green); color: #fff; margin: 80px 0; }
+.quote-hero blockquote { font-family: 'Playfair Display', serif; font-size: 42px; font-style: italic; max-width: 900px; margin: 0 auto 30px; line-height: 1.4; font-weight: 600; }
+.quote-hero cite { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+
+/* Footer */
+footer { padding: 80px 5% 40px; background: var(--text); color: #fff; text-align: center; }
+.f-logo { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; margin-bottom: 40px; color: var(--green); }
+.f-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 60px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+.f-links a { transition: 0.3s; color: rgba(255,255,255,0.7); }
+.f-links a:hover { color: var(--orange); }
+.f-copy { font-size: 13px; color: rgba(255,255,255,0.4); border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; }
+
+@media(max-width: 1000px) {
+    .hero, .ems-magazine, .pr-container { flex-direction: column; }
+    .hero h1 { font-size: 50px; }
+    .hero-content { padding-right: 0; padding-bottom: 50px; text-align: center; }
+    .hero-tag::before { display: none; }
+    .hero-tag { padding-left: 0; }
+    .hero p { margin: 0 auto 40px; }
+    .story-editorial { grid-template-columns: 1fr; }
+    .pr-header { text-align: center; margin-bottom: 40px; }
+    .pr-header p { margin: 0 auto; }
+}
 </style>
 </head>
 <body>
-<div class="back-bar">
-    <a href="index.html">← INDEX TEMPLATELERE DÖN</a>
-    <span>TEMPLATE 03: MAGAZINE CLEAN</span>
-</div>
+
+<div class="bg-shape-1"></div>
+<div class="bg-shape-2"></div>
 <div class="top-strip"></div>
+
 <nav>
-    <div class="logo">DilaFit</div>
+    <a href="index.html" class="back-btn">← ÇIKIŞ</a>
+    <div class="logo">DilaFit.</div>
     <div class="nav-links">
-        <a href="#ems">EMS</a>
-        <a href="#hikayeler">Başarılar</a>
-        <a href="#paketler">Paketler</a>
-        <a href="#sss">SSS</a>
+        <a href="#ems">Klinik</a>
+        <a href="#hikaye">Hikayeler</a>
+        <a href="#fiyat">Programlar</a>
     </div>
-    <a href="#" class="btn-nav">Randevu Al</a>
+    <a href="#fiyat" class="nav-cta">Randevu</a>
 </nav>
 
 <section class="hero">
     <div class="hero-content">
+        <div class="hero-tag">Kliniğimize Hoş Geldiniz</div>
         <h1>Sağlıklı Tahıl,<br>Güçlü Kaslar.</h1>
-        <p>Klasik diyet klişelerini unutun. Meta Slim B-8317 teknolojisi ve bilime dayalı kişiselleştirilmiş beslenme danışmanlığı ile tanışın.</p>
-        <div class="hero-btns">
-            <a href="#paketler" class="btn-primary">Paketleri İncele</a>
-            <a href="#ems" class="btn-outline">Keşfet</a>
+        <p>Klasik ve yorucu diyet klişelerini ardınızda bırakın. Meta Slim GS Makine teknolojisi ve bilime dayalı kişiselleştirilmiş beslenme danışmanlığı ile kusursuz değişimi deneyimleyin.</p>
+        <a href="#fiyat" class="btn-primary">Klinik Paketlerini Seç</a>
+    </div>
+    <div class="hero-visual">
+        <div class="visual-main"></div>
+        <div class="visual-float">
+            <h3>B-8317 Onaylı</h3>
+            <p>Meta Slim Teknolojisi</p>
         </div>
     </div>
-    <div class="hero-visual"></div>
 </section>
 
-<div class="motivation">
+<div class="quote-hero">
     <blockquote>"Bedeninize göstereceğiniz saygı, geleceğinize yapacağınız en büyük yatırımdır."</blockquote>
     <cite>— Diyetisyen Dila Karakurt</cite>
 </div>
 
-<section id="ems">
-    <div class="section-header">
-        <h2 class="section-title">Uzmanlık & Teknoloji</h2>
-        <span class="section-tag">EMS Meta Slim</span>
+<section id="ems" class="section">
+    <div class="sec-header">
+        <h2 class="sec-title">Geleceğin Egzersizi</h2>
+        <span class="sec-tag">Teknoloji Analizi</span>
     </div>
-    <div class="ems-grid">
-        <div class="ems-img">⚡</div>
-        <div class="ems-desc">
-            <h3>Meta Slim B-8317 GS Makine</h3>
-            <p>Sıradan antrenmanların ötesine geçin. Elektromanyetik kas uyarımı ile sadece 20 dakikada 4 saatlik yoğun antrenman etkisi sağlar. Güvenilir GS Makine sertifikasıyla bölgesel yağ yakımı ve kas inşası artık çok daha hızlı.</p>
-            <ul class="features">
-                <li>Derin doku kas uyarımı</li>
-                <li>Hızlı bölgesel incelme</li>
-                <li>Selülit görünümünde azalma</li>
-                <li>Metabolizma hızlandırıcı etki</li>
+    <div class="ems-magazine">
+        <div class="ems-img-wrapper">
+            <div class="ems-bg-accent"></div>
+            <div class="ems-img">İmaj Alanı</div>
+        </div>
+        <div class="ems-content">
+            <h2>Peki Nedir Bu Meta Slim?</h2>
+            <p>Sıradan antrenmanların ötesine geçin. Elektromanyetik kas uyarımı (EMS) ile sadece 20 dakikada 4 saatlik yoğun ağırlık antrenmanı etkisine ulaşın. Dila Hanım'ın size özel hazırladığı beslenme listeleri ve yürüyüş rotalarıyla birleştiğinde cihazın yağ yakma gücü maksimize olur.</p>
+            <ul class="list-magazine">
+                <li>Acı, Ağrı ve Zorlanma Yok <span>%100 Konfor</span></li>
+                <li>Lenfatik Drenaj ve Ödem Atımı <span>Sağlıklı Sonuç</span></li>
+                <li>Selülit Görünümünde Gözle Görülür Azalma <span>Estetik</span></li>
+                <li>Sadece Güvenli Vücutlarda Uygulama <span>Klinik Test</span></li>
             </ul>
         </div>
     </div>
 </section>
 
-<section id="hikayeler" style="background: var(--light-bg); border-top: 1px solid #eee;">
-    <div class="section-header">
-        <h2 class="section-title">Editörün Seçimi: Başarılar</h2>
-        <span class="section-tag">Gerçek Sonuçlar</span>
+<section id="hikaye" class="section">
+    <div class="sec-header">
+        <h2 class="sec-title">Bizi Seçenler</h2>
+        <span class="sec-tag">Editörün Seçimi</span>
     </div>
-    <div class="grid-3">
-        <div class="story-card">
-            <h4>Ayşe K.</h4><div class="result">3 Ayda -12 KG</div>
-            <p>"Dila Hanım'ın programı o kadar sürdürülebilir ki, aç kalmadan, sadece EMS desteğiyle inanılmaz bir değişim yaşadım."</p>
+    <div class="story-editorial">
+        <div class="story-box">
+            <div class="story-number">I.</div>
+            <h4>Ayşe Keskin</h4>
+            <span class="highlight">3 Ayda -12 Kilogram</span>
+            <p>"Dila Hanım'ın hazırladığı diyet o kadar sürdürülebilir ki, aç kalmadan, sadece EMS desteğiyle bu kadar hızlı sıkılaşabileceğime inanmazdım."</p>
         </div>
-        <div class="story-card">
-            <h4>Merve T.</h4><div class="result">8 Haftada -8 KG</div>
-            <p>"EMS cihazının gücünü ikinci seansta hissettim. Profesyonel ölçümler ve yürüyüş rotaları eklendiğinde sonuç mükemmel."</p>
+        <div class="story-box">
+            <div class="story-number">II.</div>
+            <h4>Merve Taşçı</h4>
+            <span class="highlight">8 Haftada -8 Kilogram</span>
+            <p>"Cihazın gücünü daha ikinci seansta kıyafetlerimin bollaşmasıyla hissettim. Haftalık profesyonel vücut analizi, sürece inancımı çok artırdı."</p>
         </div>
-        <div class="story-card">
-            <h4>Selin B.</h4><div class="result">6 Haftada -6 KG</div>
-            <p>"Daha önce çok diyet denedim ama buradaki disiplin ve cihaz teknolojisi gerçekten fark yaratıyor."</p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="section-header">
-        <h2 class="section-title">Bunu Biliyor Musunuz?</h2>
-        <span class="section-tag">Bilimsel Gerçekler</span>
-    </div>
-    <div class="grid-3">
-        <div class="dyk-card">
-            <h4>18 Kat Aktivasyon</h4>
-            <p>EMS teknolojisi, klasik bir ağırlık antrenmanına göre kas liflerinizi 18 kat daha fazla aktive eder.</p>
-        </div>
-        <div class="dyk-card">
-            <h4>Su İhtiyacı</h4>
-            <p>EMS seanslarından sonra metabolizma hızlandığı için günlük su tüketimini %30 artırmak yağ yakımını maksimize eder.</p>
-        </div>
-        <div class="dyk-card">
-            <h4>Uzay Teknolojisi</h4>
-            <p>EMS uyarımı ilk olarak astronotların uzayda kas kaybı yaşamasını engellemek için geliştirilmiştir.</p>
+        <div class="story-box">
+            <div class="story-number">III.</div>
+            <h4>Selin Bayer</h4>
+            <span class="highlight">6 Haftada -6 Kilogram</span>
+            <p>"Daha önce birçok diyet denedim ama buradaki disiplin, yepyeni bir teknoloji ve günlük motivasyon takibi gerçekten ciddi fark yaratıyor."</p>
         </div>
     </div>
 </section>
 
-<section id="paketler">
-    <div class="section-header">
-        <h2 class="section-title">Danışmanlık Paketleri</h2>
-        <span class="section-tag">Fiyatlandırma</span>
-    </div>
-    <div class="pricing-grid">
-        <div class="price-card">
-            <h3>Sadece Diyet</h3>
-            <div class="price-val">₺1.200</div>
-            <ul>
-                <li>4 Hafta Takip</li>
-                <li>Kişisel Beslenme Planı</li>
-                <li>Ölçüm ve Vücut Analizi</li>
-                <li>WhatsApp Destek</li>
-            </ul>
-            <a href="#" class="price-btn">Planı Seç</a>
+<div class="pricing-wrap" id="fiyat">
+    <div class="pr-container">
+        <div class="pr-header">
+            <h2>Klinik Program & Ücretler</h2>
+            <p>İhtiyaçlarınıza, yaşam koşullarınıza ve sağlık durumunuza en uygun danışmanlık paketini seçerek değişimi başlatın.</p>
         </div>
-        <div class="price-card" style="border-top: 4px solid var(--orange);">
-            <h3>Diyet + EMS</h3>
-            <div class="price-val">₺2.500</div>
-            <ul>
-                <li>8 Seans EMS Kullanımı</li>
-                <li>Haftalık Diyet Planı</li>
-                <li>Detaylı Kas & Yağ Analizi</li>
-                <li>Yürüyüş ve Egzersiz Tavsiyesi</li>
-            </ul>
-            <a href="#" class="price-btn" style="background: var(--orange);">Planı Seç</a>
-        </div>
-        <div class="price-card">
-            <h3>V.I.P Değişim</h3>
-            <div class="price-val">₺4.000</div>
-            <ul>
-                <li>12 Seans EMS Kullanımı</li>
-                <li>Öncelikli Randevu</li>
-                <li>Günlük Yakın Takip</li>
-                <li>Tüm Vücut Check-up Raporu</li>
-            </ul>
-            <a href="#" class="price-btn">Planı Seç</a>
+        <div class="pr-list-container">
+            <div class="pr-row">
+                <div class="pr-info">
+                    <h3>Standart Diyet</h3>
+                    <p>4 Hafta Takip • Vücut Analizi • WhatsApp Desteği</p>
+                </div>
+                <div class="pr-price">₺1.200*</div>
+            </div>
+            <div class="pr-row" style="border-left: 4px solid var(--orange);">
+                <div class="pr-info">
+                    <h3>Diyet + 8 EMS <span style="font-size: 11px; color: #fff; background: var(--orange); padding: 2px 8px; border-radius: 10px; vertical-align: middle; margin-left: 10px; font-family: 'Inter', sans-serif;">POPÜLER</span></h3>
+                    <p>8 Cihaz Seansı • Güncel Diyet Planı • Haftalık Ölçüm</p>
+                </div>
+                <div class="pr-price">₺2.500*</div>
+            </div>
+            <div class="pr-row">
+                <div class="pr-info">
+                    <h3>V.I.P Değişim</h3>
+                    <p>12 Cihaz Seansı • Öncelikli Randevu • Tıbbi Analiz Raporu</p>
+                </div>
+                <div class="pr-price">₺4.000*</div>
+            </div>
         </div>
     </div>
-</section>
-
-<section id="sss">
-    <div class="section-header">
-        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
-        <span class="section-tag">Merak Edilenler</span>
-    </div>
-    <div class="faq-list">
-        <div class="faq-item">
-            <div class="faq-q">EMS acı verir mi?</div>
-            <div class="faq-a">Hayır, kaslarda yoğun bir titreşim ve efor hissi yaratır ancak acı verici bir elektrik akımı değildir. Spor sonrası tatlı bir kas ağrısı hissedebilirsiniz.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q">Diyet listeleri katı mıdır?</div>
-            <div class="faq-a">Kesinlikle hayır. Tamamen kan değerlerinize, yaşam tarzınıza ve ekonomik durumunuza uygun sürdürülebilir listeler hazırlıyoruz.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-q">Kimler EMS kullanamaz?</div>
-            <div class="faq-a">Hamileler, kalp pili olanlar ve epilepsi hastaları için EMS kullanımı uygun değildir.</div>
-        </div>
-    </div>
-</section>
+</div>
 
 <footer>
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 32px; margin-bottom: 20px;">@diyetisyendilakarakurt</h2>
-    <div class="social-links">
-        <a href="#">Instagram</a>
+    <div class="f-logo">DilaFit.</div>
+    <div class="f-links">
+        <a href="#">Instagram @diyetisyendilakarakurt</a>
         <a href="#">Facebook</a>
-        <a href="#">WhatsApp</a>
+        <a href="#">WhatsApp İletişim</a>
     </div>
-    <p style="font-size: 13px; color: #666;">© 2025 Dila Karakurt. Tasarım Canva ve özel entegrasyonlar ile hazırlanmıştır.</p>
+    <div class="f-copy">© 2025 Diyetisyen Dila Karakurt Sağlıklı Yaşam Merkezi. Tüm hakları saklıdır.</div>
 </footer>
 
 </body>

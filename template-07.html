@@ -3,157 +3,284 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dila Karakurt — Template 07: Wellness Spa</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+<title>Dila Karakurt — Wellness & Serenity</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-:root{--gr-dark:#3B6D11;--gr-light:#f0faf4;--gr-mid:#639922;--orange:#E8843A;--text:#2d421f;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Montserrat',sans-serif;background:var(--gr-light);color:var(--text);line-height:1.7}
-a{text-decoration:none}
-.back-bar{padding:12px 5%;background:#fff;font-size:13px;border-bottom:1px solid #d0ecc0}
-.back-bar a{color:var(--gr-dark);font-weight:700}
-header{background:var(--gr-dark);padding:20px 5%;color:#fff;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-header h1{letter-spacing:4px;text-transform:uppercase;font-size:20px}
-.nav-menu a{color:rgba(255,255,255,0.8);margin-left:25px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:0.3s}
-.nav-menu a:hover{color:#fff}
-.hero{display:flex;align-items:center;padding:100px 5%;max-width:1200px;margin:0 auto}
-.hero-left{flex:1;padding-right:60px}
-.hero-left h2{font-size:54px;font-family:'Lora',serif;font-style:italic;margin-bottom:20px;line-height:1.2;color:var(--gr-dark)}
-.hero-left p{font-size:18px;margin-bottom:40px;opacity:0.9}
-.btn-book{background:var(--orange);color:#fff;padding:16px 40px;border-radius:30px;font-weight:700;letter-spacing:1px;display:inline-block;box-shadow:0 10px 20px rgba(232,132,58,0.2)}
-.hero-right{flex:1;height:550px;background:linear-gradient(160deg, #C0DD97, var(--gr-mid));border-radius:15px;box-shadow:-20px 20px 0 var(--gr-dark);position:relative;display:flex;align-items:center;justify-content:center;font-size:60px;color:rgba(255,255,255,0.7)}
-.quote-sec{text-align:center;padding:80px 5%;background:#fff}
-.quote-sec blockquote{font-family:'Lora',serif;font-size:28px;font-style:italic;color:var(--gr-dark);max-width:800px;margin:0 auto 20px}
-.quote-sec cite{font-weight:700;color:var(--orange);letter-spacing:1px;text-transform:uppercase;font-size:13px}
-.section{padding:100px 5%;max-width:1200px;margin:0 auto}
-.sec-title{text-align:center;font-size:36px;margin-bottom:60px;color:var(--gr-dark);font-family:'Lora',serif}
-.ems-info{display:flex;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.05)}
-.ems-img{flex:1;background:var(--gr-mid);min-height:400px;display:flex;align-items:center;justify-content:center;font-size:50px}
-.ems-text{flex:1.2;padding:60px}
-.ems-text h3{font-size:26px;margin-bottom:20px;color:var(--gr-dark)}
-.ems-text p{margin-bottom:20px;opacity:0.9}
-.ems-ul{list-style:none}
-.ems-ul li{padding:10px 0;border-bottom:1px dashed #d0ecc0;display:flex;align-items:center;gap:15px}
-.ems-ul li::before{content:'🌿';}
-.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
-.faq-box{background:#fff;padding:30px;border-radius:10px;border-left:4px solid var(--gr-mid)}
-.faq-box h4{font-size:18px;margin-bottom:10px;color:var(--gr-dark)}
-.faq-box p{font-size:14px;opacity:0.8}
-.pricing-section{padding:100px 5%;background:var(--gr-dark);color:#fff}
-.pricing-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:30px;max-width:1100px;margin:0 auto}
-.pricing-card{background:#fff;color:var(--text);padding:50px 30px;text-align:center;border-radius:10px}
-.pricing-card.pop{transform:scale(1.05);box-shadow:0 20px 50px rgba(0,0,0,0.2);border:2px solid var(--orange)}
-.pricing-card h3{margin-bottom:15px;font-size:22px;color:var(--gr-dark)}
-.pricing-card .price{font-size:42px;font-weight:700;color:var(--orange);margin-bottom:25px}
-.btn-select{background:var(--gr-dark);color:#fff;padding:14px 30px;display:inline-block;border-radius:30px;font-weight:700;width:100%;margin-top:20px}
-.pricing-card.pop .btn-select{background:var(--orange)}
-.pkg-detail{text-align:left;list-style:none;margin-top:20px;font-size:14px}
-.pkg-detail li{padding:10px 0;border-bottom:1px solid #f0f0f0}
-footer{padding:60px;text-align:center;background:#fff;font-size:14px}
+:root { 
+    --forest: #1A281F; 
+    --sage: #A7BDA4; 
+    --sand: #FAF5F0; 
+    --copper: #C28D75; 
+    --gold: #A58B53; 
+    --cream: #FFFDF9; 
+    --text-dark: #2F352E;
+    --text-light: #7A8574;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Lato', sans-serif; background: var(--sand); color: var(--text-dark); line-height: 1.8; overflow-x: hidden; font-weight: 300; }
+a { text-decoration: none; color: inherit; transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+
+/* Ambient Background Dynamics */
+.ambient-blur { position: fixed; width: 60vw; height: 60vw; border-radius: 50%; background: radial-gradient(circle, rgba(167,189,164,0.15) 0%, rgba(250,245,240,0) 70%); top: -20vh; right: -20vw; z-index: -1; filter: blur(50px); pointer-events: none; }
+.ambient-blur-2 { position: fixed; width: 70vw; height: 70vw; border-radius: 50%; background: radial-gradient(circle, rgba(194,141,117,0.08) 0%, rgba(250,245,240,0) 70%); bottom: -30vh; left: -20vw; z-index: -1; filter: blur(60px); pointer-events: none; }
+
+/* Elegant Navigation */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 6%; position: absolute; width: 100%; top: 0; z-index: 100; border-bottom: 1px solid rgba(26,40,31,0.05); }
+.logo-area { display: flex; align-items: center; gap: 40px; }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 600; color: var(--forest); letter-spacing: 2px; text-transform: uppercase; }
+.logo span { color: var(--copper); font-style: italic; font-weight: 400; text-transform: lowercase; font-size: 34px; margin-left: 5px; }
+.nav-links { display: flex; gap: 40px; }
+.nav-links a { font-size: 13px; font-weight: 400; text-transform: uppercase; letter-spacing: 3px; color: var(--forest); position: relative; overflow: hidden; padding-bottom: 5px; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: -100%; width: 100%; height: 1px; background: var(--copper); transition: 0.4s; }
+.nav-links a:hover::after { left: 0; }
+.nav-btn { background: var(--forest); color: var(--cream); padding: 12px 30px; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; display: inline-block; border: 1px solid var(--forest); }
+.nav-btn:hover { background: transparent; color: var(--forest); }
+
+/* Organic Hero Section */
+.hero { min-height: 100vh; display: flex; padding: 0 6%; position: relative; align-items: center; margin-top: 50px; }
+.hero-content { flex: 1; padding-right: 5%; position: relative; z-index: 2; margin-top: -50px; }
+.h-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: var(--gold); margin-bottom: 30px; display: flex; align-items: center; gap: 15px; }
+.h-label::before { content: ''; width: 40px; height: 1px; background: var(--gold); }
+.hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 80px; font-weight: 400; line-height: 1; color: var(--forest); margin-bottom: 40px; }
+.hero-content h1 i { color: var(--sage); display: block; margin-top: 10px; font-size: 85px; margin-left: 40px; font-weight: 600; }
+.hero-content p { font-size: 16px; color: var(--text-light); max-width: 420px; margin-bottom: 50px; line-height: 2; border-left: 1px solid var(--sage); padding-left: 20px; }
+.h-actions { display: flex; gap: 30px; align-items: center; }
+.play-btn { width: 60px; height: 60px; border-radius: 50%; border: 1px solid var(--copper); display: flex; align-items: center; justify-content: center; color: var(--copper); font-size: 12px; font-weight: 700; letter-spacing: 2px; position: relative; }
+.play-btn::before { content: ''; position: absolute; width: 100%; height: 100%; border-radius: 50%; border: 1px solid var(--copper); animation: ripple 2s infinite; }
+@keyframes ripple { 0% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.5); opacity: 0; } }
+
+/* Archway Visual */
+.hero-visual { flex: 0.9; height: 80vh; position: relative; display: flex; justify-content: flex-end; align-items: flex-end; }
+.arch-frame { width: 90%; height: 95%; background: var(--cream); border-radius: 999px 999px 0 0; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 1px solid rgba(167,189,164,0.4); box-shadow: 0 40px 100px rgba(26,40,31,0.06); transform: scale(0.95); transform-origin: top center; animation: arch-breathe 8s ease-in-out infinite alternate; }
+@keyframes arch-breathe { 0% { transform: scale(0.98); } 100% { transform: scale(1); } }
+.arch-frame::after { content: 'SPA'; font-family: 'Cormorant Garamond', serif; font-size: 200px; color: rgba(167,189,164,0.1); position: absolute; bottom: -60px; font-weight: 600; line-height: 0.8; letter-spacing: -5px; }
+.leaf-accent { position: absolute; left: -30px; top: 100px; font-size: 100px; color: var(--forest); opacity: 0.03; transform: rotate(-30deg); pointer-events: none; }
+
+/* The Art of EMS */
+.art-sec { padding: 150px 6%; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; background: var(--cream); position: relative; }
+.art-img { width: 100%; height: 600px; background: rgba(167,189,164,0.1); border-radius: 0 200px 0 200px; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--copper); font-style: italic; border: 1px dashed rgba(167,189,164,0.6); position: relative; }
+.art-img::before { content: ''; position: absolute; width: 100%; height: 100%; border: 1px solid var(--forest); top: -20px; left: -20px; border-radius: 0 200px 0 200px; z-index: 0; opacity: 0.1; }
+.art-content { position: relative; z-index: 2; }
+.s-title { font-family: 'Cormorant Garamond', serif; font-size: 54px; line-height: 1.1; color: var(--forest); margin-bottom: 30px; font-weight: 400; }
+.s-desc { font-size: 16px; color: var(--text-light); margin-bottom: 40px; line-height: 2; font-weight: 300; }
+.ritual-list { list-style: none; }
+.ritual-list li { padding: 25px 0; border-top: 1px solid rgba(26,40,31,0.1); display: flex; align-items: flex-start; gap: 20px; }
+.r-num { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-style: italic; color: var(--copper); line-height: 1; }
+.r-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--forest); margin-bottom: 5px; font-weight: 600; }
+.r-text p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+
+/* Testimonial Gallery */
+.gallery { padding: 150px 6%; text-align: center; }
+.g-head { font-family: 'Cormorant Garamond', serif; font-size: 48px; color: var(--forest); margin-bottom: 20px; }
+.g-sub { font-size: 12px; text-transform: uppercase; letter-spacing: 4px; color: var(--copper); margin-bottom: 80px; display: block; }
+.test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+.test-card { background: var(--cream); padding: 50px 40px; border: 1px solid rgba(26,40,31,0.05); position: relative; transition: 0.4s; }
+.test-card:hover { transform: translateY(-15px); box-shadow: 0 30px 60px rgba(167,189,164,0.2); border-color: rgba(167,189,164,0.5); }
+.test-card::before { content: '”'; position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 150px; color: rgba(194,141,117,0.1); top: -20px; left: 20px; line-height: 1; }
+.test-card p { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-style: italic; color: var(--forest); line-height: 1.6; margin-bottom: 30px; position: relative; z-index: 2; }
+.test-name { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--copper); }
+.test-res { display: block; font-size: 11px; margin-top: 5px; color: var(--text-light); }
+
+/* The Menu (Pricing) */
+.menu-sec { padding: 150px 6%; background: var(--forest); color: var(--sand); display: flex; align-items: stretch; gap: 80px; }
+.menu-left { flex: 1; }
+.menu-left h2 { font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 400; line-height: 1; color: var(--cream); margin-bottom: 30px; }
+.menu-left p { font-size: 16px; color: rgba(250,245,240,0.6); max-width: 400px; line-height: 2; margin-bottom: 50px; }
+img.menu-leaf { width: 100px; opacity: 0.3; filter: invert(1); }
+
+.menu-right { flex: 1.5; display: flex; flex-direction: column; gap: 30px; }
+.menu-item { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 20px; border-bottom: 1px solid rgba(250,245,240,0.15); transition: 0.3s; position: relative; }
+.menu-item:hover { border-bottom-color: var(--copper); padding-left: 20px; }
+.menu-item::after { content: '↗'; position: absolute; right: 0; top: 10px; font-size: 12px; color: var(--copper); opacity: 0; transition: 0.3s; }
+.menu-item:hover::after { opacity: 1; right: -20px; }
+.m-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--copper); margin-bottom: 10px; font-weight: 400; }
+.m-info p { font-size: 13px; color: rgba(250,245,240,0.5); letter-spacing: 1px; text-transform: uppercase; }
+.m-price { font-family: 'Cormorant Garamond', serif; font-size: 38px; color: var(--cream); font-style: italic; }
+
+/* FAQ Accordion Serenity */
+.faq-sec { padding: 150px 6%; max-width: 900px; margin: 0 auto; text-align: center; }
+.faq-list { margin-top: 60px; text-align: left; }
+.faq-row { border-bottom: 1px solid rgba(26,40,31,0.1); padding: 30px 0; }
+.faq-row h4 { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--forest); margin-bottom: 15px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+.faq-row h4::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--copper); }
+.faq-row p { font-size: 15px; color: var(--text-light); line-height: 1.8; padding-right: 40px; }
+
+/* Serene Footer */
+footer { padding: 60px 6%; border-top: 1px solid rgba(26,40,31,0.05); text-align: center; }
+.f-logo { font-family: 'Cormorant Garamond', serif; font-size: 40px; color: var(--forest); margin-bottom: 10px; }
+.f-line { width: 1px; height: 60px; background: var(--copper); margin: 30px auto; }
+.f-copy { font-size: 11px; text-transform: uppercase; letter-spacing: 4px; color: var(--text-light); }
+
+@media(max-width: 900px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 150px; min-height: auto; }
+    .hero-content { padding: 0; margin: 0 0 60px 0; }
+    .hero-content h1 { font-size: 56px; }
+    .hero-content h1 i { margin-left: 0; font-size: 60px; }
+    .hero-content p { border: none; padding: 0; margin: 0 auto 40px; }
+    .h-label { justify-content: center; }
+    .h-label::before { display: none; }
+    .h-actions { justify-content: center; }
+    .arch-frame { width: 100%; height: 500px; }
+    .art-sec, .menu-sec { flex-direction: column; gap: 60px; padding: 80px 6%; }
+    .art-img { height: 400px; border-radius: 40px; }
+    .art-img::before { display: none; }
+    .test-grid { grid-template-columns: 1fr; }
+    .menu-left { text-align: center; }
+    .menu-left p { margin: 0 auto 40px; }
+    nav .nav-links { display: none; }
+}
 </style>
 </head>
 <body>
-<div class="back-bar"><a href="index.html">← DİĞER TASARIMLAR</a></div>
-<header>
-    <h1>Dila Karakurt</h1>
-    <div class="nav-menu">
-        <a href="#ems">SPA & EMS</a>
-        <a href="#veri">Sonuçlar</a>
-        <a href="#fiyat">Programlar</a>
+
+<div class="ambient-blur"></div>
+<div class="ambient-blur-2"></div>
+
+<nav>
+    <div class="logo-area">
+        <div class="logo">Dila <span>Wellness</span></div>
     </div>
-</header>
+    <div class="nav-links">
+        <a href="#felsefe">Felsefemiz</a>
+        <a href="#ems">Meta Slim Ritüeli</a>
+        <a href="#ucretler">Danışmanlıklar</a>
+    </div>
+    <a href="index.html" class="nav-btn">Geri Dön</a>
+</nav>
 
 <section class="hero">
-    <div class="hero-left">
-        <h2>Wellness &<br>EMS Uzmanlığı</h2>
-        <p>Bedeninizi dinlendirin, kaslarınızı Meta Slim B-8317 teknolojisiyle güçlendirin. Klinik seviyesinde, huzurlu bir ortamda incelmenin keyfini çıkarın.</p>
-        <a href="#fiyat" class="btn-book">Seans Randevusu</a>
-    </div>
-    <div class="hero-right">✨</div>
-</section>
-
-<div class="quote-sec">
-    <blockquote>"Beden, ruhun evidir. Onu sağlıkla, bilinçli beslenmeyle ve doğru kas uyarımıyla inşa ettiğinizde, iç huzurunuz da aynı oranda parlar."</blockquote>
-    <cite>Diyetisyen Dila Karakurt (@diyetisyendilakarakurt)</cite>
-</div>
-
-<section id="ems" class="section">
-    <h2 class="sec-title">Cihaz SPA Deneyimi</h2>
-    <div class="ems-info">
-        <div class="ems-img">🌿</div>
-        <div class="ems-text">
-            <h3>Elektromanyetik Rahatlama ve Güçlenme</h3>
-            <p>Meta Slim GS Makine cihazımızla 20 dakikalık konforlu EMS seansları, sıradan diyetleri klinisyen onaylı bir vücut şekillendirme programına çevirir.</p>
-            <ul class="ems-ul">
-                <li>Acısız ve yorgunluk hissi bırakmayan terapi</li>
-                <li>Lenfatik masaj etkisi ile hızlı ödem atma</li>
-                <li>Selülit görünümünde gözle görülür azalma</li>
-                <li>Aynı anda beslenmeyle destekli yağ yakımı</li>
-            </ul>
+    <div class="hero-content">
+        <div class="h-label">Arınma ve Yenilenme</div>
+        <h1>Sükunet İçinde <br><i>İncelin.</i></h1>
+        <p>Bedeninize nazik davranarak, sükunet dolu bir atmosferde Meta Slim B-8317 onaylı elektromanyetik teknoloji ile yepyeni bir forma adım atın.</p>
+        <div class="h-actions">
+            <a href="#ucretler" class="nav-btn">SPA & Klinik Menüsü</a>
+            <a href="#" class="play-btn">MOTO</a>
         </div>
+    </div>
+    <div class="hero-visual">
+        <div class="arch-frame">
+            <div style="font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--forest); font-style: italic; opacity: 0.5;">Huzur ve Sağlık</div>
+        </div>
+        <div class="leaf-accent">🌿</div>
     </div>
 </section>
 
-<section id="veri" class="section">
-    <h2 class="sec-title">Gerçek Bedenler, Sık Sorulanlar</h2>
-    <div class="faq-grid">
-        <div class="faq-box">
-            <h4>Seanslar Ağrılı mıdır?</h4>
-            <p>Hayır, yalnızca kaslarda güçlü ancak keyifli bir titreşim eforu hissedersiniz. Rahatsız edici bir elektrik akımı kesinlikle hissetmezsiniz.</p>
+<section id="felsefe" class="art-sec">
+    <div class="art-img">
+        Denge.
+    </div>
+    <div class="art-content">
+        <h2 class="s-title">Yeni Bedeninizin, <br>Meta Slim Ritüeli.</h2>
+        <p class="s-desc">Size özel hazırladığımız diyet listeleri kesinlikle sizi aç bırakmaz, yalnızca ruhunuzu ve bedeninizi yanlış enerjilerden arındırır. Bu arınmaya ise GS Makine onaylı yüksek teknoloji ürünü eşlik eder.</p>
+        
+        <ul class="ritual-list">
+            <li>
+                <div class="r-num">01.</div>
+                <div class="r-text">
+                    <h4>Danışmanlık ve Analiz</h4>
+                    <p>Kan testleriniz, yaşam ritminiz ve metabolizma kodlarınız analiz edilerek yalnızca size ait olan o kusursuz yeme rutini planlanır.</p>
+                </div>
+            </li>
+            <li>
+                <div class="r-num">02.</div>
+                <div class="r-text">
+                    <h4>Hücresel Aktivasyon (EMS)</h4>
+                    <p>Kliniğimizin konforunda sadece 20 dakika uzanarak, kaslarınızın elektromanyetik dalgalarla 18 kat fazla çalışmasına izin verin.</p>
+                </div>
+            </li>
+            <li>
+                <div class="r-num">03.</div>
+                <div class="r-text">
+                    <h4>Lenfatik Çözülme</h4>
+                    <p>Doğru su tüketimi eşliğinde, parçalanan selülit dokularının ve ödemlerin bedeninizi nazikçe terk etmesini izleyin.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<section class="gallery">
+    <span class="g-sub">Dila Wellness Ailesi</span>
+    <h2 class="g-head">Değişimin Estetiği</h2>
+    
+    <div class="test-grid">
+        <div class="test-card">
+            <p>Hayatımda denediğim en huzurlu ve sonuç odaklı sistem. Ağrısız sızısız 3 ay içinde kalıcı bir yolla fazlalıklarımdan kurtuldum.</p>
+            <div class="test-name">Ayşe Keskin</div>
+            <span class="test-res">Kayıp: 12 KG</span>
         </div>
-        <div class="faq-box">
-            <h4>3 Ayda 12 Kilo Kaybı (Ayşe K.)</h4>
-            <p>Sizlerin de okuyabileceği başarı hikayelerinden sadece biri: Sıkı ve kişiselleştirilmiş bir program ile sarkmadan zayıflama mümkün.</p>
+        <div class="test-card">
+            <p>EMS teknolojisinin bölgesel incelmedeki o muazzam gücünü ikinci seansta kıyafetlerimden fark ettim. Çok başarılı bir klinik yaklaşımı.</p>
+            <div class="test-name">Merve Taşçı</div>
+            <span class="test-res">Kayıp: 8 KG (8 Hafta)</span>
         </div>
-        <div class="faq-box">
-            <h4>Bunu Biliyor Musunuz?</h4>
-            <p>EMS uyarımının standart egzersize oranla kas liflerini 18 kat daha verimli analiz edip aktifleştirdiği klinik olarak kanıtlanmıştır.</p>
-        </div>
-        <div class="faq-box">
-            <h4>Su Tüketiminin SPA Etkisi</h4>
-            <p>Hazırladığımız yürüyüş ve diyet programlarında suyu odak noktasına koyarak, vücudunuzun arınma (detoks) hızını %40 oranında artırıyoruz.</p>
+        <div class="test-card">
+            <p>Açlık krizleri geçirmeden, Dila Hanım'ın sıcak takibi ve o inanılmaz cihazın gücüyle yeni bir bedene kavuşmak paha biçilemez.</p>
+            <div class="test-name">Selin Bayer</div>
+            <span class="test-res">Kayıp: 6 KG (6 Hafta)</span>
         </div>
     </div>
 </section>
 
-<section id="fiyat" class="pricing-section">
-    <h2 class="sec-title" style="color:#fff">Hizmet Paketleri</h2>
-    <div class="pricing-grid">
-        <div class="pricing-card">
-            <h3>Başlangıç Diyet</h3>
-            <div class="price">₺1.200</div>
-            <ul class="pkg-detail">
-                <li>4 Hafta Detaylı Takip</li>
-                <li>1 Tam Beden Vücut Analizi</li>
-                <li>Online WhatsApp İletişimi</li>
-            </ul>
-            <a href="#" class="btn-select">Hemen Al</a>
+<section id="ucretler" class="menu-sec">
+    <div class="menu-left">
+        <h2>Seans <br>İçerikleri</h2>
+        <p>Bedeninize yapacağınız bu asil yatırımın şeffaf yapısı. Lütfen randevularınız için iletişime geçin.</p>
+        <span style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--copper); font-style: italic;">Sonsuz Döngü, Saf Beslenme.</span>
+    </div>
+    
+    <div class="menu-right">
+        <div class="menu-item">
+            <div class="m-info">
+                <h3>Klasik Diyet Takibi</h3>
+                <p>Beslenme Yönetimi • Hafta Sonu Raporlama</p>
+            </div>
+            <div class="m-price">₺1.200</div>
         </div>
-        <div class="pricing-card pop">
-            <h3>Pro (Diyet+EMS)</h3>
-            <div class="price">₺2.500</div>
-            <ul class="pkg-detail">
-                <li><strong>8 Seans Meta Slim EMS</strong></li>
-                <li>Haftalık Diyet Değişimi</li>
-                <li>Vücut Kas/Yağ Analizi</li>
-            </ul>
-            <a href="#" class="btn-select">Popüler Paket</a>
+        
+        <div class="menu-item">
+            <div class="m-info">
+                <h3>Diyet & EMS Kombinasyonu</h3>
+                <p>Ayda 8 Seans Cihaz Kullanımı • Kombine Beslenme Planı</p>
+            </div>
+            <div class="m-price">₺2.500</div>
         </div>
-        <div class="pricing-card">
-            <h3>Premium Bakım</h3>
-            <div class="price">₺4.000</div>
-            <ul class="pkg-detail">
-                <li><strong>12 Seans Yoğun EMS</strong></li>
-                <li>Öncelikli SPA Seansı</li>
-                <li>Günlük Yemek Takibi</li>
-            </ul>
-            <a href="#" class="btn-select">Hemen Al</a>
+        
+        <div class="menu-item">
+            <div class="m-info">
+                <h3>Özel VIP Arınma</h3>
+                <p>Aylık 12 EMS Seansı • Öncelikli Süreç Takibi • Birebir İletişim</p>
+            </div>
+            <div class="m-price">₺4.000</div>
+        </div>
+    </div>
+</section>
+
+<section class="faq-sec">
+    <h2 class="g-head">Sakin Bir Zihin İçin Bilgiler</h2>
+    <span class="g-sub">Bunu Biliyor Musunuz?</span>
+    
+    <div class="faq-list">
+        <div class="faq-row">
+            <h4>Seanslar sırasında acı hissedilir mi?</h4>
+            <p>Sistemimiz tamamen acısız ve sızısızdır. Kaslarda sadece konforlu ve derin bir titreşim hissedersiniz, tıpkı yoğun ama sükunet dolu bir egzersiz sonrası oluşan tatlı yorgunluk gibi.</p>
+        </div>
+        <div class="faq-row">
+            <h4>Meta Slim teknolojisinin sırrı nedir?</h4>
+            <p>Orijinal olarak astronotların kas kaybını engellemek için üretilen teknoloji üzerine tasarlanmıştır. Geleneksel egzersizlere oranla derin dokulardaki kas liflerinizi 18 kat daha verimli aktive eder.</p>
+        </div>
+        <div class="faq-row">
+            <h4>Kimler bu hizmeti alamamaktadır?</h4>
+            <p>Müşteri sağlığı en önemli kriterimizdir. Kalp pili taşıyanlar ve gebelik durumu olanlar için elektromanyetik uyarım önerilmemektedir.</p>
         </div>
     </div>
 </section>
 
 <footer>
-    <p>&copy; 2025 Diyetisyen Dila Karakurt Wellness Clinic | B-8317 Sertifikalı Merkez</p>
+    <div class="f-logo">Dila Wellness</div>
+    <div class="f-line"></div>
+    <div class="f-copy">Klinik Meta Slim Beslenme © 2025. Tüm Hakları Saklıdır.</div>
 </footer>
 
 </body>

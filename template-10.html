@@ -3,154 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dila Karakurt — Template 10: Instagram First</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<title>Dila Karakurt — IG & Visual Driven</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
-:root{--green:#3B6D11;--orange:#E8843A;--purple:#7C4D8B;}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;background:#fafafa;color:#262626;line-height:1.5}
-.back-bar{padding:15px;background:#fff;border-bottom:1px solid #dbdbdb;text-align:center}
-.back-bar a{color:#00376b;text-decoration:none;font-size:14px;font-weight:600}
-nav{background:#fff;padding:15px 20px;border-bottom:1px solid #dbdbdb;display:flex;justify-content:center;position:sticky;top:0;z-index:100;height:60px;align-items:center}
-.logo{font-family:Georgia, serif;font-weight:700;font-size:20px;letter-spacing:1px}
+:root { --bg: #FFFFFF; --text: #262626; --muted: #8E8E8E; --border: #DBDBDB; --ig-o: #F58529; --ig-p: #DD2A7B; --ig-v: #8134AF; --blue: #0095F6; --green: #3B6D11;}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
 
-/* Main Container */
-.container{max-width:935px;margin:30px auto;padding:0 20px}
+/* Sticky Header */
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 100; }
+.logo { font-size: 22px; font-weight: 800; letter-spacing: -0.5px; display: flex; align-items: center; gap: 10px; }
+.logo span { background: linear-gradient(45deg, var(--ig-o), var(--ig-p)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 900; }
+.nav { display: flex; gap: 30px; }
+.nav a { font-size: 14px; font-weight: 600; color: var(--text); }
+.nav a:hover { color: var(--ig-p); }
+.btn-ig { background: linear-gradient(45deg, var(--ig-o), var(--ig-p), var(--ig-v)); color: #fff; padding: 8px 24px; border-radius: 100px; font-size: 13px; font-weight: 700; }
 
-/* Profile Header */
-.profile-header{display:flex;gap:50px;margin-bottom:44px}
-.profile-pic{width:150px;height:150px;border-radius:50%;background:linear-gradient(45deg, var(--orange), var(--purple));padding:4px;flex-shrink:0}
-.profile-pic div{width:100%;height:100%;border-radius:50%;background:#eee;border:2px solid #fff}
-.profile-info{flex:1}
-.top-row{display:flex;align-items:center;gap:20px;margin-bottom:20px}
-.username{font-size:28px;font-weight:300}
-.btn-blue{background:#0095f6;color:#fff;padding:7px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
-.btn-gray{background:#efefef;color:#262626;padding:7px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px}
-.stats{display:flex;gap:40px;margin-bottom:20px}
-.stats span{font-size:16px}
-.stats strong{font-weight:600}
-.bio h1{font-size:14px;font-weight:600;margin-bottom:5px}
-.bio p{font-size:14px;white-space:pre-line;}
+/* Visual Hero / IG Grid Header */
+.hero { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 5px; padding: 5px; }
+.hero-box { background: #f0f0f0; position: relative; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; color: #fff; overflow: hidden; }
+.hero-box::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(transparent, rgba(0,0,0,0.7)); }
+.h-b-1 { grid-row: span 2; background: linear-gradient(135deg, var(--green), #569B1B); }
+.h-b-2 { background: var(--ig-p); }
+.h-b-3 { background: var(--ig-o); }
+.h-b-4 { grid-column: span 2; background: var(--ig-v); }
+.h-content { position: relative; z-index: 2; }
+.hero-box h2 { font-size: 24px; font-weight: 800; line-height: 1.2; margin-bottom: 10px; }
+.h-b-1 h2 { font-size: 48px; }
+.hero-box p { font-size: 14px; font-weight: 500; opacity: 0.9; }
 
-/* Highlights */
-.highlights{display:flex;gap:35px;margin-bottom:44px;overflow-x:auto;padding-bottom:10px}
-.highlight{display:flex;flex-direction:column;align-items:center;gap:10px}
-.hl-img{width:77px;height:77px;border-radius:50%;border:1px solid #dbdbdb;padding:3px;display:flex;align-items:center;justify-content:center;font-size:24px;background:#fff}
-.highlight span{font-size:12px;font-weight:600;letter-spacing:0.5px}
+/* Clinic Profile Banner */
+.clinic-profile { padding: 80px 5%; max-width: 1200px; margin: 0 auto; display: flex; gap: 60px; align-items: flex-start; }
+.cp-img-circle { width: 180px; height: 180px; border-radius: 50%; padding: 5px; background: linear-gradient(45deg, var(--ig-o), var(--ig-p), var(--ig-v)); flex-shrink: 0; }
+.cp-img-in { width: 100%; height: 100%; border: 4px solid #fff; border-radius: 50%; background: #eee; }
+.cp-info { flex: 1; }
+.cp-title { display: flex; align-items: center; gap: 20px; border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 20px; }
+.cp-title h1 { font-size: 32px; font-weight: 300; }
+.badge { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: var(--blue); color: #fff; font-size: 12px; border-radius: 50%; font-weight: bold; }
+.cp-desc { font-size: 16px; margin-bottom: 30px; }
+.cp-desc strong { font-weight: 700; color: var(--text); display: block; margin-bottom: 10px; }
+.cp-grid-stats { display: flex; gap: 40px; margin-bottom: 30px; }
+.cp-grid-stats div { font-size: 16px; color: var(--text); }
+.cp-grid-stats span { font-weight: 700; font-size: 20px; display: block; }
+.social-buttons { display: flex; gap: 15px; }
+.social-buttons a { padding: 12px 30px; background: #EFEFEF; border-radius: 8px; font-size: 14px; font-weight: 600; }
+.social-buttons a.primary { background: var(--blue); color: #fff; }
 
-/* TABS */
-.tabs{display:flex;justify-content:center;border-top:1px solid #dbdbdb;gap:60px}
-.tab{padding:18px 0;font-size:12px;font-weight:600;color:#8e8e8e;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border-top:1px solid transparent}
-.tab.active{color:#262626;border-top:1px solid #262626}
+/* Services (Highlight Reels) */
+.services-real { padding: 0 5% 80px; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; gap: 20px; overflow-x: auto; }
+.sr-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 10px; min-width: 100px; }
+.sr-ring { width: 90px; height: 90px; border: 1px solid var(--border); border-radius: 50%; padding: 4px; display: flex; align-items: center; justify-content: center; }
+.sr-box { width: 100%; height: 100%; border-radius: 50%; background: #F8F8F8; display: flex; align-items: center; justify-content: center; font-size: 24px; border: 1px solid var(--border); transition: 0.3s; }
+.sr-item:hover .sr-box { background: var(--ig-p); color: #fff; border-color: var(--ig-p); }
+.sr-item span { font-size: 13px; font-weight: 600; text-transform: uppercase; }
 
-/* IG GRID */
-.ig-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:4px;padding-bottom:50px}
-.grid-item{aspect-ratio:1/1;background:#efefef;position:relative;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;color:#fff}
+/* Pricing Visual Cards */
+.v-pricing { padding: 80px 5%; background: #FAFAFA; border-top: 1px solid var(--border); }
+.vp-header { text-align: center; margin-bottom: 60px; }
+.vp-header h2 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+.vp-header p { font-size: 15px; color: var(--muted); }
 
-/* Specific Items */
-.item-1{background:linear-gradient(135deg, var(--green), #85c83b);grid-column:span 2;grid-row:span 2;}
-.item-1 h2{font-size:32px;margin-bottom:10px}
-.item-2{background:var(--orange)}
-.item-3{background:var(--purple)}
-.item-4{background:#555}
-.item-5{background:#777}
-.grid-item h3{font-size:18px;margin-bottom:5px}
-.grid-item p{font-size:12px;opacity:0.9}
+.vp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
+.vp-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: 0.3s; }
+.vp-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.06); border-color: var(--ig-o); }
+.vp-img { height: 200px; background: linear-gradient(45deg, #eee, #ddd); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #fff; font-weight: 900; }
+.vp-body { padding: 40px 30px; text-align: center; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.vp-body h3 { font-size: 20px; font-weight: 700; margin-bottom: 5px; }
+.vp-body h4 { font-size: 36px; color: var(--text); font-weight: 900; margin-bottom: 20px; }
+.vp-body p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 30px; }
+.vp-btn { width: 100%; background: #EFEFEF; color: var(--text); padding: 14px; border-radius: 8px; font-weight: 700; font-size: 14px; }
+.vp-card:hover .vp-btn { background: var(--blue); color: #fff; }
 
-/* Mobile Friendly */
-@media(max-width: 735px){
-    .profile-header{gap:20px}
-    .profile-pic{width:77px;height:77px}
-    .stats{display:none} /* in real IG it goes below bio, keeping simple here */
-    .top-row{flex-direction:column;align-items:flex-start}
+/* Footer */
+footer { padding: 40px 5%; text-align: center; font-size: 13px; color: var(--muted); border-top: 1px solid var(--border); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+@media(max-width: 900px) {
+    .nav { display: none; }
+    .hero { grid-template-columns: 1fr; grid-template-rows: 300px 200px 200px 200px; }
+    .h-b-1, .h-b-4 { grid-column: span 1; }
+    .clinic-profile { flex-direction: column; text-align: center; align-items: center; }
+    .cp-title, .cp-grid-stats, .social-buttons { justify-content: center; }
+    .vp-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-<div class="back-bar"><a href="index.html">← INDEX TEMPLATELERE DÖN</a></div>
-<nav>
-    <div class="logo">diyetisyendilakarakurt</div>
-</nav>
 
-<div class="container">
-    <header class="profile-header">
-        <div class="profile-pic"><div></div></div>
-        <div class="profile-info">
-            <div class="top-row">
-                <div class="username">diyetisyendilakarakurt</div>
-                <div style="display:flex; gap:10px">
-                    <a href="#" class="btn-gray">Mesaj Gönder</a>
-                    <a href="#" class="btn-blue">Randevu Al</a>
-                </div>
-            </div>
-            <div class="stats">
-                <span><strong>54</strong> gönderi</span>
-                <span><strong>10.2k</strong> takipçi</span>
-            </div>
-            <div class="bio">
-                <h1>Dila Karakurt</h1>
-                <p>👩‍⚕️ Diyetisyen & EMS Sağlıklı Yaşam Merkezi
-⚡ GS Makine (Meta Slim B-8317) Uzmanlığı
-🍏 Kişiye Özel Beslenme Programları
-📍 Açlıkla Değil, Kalıcı İncelmeyle Tanışın
-👇 Fiyat ve İletişim İçin Tıklayın
-<a href="#" style="color:#00376b; font-weight:600">dilafit.link/randevu</a></p>
-            </div>
-        </div>
-    </header>
-
-    <div class="highlights">
-        <div class="highlight"><div class="hl-img" style="color:var(--orange)">📦</div><span>PAKETLER</span></div>
-        <div class="highlight"><div class="hl-img" style="color:var(--green)">⚡</div><span>EMS NEDİR?</span></div>
-        <div class="highlight"><div class="hl-img" style="color:var(--purple)">🌟</div><span>BAŞARILAR</span></div>
-        <div class="highlight"><div class="hl-img" style="color:#555">❓</div><span>S.S.S</span></div>
-        <div class="highlight"><div class="hl-img" style="color:#888">💪</div><span>MOTİVASYON</span></div>
+<header>
+    <a href="index.html" class="logo">DİLA<span>KARAKURT</span></a>
+    <div class="nav">
+        <a href="#hizmetler">Klinik Servisleri</a>
+        <a href="#fiyatlar">Paket Listesi</a>
+        <a href="#">S.S.S</a>
     </div>
+    <a href="index.html" class="btn-ig">Tüm Temalara Dön</a>
+</header>
 
-    <div class="tabs">
-        <div class="tab active">GÖNDERİLER</div>
-        <div class="tab">BİLGİLENDİRME</div>
-    </div>
-
-    <div class="ig-grid">
-        <div class="grid-item item-1">
-            <div>
-                <h2>EMS İle Zayıfla!</h2>
-                <p>20 dakikada 4 saatlik etki sağlayan Meta Slim teknolojisiyle incel.</p>
-            </div>
-        </div>
-        <div class="grid-item item-2">
-            <div>
-                <h3>1.200₺*</h3>
-                <p>Sadece Diyet Planı</p>
-            </div>
-        </div>
-        <div class="grid-item item-3">
-            <div>
-                <h3>2.500₺*</h3>
-                <p>Diyet + 8 Seans EMS</p>
-            </div>
-        </div>
-        <div class="grid-item item-4">
-            <div>
-                <h3>Acı Verir mi?</h3>
-                <p>Hayır, risksiz titreşim.</p>
-            </div>
-        </div>
-        <div class="grid-item item-5">
-            <div>
-                <h3>Bunu Biliyor Musunuz?</h3>
-                <p>EMS 18x daha fazla çalıştırır.</p>
-            </div>
-        </div>
-        <div class="grid-item" style="background:var(--green)">
-            <div>
-                <h3>Ayşe K. (-12 KG)</h3>
-                <p>Başarı Hikayesi</p>
-            </div>
+<section class="hero">
+    <div class="hero-box h-b-1">
+        <div class="h-content">
+            <h2>Kalıcı<br>Sıkılaşma</h2>
+            <p>Meta Slim EMS teknolojisi ile tanışın.</p>
         </div>
     </div>
-</div>
+    <div class="hero-box h-b-2">
+        <div class="h-content">
+            <h2>-12 KG Kayıp</h2>
+            <p>Ayşe K.'nın başarı serüveni.</p>
+        </div>
+    </div>
+    <div class="hero-box h-b-3">
+        <div class="h-content">
+            <h2>%1800 Etki</h2>
+            <p>Normale göre kas aktivasyonu.</p>
+        </div>
+    </div>
+    <div class="hero-box h-b-4">
+        <div class="h-content">
+            <h2>20 Dakika</h2>
+            <p>Zamana karşı en güçlü yatırım. Seans süreleri spor yorgunluğu yaratmaz.</p>
+        </div>
+    </div>
+</section>
+
+<section class="clinic-profile">
+    <div class="cp-img-circle">
+        <div class="cp-img-in"></div>
+    </div>
+    <div class="cp-info">
+        <div class="cp-title">
+            <h1>diyetisyendilakarakurt</h1>
+            <span class="badge">✓</span>
+        </div>
+        <div class="cp-grid-stats">
+            <div><span>54</span> Gönderi (Kanıt)</div>
+            <div><span>543</span> Klinik Danışanı</div>
+            <div><span>20M</span> Seans Süresi</div>
+        </div>
+        <div class="cp-desc">
+            <strong>Diyetisyen Dila Karakurt • B-8317 Sertifikalı Merkez</strong>
+            Aç bırakan klşelerden uzaklaşın. Vücudunuzu tanıyor, kan değerlerinize uygun beslenme planlarını Meta Slim (Elektromanyetik) teknolojisiyle hızlandırıyoruz. Sarkan bölgelerinizi saniyeler içinde onarmaya yardımcı oluyoruz. ✨👇
+        </div>
+        <div class="social-buttons">
+            <a href="#fiyatlar" class="primary">Program Seç</a>
+            <a href="#">Canva Postları</a>
+        </div>
+    </div>
+</section>
+
+<section class="services-real" id="hizmetler">
+    <div class="sr-item">
+        <div class="sr-ring"><div class="sr-box">⚡</div></div>
+        <span>EMS Cihazı</span>
+    </div>
+    <div class="sr-item">
+        <div class="sr-ring"><div class="sr-box">🍏</div></div>
+        <span>Beslenme</span>
+    </div>
+    <div class="sr-item">
+        <div class="sr-ring"><div class="sr-box">✨</div></div>
+        <span>SPA & Detoks</span>
+    </div>
+    <div class="sr-item">
+        <div class="sr-ring"><div class="sr-box">🎯</div></div>
+        <span>Ölçüm</span>
+    </div>
+    <div class="sr-item">
+        <div class="sr-ring"><div class="sr-box">🏆</div></div>
+        <span>Hikayeler</span>
+    </div>
+</section>
+
+<section class="v-pricing" id="fiyatlar">
+    <div class="vp-header">
+        <h2>Şeffaf Yatırım, Görsel Sonuçlar.</h2>
+        <p>Bütçenize dost ve hedefinize doğrudan ulaşmanızı sağlayan paket listemiz.</p>
+    </div>
+    
+    <div class="vp-grid">
+        <div class="vp-card">
+            <div class="vp-img" style="background:var(--blue)">KLASİK DİYET</div>
+            <div class="vp-body">
+                <h3>Aylık Takip</h3>
+                <h4>₺1.200</h4>
+                <p>1 aylık beslenme rotası. WhatsApp bildirimleri ve kalıcı motivasyon desteği ile kısıtlamadan kilo verin.</p>
+                <a href="#" class="vp-btn">Paketi Seç</a>
+            </div>
+        </div>
+        <div class="vp-card" style="border-color: var(--ig-p); box-shadow: 0 10px 40px rgba(221,42,123,0.15); transform: translateY(-5px);">
+            <div class="vp-img" style="background:var(--ig-p)">DİYET + EMS</div>
+            <div class="vp-body">
+                <h3>8 Cihaz Seansı</h3>
+                <h4 style="color:var(--ig-p)">₺2.500</h4>
+                <p>Siz diyetinizle zayıflarken, profesyonel cihazımız sarkan tüm derilerinizi tamir edip hücresel seviyede kas inşasını tetikler.</p>
+                <a href="#" class="vp-btn" style="background:var(--ig-p); color:#fff;">Popüler Seçim</a>
+            </div>
+        </div>
+        <div class="vp-card">
+            <div class="vp-img" style="background:var(--text)">V.I.P ERİŞİM</div>
+            <div class="vp-body">
+                <h3>12 Seans + Öncelik</h3>
+                <h4>₺4.000</h4>
+                <p>Bekleme sürelerini sıfıra indiren, limitsiz soru sorma hakkı tanıyan ve haftada 3 gün EMS kullandıran yoğun bakım.</p>
+                <a href="#" class="vp-btn">İletişime Geç</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    © 2025 Dila Karakurt Beslenme Stüdyosu. Tüm Tasarım ve Veriler Canva vb. Altyapılarla Entegre Edilmiştir.
+</footer>
 
 </body>
 </html>
