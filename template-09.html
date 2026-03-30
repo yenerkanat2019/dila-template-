@@ -3,35 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DilaFit — Story Driven</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<title>Dila Karakurt — Template 09: Story Driven</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+:root{--dark-purple:#1c0a2e;--dark-card:#2d1748;--bright-purple:#c878e0;--orange:#E8843A;--green:#3B6D11;--text:#fff;--muted:#a39bb8;}
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--dark-purple:#1c0a2e;--bright-purple:#c878e0;--orange:#E8843A}
-body{font-family:'Space Grotesk',sans-serif;background:var(--dark-purple);color:#fff}
-.back-bar{padding:20px 32px;background:rgba(0,0,0,0.2)}
-.back-bar a{color:var(--bright-purple);text-decoration:none;font-weight:700}
-nav{padding:30px 32px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:24px;font-weight:700;background:linear-gradient(90deg, var(--orange), var(--bright-purple));-webkit-background-clip: text;-webkit-text-fill-color: transparent;}
-.rainbow-strip{height:4px;background:linear-gradient(90deg, #3B6D11, #E8843A, #7C4D8B)}
-.hero{padding:100px 32px;text-align:center;max-width:900px;margin:0 auto}
-.tag{display:inline-block;border:1px solid var(--bright-purple);color:var(--bright-purple);padding:8px 20px;border-radius:100px;font-size:14px;margin-bottom:30px}
-.hero h1{font-size:62px;line-height:1.1;margin-bottom:20px}
-.hero p{font-size:18px;color:#aaa;margin-bottom:40px}
-.btn-grad{background:linear-gradient(135deg, var(--orange), var(--bright-purple));color:#fff;padding:18px 40px;border-radius:100px;text-decoration:none;font-weight:700;display:inline-block}
+body{font-family:'Space Grotesk',sans-serif;background:var(--dark-purple);color:var(--text);line-height:1.7}
+a{text-decoration:none}
+.back-bar{padding:20px 5%;background:rgba(0,0,0,0.3);font-size:14px}
+.back-bar a{color:var(--bright-purple);font-weight:700}
+.rainbow-strip{height:5px;background:linear-gradient(90deg, var(--green), var(--orange), var(--bright-purple))}
+nav{padding:30px 5%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:rgba(28,10,46,0.95);z-index:100;backdrop-filter:blur(5px)}
+.logo{font-size:26px;font-weight:700;background:linear-gradient(90deg, var(--orange), var(--bright-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-links{display:flex;gap:30px}
+.nav-links a{color:var(--muted);font-weight:600;font-size:15px;transition:0.3s}
+.nav-links a:hover{color:#fff}
+.hero{padding:100px 5%;text-align:center;max-width:1000px;margin:0 auto}
+.tag{display:inline-block;border:2px solid rgba(200,120,224,0.3);background:rgba(200,120,224,0.1);color:var(--bright-purple);padding:8px 25px;border-radius:100px;font-size:14px;margin-bottom:30px;font-weight:700;letter-spacing:1px}
+.hero h1{font-size:68px;line-height:1.1;margin-bottom:30px;letter-spacing:-1px}
+.hero p{font-size:20px;color:var(--muted);margin-bottom:50px;max-width:700px;margin-left:auto;margin-right:auto}
+.btn-grad{background:linear-gradient(135deg, var(--orange), var(--bright-purple));color:#fff;padding:18px 50px;border-radius:100px;font-weight:700;display:inline-block;font-size:16px;box-shadow:0 10px 30px rgba(232,132,58,0.3);border:none;cursor:pointer}
+.quote-box{max-width:800px;margin:60px auto;text-align:center;font-size:26px;line-height:1.5;color:var(--orange);font-style:italic}
+.sec{padding:80px 5%;max-width:1200px;margin:0 auto}
+.sec-title{font-size:38px;margin-bottom:50px;text-align:center}
+
+/* STORY CARDS */
+.story-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));gap:30px}
+.s-card{background:var(--dark-card);padding:40px;border-radius:20px;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.05)}
+.s-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg, var(--orange), var(--bright-purple))}
+.s-name{font-size:22px;font-weight:700;margin-bottom:5px}
+.s-res{color:var(--green);font-weight:700;font-size:15px;margin-bottom:20px}
+.s-txt{color:var(--muted);font-style:italic}
+
+/* EMS FLEX */
+.ems-flex{display:flex;gap:50px;align-items:center;background:var(--dark-card);border-radius:30px;padding:50px}
+.ems-info{flex:1}
+.ems-info h3{font-size:32px;color:var(--bright-purple);margin-bottom:20px}
+.ems-info p{color:var(--muted);margin-bottom:20px}
+.feat-tags{display:flex;flex-wrap:wrap;gap:10px}
+.f-tag{background:rgba(255,255,255,0.05);padding:10px 20px;border-radius:100px;font-size:13px;color:#fff}
+.ems-vis{width:300px;height:300px;background:#1a082b;border-radius:50%;display:flex;align-items:center;justify-content:center;border:10px solid rgba(255,255,255,0.05);font-size:40px;color:rgba(255,255,255,0.1)}
+
+/* PRICING */
+.pr-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:20px}
+.p-card{background:rgba(255,255,255,0.03);padding:50px 30px;border-radius:20px;text-align:center;border:1px solid rgba(255,255,255,0.05)}
+.p-card.glow{background:var(--dark-card);border-color:var(--bright-purple);transform:translateY(-10px);box-shadow:0 20px 50px rgba(200,120,224,0.1)}
+.p-card h4{font-size:20px;color:var(--muted);margin-bottom:15px}
+.p-amt{font-size:42px;font-weight:700;color:#fff;margin-bottom:30px}
+.p-card.glow .p-amt{background:linear-gradient(90deg, var(--orange), var(--bright-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.p-list{text-align:left;list-style:none;margin-bottom:40px}
+.p-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:14px;color:var(--muted)}
+
+footer{text-align:center;padding:60px 5%;border-top:1px solid rgba(255,255,255,0.05);color:var(--muted);font-size:14px}
 </style>
 </head>
 <body>
-<div class="back-bar"><a href="index.html">← Geri Dön</a></div>
+<div class="back-bar"><a href="index.html">← DİĞER TEMALAR</a></div>
 <div class="rainbow-strip"></div>
 <nav>
     <div class="logo">DilaForm</div>
+    <div class="nav-links">
+        <a href="#hikayeler">Değişimler</a>
+        <a href="#ems">Teknoloji & SSS</a>
+        <a href="#fiyat">Programlar</a>
+    </div>
 </nav>
+
 <section class="hero">
-    <div class="tag">Başarı Hikayeleri</div>
+    <div class="tag">Başarı Hikayeleri & Motivasyon</div>
     <h1>Gerçek İnsanlar,<br>Gerçek Sonuçlar</h1>
-    <p>500'den fazla danışmanımızın Meta Slim (GS Makine) ve özel diyet programlarıyla yazdığı değişim hikayesine sen de katıl.</p>
-    <a href="#" class="btn-grad">Hikayeleri Oku</a>
+    <p>500'den fazla danışanımızın Meta Slim (GS Makine) teknolojisi ve sadece onlara özel hazırladığımız diyet programlarıyla yazdığı değişim hikayesine sen de katıl.</p>
+    <a href="#fiyat" class="btn-grad">Kendi Hikayeni Başlat</a>
 </section>
+
+<div class="quote-box">
+    "Hedefinize olan inancınız, başarınızın yegâne pusulasıdır."<br>
+    <span style="font-size:16px; color:var(--muted); font-style:normal; font-weight:700; text-transform:uppercase">@diyetisyendilakarakurt</span>
+</div>
+
+<section id="hikayeler" class="sec">
+    <h2 class="sec-title">Dönüşüm Kanıtları</h2>
+    <div class="story-grid">
+        <div class="s-card">
+            <div class="s-name">Ayşe K.</div>
+            <div class="s-res">Başarı: -12 KG / 3 Ay</div>
+            <p class="s-txt">"Uzun diyet süreçlerinden bıkmıştım. Dila Hanım'ın klinik testlere dayalı listesi ve EMS enerjisini birleştirmesi muazzamdı."</p>
+        </div>
+        <div class="s-card">
+            <div class="s-name">Merve T.</div>
+            <div class="s-res">Başarı: -8 KG / 8 Hafta</div>
+            <p class="s-txt">"Sıkılaşarak zayıflamanın ne demek olduğunu burada anladım. EMS seansları çok kısa sürdüğü için yormuyor."</p>
+        </div>
+        <div class="s-card">
+            <div class="s-name">Selin B.</div>
+            <div class="s-res">Başarı: -6 KG / 6 Hafta</div>
+            <p class="s-txt">"Kısa sürede hedeflediğim o estetik görüntüye, her hafta değişen diyet listesi motivasyonuyla ulaştım."</p>
+        </div>
+    </div>
+</section>
+
+<section id="ems" class="sec">
+    <h2 class="sec-title">Merak Edilenler: EMS B-8317</h2>
+    <div class="ems-flex">
+        <div class="ems-info">
+            <h3>Elektromanyetik Zayıflama</h1>
+            <p>GS Makine güvencesiyle, haftada sadece 2 kez 20 dakika ayırarak geleneksel egzersizlerin 18 katı etkiyi elde edebildiğinizi biliyor muydunuz? İşlem acısızdır ve sadece kalp pili taşıyanlar ile hamilelere önerilmez.</p>
+            <div class="feat-tags">
+                <span class="f-tag">Ağrısız & Acısız</span>
+                <span class="f-tag">GS Makine Sertifikalı</span>
+                <span class="f-tag">18x Daha Etkili</span>
+                <span class="f-tag">20 Dk Seans</span>
+            </div>
+        </div>
+        <div class="ems-vis">B-8317</div>
+    </div>
+</section>
+
+<section id="fiyat" class="sec">
+    <h2 class="sec-title">Program Planları</h2>
+    <div class="pr-grid">
+        <div class="p-card">
+            <h4>Diyet & Takip</h4>
+            <div class="p-amt">₺1.200*</div>
+            <ul class="p-list">
+                <li>Sürekli İletişim</li>
+                <li>Haftalık Yeni Plan</li>
+                <li>Online Konsültasyon</li>
+            </ul>
+        </div>
+        <div class="p-card glow">
+            <h4>Diyet + EMS</h3>
+            <div class="p-amt">₺2.500*</div>
+            <ul class="p-list">
+                <li>Ayda 8 Cihaz Seansı</li>
+                <li>Düzenli Kas Ölçümü</li>
+                <li>Diyet Danışmanlığı</li>
+            </ul>
+        </div>
+        <div class="p-card">
+            <h4>Özel Bakım</h4>
+            <div class="p-amt">₺4.000*</div>
+            <ul class="p-list">
+                <li>Kapsamlı Analiz</li>
+                <li>12 Seans Kullanım</li>
+                <li>VIP İzleme Süreci</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Diyetisyen Dila Karakurt Sağlıklı Yaşam Platformu © 2025</p>
+</footer>
+
 </body>
 </html>

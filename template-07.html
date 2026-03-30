@@ -3,69 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DilaFit — Wellness Spa</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
+<title>Dila Karakurt — Template 07: Wellness Spa</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
 <style>
+:root{--gr-dark:#3B6D11;--gr-light:#f0faf4;--gr-mid:#639922;--orange:#E8843A;--text:#2d421f;}
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--green-header:#3B6D11;--green-bg:#f0faf4;--orange:#E8843A}
-body{font-family:'Montserrat',sans-serif;background:var(--green-bg);color:#2d421f}
-.back-bar{padding:12px 32px;background:#fff;font-size:13px;border-bottom:1px solid #d0ecc0}
-.back-bar a{color:var(--green-header);font-weight:700;text-decoration:none}
-header{background:var(--green-header);padding:40px 32px;color:#fff;text-align:center}
-header h1{letter-spacing:4px;text-transform:uppercase;font-size:24px}
-.hero{display:flex;align-items:center;padding:80px 32px;max-width:1100px;margin:0 auto}
+body{font-family:'Montserrat',sans-serif;background:var(--gr-light);color:var(--text);line-height:1.7}
+a{text-decoration:none}
+.back-bar{padding:12px 5%;background:#fff;font-size:13px;border-bottom:1px solid #d0ecc0}
+.back-bar a{color:var(--gr-dark);font-weight:700}
+header{background:var(--gr-dark);padding:20px 5%;color:#fff;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+header h1{letter-spacing:4px;text-transform:uppercase;font-size:20px}
+.nav-menu a{color:rgba(255,255,255,0.8);margin-left:25px;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:0.3s}
+.nav-menu a:hover{color:#fff}
+.hero{display:flex;align-items:center;padding:100px 5%;max-width:1200px;margin:0 auto}
 .hero-left{flex:1;padding-right:60px}
-.hero-left h2{font-size:48px;font-family:'Lora',serif;font-style:italic;margin-bottom:20px}
-.hero-right{width:350px;height:450px;background:linear-gradient(160deg, #C0DD97, #639922);border-radius:10px;box-shadow:20px 20px 0 var(--orange)}
-.pricing-section{padding:80px 32px;max-width:1100px;margin:0 auto}
-.pricing-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:25px;margin-top:40px}
-.pricing-card{background:#fff;padding:40px 20px;text-align:center;border-radius:5px}
-.pricing-card h3{margin-bottom:15px;color:var(--green-header)}
-.pricing-card .price{font-size:32px;font-weight:700;color:var(--orange);margin-bottom:20px}
-.btn-select{background:var(--green-header);color:#fff;padding:12px 30px;display:inline-block;text-decoration:none;border-radius:30px;font-weight:700}
-footer{padding:60px;text-align:center;background:#fff;margin-top:80px}
+.hero-left h2{font-size:54px;font-family:'Lora',serif;font-style:italic;margin-bottom:20px;line-height:1.2;color:var(--gr-dark)}
+.hero-left p{font-size:18px;margin-bottom:40px;opacity:0.9}
+.btn-book{background:var(--orange);color:#fff;padding:16px 40px;border-radius:30px;font-weight:700;letter-spacing:1px;display:inline-block;box-shadow:0 10px 20px rgba(232,132,58,0.2)}
+.hero-right{flex:1;height:550px;background:linear-gradient(160deg, #C0DD97, var(--gr-mid));border-radius:15px;box-shadow:-20px 20px 0 var(--gr-dark);position:relative;display:flex;align-items:center;justify-content:center;font-size:60px;color:rgba(255,255,255,0.7)}
+.quote-sec{text-align:center;padding:80px 5%;background:#fff}
+.quote-sec blockquote{font-family:'Lora',serif;font-size:28px;font-style:italic;color:var(--gr-dark);max-width:800px;margin:0 auto 20px}
+.quote-sec cite{font-weight:700;color:var(--orange);letter-spacing:1px;text-transform:uppercase;font-size:13px}
+.section{padding:100px 5%;max-width:1200px;margin:0 auto}
+.sec-title{text-align:center;font-size:36px;margin-bottom:60px;color:var(--gr-dark);font-family:'Lora',serif}
+.ems-info{display:flex;background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.05)}
+.ems-img{flex:1;background:var(--gr-mid);min-height:400px;display:flex;align-items:center;justify-content:center;font-size:50px}
+.ems-text{flex:1.2;padding:60px}
+.ems-text h3{font-size:26px;margin-bottom:20px;color:var(--gr-dark)}
+.ems-text p{margin-bottom:20px;opacity:0.9}
+.ems-ul{list-style:none}
+.ems-ul li{padding:10px 0;border-bottom:1px dashed #d0ecc0;display:flex;align-items:center;gap:15px}
+.ems-ul li::before{content:'🌿';}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.faq-box{background:#fff;padding:30px;border-radius:10px;border-left:4px solid var(--gr-mid)}
+.faq-box h4{font-size:18px;margin-bottom:10px;color:var(--gr-dark)}
+.faq-box p{font-size:14px;opacity:0.8}
+.pricing-section{padding:100px 5%;background:var(--gr-dark);color:#fff}
+.pricing-grid{display:grid;grid-template-columns:repeat(3, 1fr);gap:30px;max-width:1100px;margin:0 auto}
+.pricing-card{background:#fff;color:var(--text);padding:50px 30px;text-align:center;border-radius:10px}
+.pricing-card.pop{transform:scale(1.05);box-shadow:0 20px 50px rgba(0,0,0,0.2);border:2px solid var(--orange)}
+.pricing-card h3{margin-bottom:15px;font-size:22px;color:var(--gr-dark)}
+.pricing-card .price{font-size:42px;font-weight:700;color:var(--orange);margin-bottom:25px}
+.btn-select{background:var(--gr-dark);color:#fff;padding:14px 30px;display:inline-block;border-radius:30px;font-weight:700;width:100%;margin-top:20px}
+.pricing-card.pop .btn-select{background:var(--orange)}
+.pkg-detail{text-align:left;list-style:none;margin-top:20px;font-size:14px}
+.pkg-detail li{padding:10px 0;border-bottom:1px solid #f0f0f0}
+footer{padding:60px;text-align:center;background:#fff;font-size:14px}
 </style>
 </head>
 <body>
-<div class="back-bar"><a href="index.html">← Tasarımlar</a></div>
+<div class="back-bar"><a href="index.html">← DİĞER TASARIMLAR</a></div>
 <header>
     <h1>Dila Karakurt</h1>
+    <div class="nav-menu">
+        <a href="#ems">SPA & EMS</a>
+        <a href="#veri">Sonuçlar</a>
+        <a href="#fiyat">Programlar</a>
+    </div>
 </header>
+
 <section class="hero">
     <div class="hero-left">
-        <h2>Wellness & EMS Uzmanlığı</h2>
-        <p>Bedeninizi dinlendirin, kaslarınızı güçlendirin. Meta Slim B-8317 teknolojisi ile klinik ortamında zayıflamanın keyfini çıkarın.</p>
+        <h2>Wellness &<br>EMS Uzmanlığı</h2>
+        <p>Bedeninizi dinlendirin, kaslarınızı Meta Slim B-8317 teknolojisiyle güçlendirin. Klinik seviyesinde, huzurlu bir ortamda incelmenin keyfini çıkarın.</p>
+        <a href="#fiyat" class="btn-book">Seans Randevusu</a>
     </div>
-    <div class="hero-right"></div>
+    <div class="hero-right">✨</div>
 </section>
-<section class="pricing-section">
-    <h2 style="text-align:center">Hizmet Paketleri</h2>
+
+<div class="quote-sec">
+    <blockquote>"Beden, ruhun evidir. Onu sağlıkla, bilinçli beslenmeyle ve doğru kas uyarımıyla inşa ettiğinizde, iç huzurunuz da aynı oranda parlar."</blockquote>
+    <cite>Diyetisyen Dila Karakurt (@diyetisyendilakarakurt)</cite>
+</div>
+
+<section id="ems" class="section">
+    <h2 class="sec-title">Cihaz SPA Deneyimi</h2>
+    <div class="ems-info">
+        <div class="ems-img">🌿</div>
+        <div class="ems-text">
+            <h3>Elektromanyetik Rahatlama ve Güçlenme</h3>
+            <p>Meta Slim GS Makine cihazımızla 20 dakikalık konforlu EMS seansları, sıradan diyetleri klinisyen onaylı bir vücut şekillendirme programına çevirir.</p>
+            <ul class="ems-ul">
+                <li>Acısız ve yorgunluk hissi bırakmayan terapi</li>
+                <li>Lenfatik masaj etkisi ile hızlı ödem atma</li>
+                <li>Selülit görünümünde gözle görülür azalma</li>
+                <li>Aynı anda beslenmeyle destekli yağ yakımı</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="veri" class="section">
+    <h2 class="sec-title">Gerçek Bedenler, Sık Sorulanlar</h2>
+    <div class="faq-grid">
+        <div class="faq-box">
+            <h4>Seanslar Ağrılı mıdır?</h4>
+            <p>Hayır, yalnızca kaslarda güçlü ancak keyifli bir titreşim eforu hissedersiniz. Rahatsız edici bir elektrik akımı kesinlikle hissetmezsiniz.</p>
+        </div>
+        <div class="faq-box">
+            <h4>3 Ayda 12 Kilo Kaybı (Ayşe K.)</h4>
+            <p>Sizlerin de okuyabileceği başarı hikayelerinden sadece biri: Sıkı ve kişiselleştirilmiş bir program ile sarkmadan zayıflama mümkün.</p>
+        </div>
+        <div class="faq-box">
+            <h4>Bunu Biliyor Musunuz?</h4>
+            <p>EMS uyarımının standart egzersize oranla kas liflerini 18 kat daha verimli analiz edip aktifleştirdiği klinik olarak kanıtlanmıştır.</p>
+        </div>
+        <div class="faq-box">
+            <h4>Su Tüketiminin SPA Etkisi</h4>
+            <p>Hazırladığımız yürüyüş ve diyet programlarında suyu odak noktasına koyarak, vücudunuzun arınma (detoks) hızını %40 oranında artırıyoruz.</p>
+        </div>
+    </div>
+</section>
+
+<section id="fiyat" class="pricing-section">
+    <h2 class="sec-title" style="color:#fff">Hizmet Paketleri</h2>
     <div class="pricing-grid">
         <div class="pricing-card">
-            <h3>Başlangıç</h3>
-            <div class="price">₺499</div>
-            <p>4 Seans EMS + Diyet Programı</p>
-            <br>
+            <h3>Başlangıç Diyet</h3>
+            <div class="price">₺1.200</div>
+            <ul class="pkg-detail">
+                <li>4 Hafta Detaylı Takip</li>
+                <li>1 Tam Beden Vücut Analizi</li>
+                <li>Online WhatsApp İletişimi</li>
+            </ul>
             <a href="#" class="btn-select">Hemen Al</a>
         </div>
-        <div class="pricing-card" style="box-shadow: 0 10px 30px rgba(0,0,0,0.1)">
-            <h3>Pro</h3>
-            <div class="price">₺899</div>
-            <p>8 Seans EMS + Takip</p>
-            <br>
-            <a href="#" class="btn-select">Hemen Al</a>
+        <div class="pricing-card pop">
+            <h3>Pro (Diyet+EMS)</h3>
+            <div class="price">₺2.500</div>
+            <ul class="pkg-detail">
+                <li><strong>8 Seans Meta Slim EMS</strong></li>
+                <li>Haftalık Diyet Değişimi</li>
+                <li>Vücut Kas/Yağ Analizi</li>
+            </ul>
+            <a href="#" class="btn-select">Popüler Paket</a>
         </div>
         <div class="pricing-card">
-            <h3>Premium</h3>
-            <div class="price">₺1.499</div>
-            <p>12 Seans EMS + WhatsApp Destek</p>
-            <br>
+            <h3>Premium Bakım</h3>
+            <div class="price">₺4.000</div>
+            <ul class="pkg-detail">
+                <li><strong>12 Seans Yoğun EMS</strong></li>
+                <li>Öncelikli SPA Seansı</li>
+                <li>Günlük Yemek Takibi</li>
+            </ul>
             <a href="#" class="btn-select">Hemen Al</a>
         </div>
     </div>
 </section>
+
 <footer>
-    <p>&copy; 2025 Diyetisyen Dila Karakurt Wellness Clinic</p>
+    <p>&copy; 2025 Diyetisyen Dila Karakurt Wellness Clinic | B-8317 Sertifikalı Merkez</p>
 </footer>
+
 </body>
 </html>
